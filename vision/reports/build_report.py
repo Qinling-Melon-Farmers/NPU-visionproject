@@ -100,7 +100,7 @@ def build(cfg, experiment_root, output_path):
     p('生成日期：'+datetime.now().strftime('%Y-%m-%d'))
     status_paragraph=doc.add_paragraph('报告状态：'+('实验验证通过；交互归档存在已明示的历史原文缺口，见附录 C、D。' if final and record_gaps else '实验与记录齐备，提交前请更新目录并核对个人信息。' if final else '待完成草稿；不得作为全部验收完成的最终报告。'))
     table(['验收项目','当前状态'],[(n,'真实运行已完成' if r and r.get('status')=='completed' else '待完成') for n,r in results.items()]+[('摘要实际播放','已记录检查' if playback else '待检查／缺少记录'),('可见交互附录',f'{len(records)} 条；解析错误 {transcript_errors}' if records else '缺失')])
-    doc.add_page_break();doc.add_heading('目录',level=1);field(doc.add_paragraph(),' TOC \\o "1-3" \\h \\z \\u ');p('请在 Word 中全选并更新域，以显示目录及实际页码。')
+    doc.add_page_break();doc.add_paragraph('目录',style='Title');field(doc.add_paragraph(),' TOC \\o "1-1" \\h \\z ');p('目录仅列主章节和附录；实际页码由本机 Word 更新。')
     doc.add_page_break()
     page('1 实验目标与证据边界')
     if complete:

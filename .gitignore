@@ -30,3 +30,5 @@ vision/reports/**/vision_report.pdf
 ~$*
 vision/reports/delivery-20261023/
 vision/logs/inspect_*.py
+vision/reports/delivery-audited-20261023/
+vision/reports/delivery-review-20261023/

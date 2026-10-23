@@ -36,12 +36,22 @@ try {
   $pages=$document.ComputeStatistics(2)
   $headings=@()
   # Find the actual appendices after the TOC, without thousands of COM round trips.
-  foreach ($title in @('附录 A','附录 B','附录 C','附录 D')) {
+  # ASCII source also works when Windows PowerShell 5 reads a BOM-less file.
+  $appendixPrefix=[string][char]0x9644+[char]0x5f55+' '
+  foreach ($letter in @('A','B','C','D')) {
+    $title=$appendixPrefix+$letter
     $range=$document.Content.Duplicate
     if ($document.TablesOfContents.Count -gt 0) { $range.Start=$document.TablesOfContents.Item(1).Range.End }
+    $range.Find.ClearFormatting()
+    $range.Find.Style=$document.Styles.Item(-2)
+    $range.Find.Format=$true
+    $range.Find.MatchWildcards=$false
+    $range.Find.Forward=$true
+    $range.Find.Wrap=0
     $range.Find.Text=$title
     if ($range.Find.Execute()) { $headings += [pscustomobject]@{title=$title;page=$range.Information(3)} }
   }
+  if ($headings.Count -ne 4) { throw 'Could not locate all four appendix headings after TOC' }
   $previewPages=@(1,2,6,10,14,18,22,24)+@($headings | ForEach-Object { $_.page })
   $previews=@()
   foreach ($number in ($previewPages | Sort-Object -Unique)) {

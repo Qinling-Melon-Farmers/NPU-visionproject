@@ -75,7 +75,11 @@ def select_sources():
             continue
         for path in sorted(base.rglob('*')):
             relative=path.relative_to(ROOT)
-            if not path.is_file() or path.is_symlink() or any(p.lower() in BLOCKED_PARTS for p in relative.parts):
+            blocked=any(p.lower() in BLOCKED_PARTS for p in relative.parts)
+            # Some author Python packages are named datasets/models; they are
+            # import dependencies, not downloaded dataset/weight assets.
+            vendor_module=directory=='vendor' and path.suffix.lower()=='.py' and not any(p.lower() in {'.git','__pycache__','custom_data','custom_dataset'} for p in relative.parts)
+            if not path.is_file() or path.is_symlink() or blocked and not vendor_module:
                 continue
             if directory=='reports' and path.suffix!='.py' and path.name!='INTERACTION_AUDIT.md':
                 continue
