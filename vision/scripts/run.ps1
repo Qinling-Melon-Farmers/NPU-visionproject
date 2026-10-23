@@ -1,7 +1,7 @@
 param(
   [Parameter(Mandatory=$true)][ValidateSet('prepare','image','video','summary','report','verify')][string]$Command,
   [string]$RunId = 'visual-20261023',
-  [string]$EnvironmentPrefix = 'E:\MultimediaCourseAssets\envs\multimedia-vision',
+  [Parameter(Mandatory=$true)][string]$EnvironmentPrefix,
   [string]$Config = 'vision\configs\default.yaml'
 )
 $ErrorActionPreference = 'Stop'

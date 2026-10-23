@@ -81,41 +81,36 @@ def _name(value):
     return str(value)
 
 def _export(video, mask, destination, contactsheet):
-    import cv2
+    import subprocess
     import matplotlib.pyplot as plt
-    capture = cv2.VideoCapture(str(video))
-    if not capture.isOpened():
-        raise RuntimeError(f'Cannot open video: {video}')
-    fps = capture.get(cv2.CAP_PROP_FPS)
-    width, height = int(capture.get(3)), int(capture.get(4))
+    from vision.common.media import probe_video, iter_frames
+    info = probe_video(video)
+    fps = info['fps']
+    width, height = info['width'], info['height']
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists():
         raise FileExistsError(destination)
-    writer = cv2.VideoWriter(str(destination), cv2.VideoWriter_fourcc(*'mp4v'), fps, (width,height))
-    if not writer.isOpened():
-        raise RuntimeError('MP4 writer unavailable')
+    ffmpeg = str(Path(sys.prefix)/'Library/bin/ffmpeg.exe')
+    writer = subprocess.Popen([ffmpeg,'-v','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{width}x{height}','-r',str(fps),'-i','pipe:0','-an','-c:v','mpeg4','-q:v','3','-pix_fmt','yuv420p','-n',str(destination)],stdin=subprocess.PIPE,stderr=subprocess.PIPE)
     count = written = 0
     representative = []
     targets = set(np.linspace(0, max(0,int(mask.sum())-1), 8).astype(int))
-    while True:
-        ok, frame = capture.read()
-        if not ok:
-            break
-        if count < len(mask) and mask[count]:
-            writer.write(frame)
-            if written in targets:
-                representative.append((count, cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)))
-            written += 1
-        count += 1
-    capture.release()
-    writer.release()
+    try:
+        for frame in iter_frames(video):
+            if count < len(mask) and mask[count]:
+                writer.stdin.write(frame.tobytes())
+                if written in targets:
+                    representative.append((count,frame.copy()))
+                written += 1
+            count += 1
+    finally:
+        writer.stdin.close()
+        error = writer.stderr.read().decode('utf-8',errors='replace')
+        code = writer.wait()
+    if code: raise RuntimeError('Summary FFmpeg writer failed: '+error)
     if count != len(mask):
         raise ValueError(f'Media/H5 frame mismatch: {count} != {len(mask)}')
-    verify = cv2.VideoCapture(str(destination))
-    decoded = 0
-    while verify.read()[0]:
-        decoded += 1
-    verify.release()
+    decoded = sum(1 for _ in iter_frames(destination))
     assert decoded == written == int(mask.sum())
     fig, axes = plt.subplots(2,4,figsize=(12,5))
     for ax in axes.flat:
@@ -129,6 +124,8 @@ def _export(video, mask, destination, contactsheet):
 def run(cfg, run_dir):
     import h5py
     import torch
+    from vision.common.runtime import configure_fp32
+    numerics=configure_fp32()
     import matplotlib.pyplot as plt
     import csv
     state = prepare(cfg)
@@ -141,6 +138,8 @@ def run(cfg, run_dir):
     from helpers.bbox_helper import nms
     root = Path(cfg['asset_root'])
     video_root = Path(cfg.get('summary',{}).get('video_root',root/'data/tvsum'))
+    mapping_file=Path(__file__).resolve().parents[1]/'manifests/tvsum_h5_mapping.json'
+    mapping=json.loads(mapping_file.read_text(encoding='utf-8')) if mapping_file.exists() else {}
     metadata_files = list(video_root.rglob('ydata-tvsum50-info.tsv'))
     if len(metadata_files) != 1:
         raise FileNotFoundError('Expected one official TVSum metadata TSV')
@@ -150,7 +149,12 @@ def run(cfg, run_dir):
         selected = None
         for key in state['test_keys']:
             group = h5[key]
-            name = _name(group['video_name'][()])
+            if 'video_name' in group:
+                name = _name(group['video_name'][()])
+            else:
+                match=mapping.get('mappings',{}).get(key,{})
+                if match.get('status')!='verified':continue
+                name=match['video_id']
             if name not in metadata:
                 raise ValueError(f'H5 video_name not present in official metadata: {name}')
             matches = list(video_root.rglob(name+'.mp4'))
@@ -200,7 +204,8 @@ def run(cfg, run_dir):
             if nfps[i]<=remaining:
                 a,b=cps[i]; mask[a:b+1]=True; remaining-=int(nfps[i])
         baseline.append({'seed':seed,'avg_f1':float(np.mean([f1_score(mask,u) for u in arrays['user_summary']])),'ratio':float(mask.mean())})
-    result={'status':'completed','method':'DSNet anchor-free attention','video_key':key,'video_name':name,'video_path':str(video),'selection':'first numeric official split test key with matching video_name media','split':state,'nms':.4,'results':rows,'random_baseline':{'runs':baseline,'mean_f1':float(np.mean([r['avg_f1'] for r in baseline])),'std_f1':float(np.std([r['avg_f1'] for r in baseline]))},'playback_check':'programmatic decoding complete; human playback pending'}
+    from vision.common.io import sha256
+    result={'status':'completed','method':'DSNet anchor-free attention','video_key':key,'video_name':name,'video_path':str(video),'selection':'first numeric official split test key with original/H5 frame-count and official annotation-curve verified mapping','split':state,'mapping_evidence':mapping.get('mappings',{}).get(key),'mapping_file':str(mapping_file),'weight_sha256':sha256(state['checkpoint']),'h5_sha256':sha256(state['h5']),'video_sha256':sha256(video),'nms':.4,'results':rows,'random_baseline':{'runs':baseline,'mean_f1':float(np.mean([r['avg_f1'] for r in baseline])),'std_f1':float(np.std([r['avg_f1'] for r in baseline]))},'playback_check':'programmatic decoding complete; player review recorded separately'}
     save_json(run_dir/'results.json',result)
     with (run_dir/'metrics.csv').open('w',newline='',encoding='utf-8-sig') as f:
         writer=csv.DictWriter(f,fieldnames=['budget','selected_frames','total_frames','ratio','avg_f1']); writer.writeheader(); writer.writerows([{k:r[k] for k in writer.fieldnames} for r in rows])

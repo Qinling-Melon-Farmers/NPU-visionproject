@@ -77,6 +77,7 @@ def prepare_clips(cfg):
     from PIL import Image, ImageDraw
     import cv2
     import numpy as np
+    from vision.common.media import sample_frames
     manifest = json.loads(MANIFEST.read_text(encoding='utf-8'))
     output = Path(cfg['asset_root']) / 'cache' / 'video' / 'clips'
     output.mkdir(parents=True, exist_ok=True)
@@ -99,24 +100,20 @@ def prepare_clips(cfg):
                     subprocess.run(command, check=True)
                 item = {'id':clip_id, 'source_id':source['id'], 'category':source['category'], 'start':start, 'end':start+20, 'variant':variant, 'path':str(path), 'encoder':'mpeg4', 'qscale':2 if variant=='query' else 5, 'filters':filters}
                 clip_sheet=Image.new('RGB',(800,145),'white'); clip_draw=ImageDraw.Draw(clip_sheet)
-                clip_cap=cv2.VideoCapture(str(path))
-                for frame_index,second in enumerate([0,4,8,12,16]):
-                    clip_cap.set(cv2.CAP_PROP_POS_MSEC,second*1000);ok,frame=clip_cap.read()
-                    if not ok:raise ValueError('Clip cannot decode contact frame: '+clip_id)
-                    thumb=Image.fromarray(cv2.cvtColor(frame,cv2.COLOR_BGR2RGB));thumb.thumbnail((160,120));clip_sheet.paste(thumb,(frame_index*160,0));clip_draw.text((frame_index*160,122),f'{second}s',fill='black')
-                clip_cap.release(); contact=output/(clip_id+'_contact.jpg');clip_sheet.save(contact);item['contact_sheet']=str(contact)
+                sampled=sample_frames(path,fps=.25,cc_size=None,rs_size=None)
+                if len(sampled)<5:raise ValueError('Clip has fewer than five contact frames: '+clip_id)
+                for frame_index,frame in enumerate(sampled[:5]):
+                    thumb=Image.fromarray(frame);thumb.thumbnail((160,120));clip_sheet.paste(thumb,(frame_index*160,0));clip_draw.text((frame_index*160,122),f'{frame_index*4}s',fill='black')
+                contact=output/(clip_id+'_contact.jpg');clip_sheet.save(contact);item['contact_sheet']=str(contact)
                 (queries if variant == 'query' else candidates).append(item)
         print(f"Prepared clips for {source['id']}", flush=True)
         # Source contact sheet at 1s sampling also makes repeated scenes inspectable.
-        cap = cv2.VideoCapture(source['path']); thumbs = []; hashes = []
-        for second in range(int(duration)):
-            cap.set(cv2.CAP_PROP_POS_MSEC, second*1000); ok, frame = cap.read()
-            if not ok: continue
-            gray = cv2.resize(cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY), (16,16))
+        thumbs = []; hashes = []
+        for second,frame in enumerate(sample_frames(source['path'],fps=1,cc_size=None,rs_size=160)):
+            gray = cv2.resize(cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY), (16,16))
             hashes.append((second, gray.astype(float)))
             if second % 5 == 0:
-                thumb = Image.fromarray(cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)); thumb.thumbnail((160,120)); thumbs.append((second,thumb))
-        cap.release()
+                thumb = Image.fromarray(frame); thumb.thumbnail((160,120)); thumbs.append((second,thumb))
         sheet = Image.new('RGB',(800,145*((len(thumbs)+4)//5)), 'white'); draw=ImageDraw.Draw(sheet)
         for i,(second,thumb) in enumerate(thumbs):
             x,y=(i%5)*160,(i//5)*145; sheet.paste(thumb,(x,y)); draw.text((x,y+120),f'{second}s',fill='black')
@@ -157,6 +154,8 @@ def run(cfg, run_dir):
     import matplotlib.pyplot as plt
     import cv2
     from unittest.mock import patch
+    from vision.common.runtime import configure_fp32
+    numerics=configure_fp32()
     run_dir=Path(run_dir);run_dir.mkdir(parents=True,exist_ok=True)
     manifest=json.loads(MANIFEST.read_text(encoding='utf-8'))
     if not manifest.get('visual_review_approved'):
@@ -166,7 +165,7 @@ def run(cfg, run_dir):
         writer.writerows((q['id'],c['id'],int(relevant(q,c))) for q in manifest['queries'] for c in manifest['candidates'])
     vendor=ROOT/'vendor'/'visil';sys.path.insert(0,str(vendor))
     from model.visil import ViSiL
-    from utils import load_video
+    from vision.common.media import sample_frames, read_frame
     weights=Path(cfg['asset_root'])/'weights'/'visil'
     original_load=torch.load
     def local_weight(url,*args,**kwargs):
@@ -182,7 +181,7 @@ def run(cfg, run_dir):
         model=ViSiL(pretrained=True,symmetric=False).to(cfg['device']).eval()
     cache=Path(cfg['asset_root'])/'cache'/'video'/'features';cache.mkdir(parents=True,exist_ok=True)
     weight_hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in weights.glob('*.pth')}
-    feature_config={'weights':weight_hashes,'sample_fps':cfg.get('video',{}).get('sample_fps',1),'short_side':256,'center_crop':224,'attention':True,'adapter_version':2}
+    feature_config={'weights':weight_hashes,'sample_fps':cfg.get('video',{}).get('sample_fps',1),'short_side':256,'center_crop':224,'attention':True,'decoder':'FFmpeg raw RGB; author frame-index stride','adapter_version':4,'numerics':numerics}
     config_fingerprint=hashlib.sha256(json.dumps(feature_config,sort_keys=True).encode()).hexdigest()
     features={};counts={};batch=cfg.get('video',{}).get('batch_size',8)
     with torch.inference_mode():
@@ -192,7 +191,7 @@ def run(cfg, run_dir):
             if target.exists():
                 feature=original_load(target,map_location='cpu',weights_only=True)
             else:
-                frames=load_video(clip['path'],fps=cfg.get('video',{}).get('sample_fps',1))
+                frames=sample_frames(clip['path'],fps=cfg.get('video',{}).get('sample_fps',1))
                 if len(frames)<4: raise ValueError('Fewer than four real sampled frames: '+clip['id'])
                 feature=torch.cat([model.extract_features(torch.from_numpy(frames[i:i+batch]).to(cfg['device'])).cpu() for i in range(0,len(frames),batch)])
                 torch.save(feature,target)
@@ -223,9 +222,8 @@ def run(cfg, run_dir):
         fig,axes=plt.subplots(1,4,figsize=(16,3))
         ids=[row['query_id']]+[c['id'] for c in row['top3']]
         for index,(ax,clip_id) in enumerate(zip(axes,ids)):
-            cap=cv2.VideoCapture(clips[clip_id]['path']);cap.set(cv2.CAP_PROP_POS_MSEC,10000);ok,frame=cap.read();cap.release()
-            if not ok:raise ValueError('Representative frame decode failed: '+clip_id)
-            ax.imshow(cv2.cvtColor(frame,cv2.COLOR_BGR2RGB));ax.axis('off')
+            frame=read_frame(clips[clip_id]['path'],10)
+            ax.imshow(frame);ax.axis('off')
             title='Query' if index==0 else f"#{index} score={row['top3'][index-1]['score']:.4f}"
             ax.set_title(title+'\n'+clip_id,fontsize=8)
         file=run_dir/(row['query_id']+'_top3.png');fig.savefig(file,bbox_inches='tight');plt.close(fig);top3_figures.append(str(file))

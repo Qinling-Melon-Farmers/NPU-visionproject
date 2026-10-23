@@ -60,6 +60,8 @@ def _descriptors(cfg, prepared):
     import numpy as np
     import torch
     import torchvision
+    from vision.common.runtime import configure_fp32
+    numerics=configure_fp32()
     from torchvision import transforms
     from PIL import Image
     import sys
@@ -76,7 +78,7 @@ def _descriptors(cfg, prepared):
     size = int(cfg.get('image',{}).get('image_size',362))
     fingerprint = hashlib.sha256(json.dumps(dict(weight=prepared['weight_sha256'],size=size,
         mean=meta['mean'],std=meta['std'],rgb=True,resize='PIL thumbnail lanczos',
-        inputs=[(r['id'],_hash(r['path'])) for r in prepared['images']],adapter=1),sort_keys=True).encode()).hexdigest()
+        inputs=[(r['id'],_hash(r['path'])) for r in prepared['images']],adapter=2,numerics=numerics),sort_keys=True).encode()).hexdigest()
     cache = Path(cfg['asset_root'])/'cache'/'image'/f'{fingerprint}.npz'
     if cache.exists():
         with np.load(cache) as data: return {k:data[k] for k in ('gem','avg','max')}, float(p.item()), fingerprint

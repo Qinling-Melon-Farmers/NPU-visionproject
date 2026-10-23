@@ -59,6 +59,9 @@ def main(argv=None):
     metadata = {'run_id': args.run_id, 'command': sys.argv, 'started_at': stamp, 'config': cfg,
                 'interpreter': sys.executable, 'python': sys.version, 'code': code_state(),
                 'status': 'running', 'log': str(logfile.relative_to(WORKSPACE))}
+    if args.command in ('image','video','summary'):
+        from vision.common.runtime import configure_fp32
+        metadata['numerics']=configure_fp32()
     started = time.monotonic()
     with logfile.open('w', encoding='utf-8') as stream, contextlib.redirect_stdout(Tee(sys.stdout, stream)), contextlib.redirect_stderr(Tee(sys.stderr, stream)):
         try:

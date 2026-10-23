@@ -1,5 +1,6 @@
 """Resume and verify approved official Conda downloads; never install packages."""
 import concurrent.futures
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -9,7 +10,7 @@ import time
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-CACHE = Path(r'E:\MultimediaCourseAssets\conda-pkgs')
+CACHE = None
 LOG = ROOT/'logs/conda-prefetch.log'
 LOCK = threading.Lock()
 
@@ -72,7 +73,13 @@ def fetch(record):
     return False
 
 def main():
-    payload=(ROOT/'logs/conda-solve.json').read_bytes()
+    global CACHE
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--cache',type=Path,required=True)
+    parser.add_argument('--solve',type=Path,default=ROOT/'logs/conda-solve.json')
+    args=parser.parse_args()
+    CACHE=args.cache
+    payload=args.solve.read_bytes()
     records=json.loads(payload.decode('utf-16' if payload[:2] in [b'\xff\xfe',b'\xfe\xff'] else 'utf-8-sig'))['actions']['FETCH']
     CACHE.mkdir(parents=True,exist_ok=True)
     log(f'START packages={len(records)} workers=4 download_only=true')

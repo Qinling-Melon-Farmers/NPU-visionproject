@@ -1,6 +1,6 @@
 # 视觉实验复现说明
 
-本目录实现 GeM 图像检索、完整 ViSiL 视频检索与 DSNet 无锚框视频摘要。当前代码、资源校验和单元测试不等于三个实验已经完成；正式结果以独立运行目录中的真实输出、验收记录及 Word 报告为准。根目录原始任务书和课件保留只读。语音实验不在本目录范围内。
+本目录实现 GeM 图像检索、完整 ViSiL 视频检索与 DSNet 无锚框视频摘要。三个实验已产生 `outputs/visual-20261023` 的真实运行结果；最终完成状态还须结合独立验收、摘要播放记录及 Word 报告检查，不能仅凭代码或单元测试判断。根目录原始任务书和课件保留只读。语音实验不在本目录范围内。
 
 ## 环境与配置
 
@@ -63,15 +63,26 @@ GeM 使用作者检索权重的参数 `p`、RGB、单尺度512维、无额外白
 
 DSNet 使用官方 TVSum GoogLeNet1024维 H5 和对应 AF checkpoint，默认官方 split0；资源脚本仅提取需要的 H5 和配置对应的 checkpoint。摘要从完整原视频独立运行，不读取检索排名。预算为5%、10%、15%，帧预算、原帧映射及导出帧数均须依据真实输出验收。
 
-## 视频划分及视觉审查
-
-`prepare` 只下载、核验资源并返回准备状态，不自动完成视频选源、切片或视觉审查。环境就绪后显式调用：
+官方DSNet H5的`video_name`仅适用于SumMe，TVSum不能猜测编号顺序。可独立运行映射核验：
 
 ```powershell
-conda run --no-capture-output -p $courseEnv python -s -c "import yaml; from pathlib import Path; from vision.experiments.video import prepare_sources,prepare_clips; c=yaml.safe_load(Path('vision/configs/default.yaml').read_text(encoding='utf-8')); print(prepare_sources(c)); print(prepare_clips(c))"
+conda run -p $courseEnv python -s vision/scripts/build_tvsum_mapping.py --asset-root 'E:\MultimediaCourseAssets\vision'
+```
+
+`manifests/tvsum_h5_mapping.json`保存H5、官方TSV及原视频哈希、帧数、评分曲线比较和50项映射证据。固定按官方1–5分范围归一化`(20人平均分-1)/4`，在H5 picks处全表最大误差约`2.3842e-8`；50项评分曲线均唯一识别，48项原视频/标注/H5帧数严格一致。`video_16 → WG0MBPpPC6I`为原视频9535帧、标注/H5 9534帧，`video_39 → Se3oxnaPsz0`为原视频4166帧、标注/H5 4165帧；两项实际解码确认差1帧，清单保留未通过严格时间轴核验状态，没有静默截断。当前摘要使用完全核验的`video_1 → AwmHb44_ouw`（10597帧），映射依据不涉及模型预测或F1选样。
+
+## 视频划分及视觉审查
+
+默认`prepare --video-stage status`只返回视频准备状态，不自动完成选源、切片或视觉审查。环境就绪后显式调用：
+
+```powershell
+conda run --no-capture-output -p $courseEnv python -s -m vision prepare --target video --video-stage sources --run-id prepare-sources-01
+conda run --no-capture-output -p $courseEnv python -s -m vision prepare --target video --video-stage clips --run-id prepare-clips-01
 ```
 
 选源按类别、视频 ID、可完整解码且至少80秒的规则生成10个源；20秒查询及同源干扰片段产生20查询、90候选，统一包含重编码、裁剪和遮挡条件。TVSum 原用于摘要，本实验将其改编为受控近重复检索；相关性定义为同源且原时间交集覆盖查询至少80%。
+
+本机官方Conda OpenCV4.10构建缺少FFmpeg Video I/O，`common/media.py`使用当前专用环境`Library/bin`的FFmpeg/ffprobe替代视频解码，OpenCV只执行图像resize。RGB管道以`-vsync 0`逐帧输出、不复制帧；采样在单个FFmpeg进程内选择作者定义的帧序号`0, round(source_fps/request_fps), ...`，随后执行相同INTER_CUBIC短边256和中心224裁剪。此替代避免GStreamer/MSMF打开失败与延迟，没有改变ViSiL采样或图像预处理定义。
 
 必须在正式打分前查看 `video_sources.json` 的 `review`、源视频接触图、片段接触图及疑似重复帧，并按需播放原片段，检查重复镜头造成的标签歧义。存在歧义时先修订选源和清单、重新生成切片，保留理由；不可根据模型排名挑选数据。核验无误后在清单记录审查者、日期、查看对象和结论，再将 `visual_review_approved` 设为 `true`。这是实际视觉检查证据门禁，不能只为让运行通过而置位。重新调用 `prepare_sources/prepare_clips` 会重新写清单并将审查标志重置，修改前先保存已有清单版本。未通过审查的 `video` 命令会停止。
 
@@ -91,6 +102,14 @@ conda run -p $courseEnv python -s -m vision report --run-id visual-run-01
 默认配置以外的配置须在每条命令追加同一 `--config`。CLI 日志保存于 `vision/logs/`，元数据、配置、代码指纹、错误及结果保存在 `vision/outputs/<run-id>/`。三个实验目录一旦包含证据便拒绝重跑；失败后用新的 run-id，保留失败目录和日志，不能清空或覆盖。缓存可复用；算法或预处理改变后必须重新运行受影响实验。
 
 图像输出包括逐查询P@5/AP、Top-5 CSV、完整排名压缩档、两图库三方法对比、对象配对bootstrap和案例图。视频输出包含完整ViSiL与去CNN对照、Top-3、逐查询命中/AP、真实帧间矩阵及代表帧。摘要输出包含候选区间、各预算选帧、帧数验收和本地无音频MP4。实际播放摘要后保存有依据的播放审查记录；程序解码不等于人工播放。`verify` 会指出尚缺的记录，不能将待完成项描述为已验收。
+
+图像可另外对固定4查询执行独立重放：
+
+```powershell
+conda run -p $courseEnv python -s vision/scripts/replay_image.py --config vision/configs/default.yaml --run-root vision/outputs/visual-20261023
+```
+
+重放从原图和真实权重新计算查询特征，图库复用原指纹缓存；对主/稀疏图库和三池化方法检查保存NPZ的Top-5标识完全一致及所有候选分数最大误差不超过`1e-6`。输出`replay_image.json`拒绝覆盖，失败也保留实际差异，不自动放宽阈值。此命令会执行模型前向，应按GPU统一调度安排。
 
 Word 报告生成于 `vision/reports/`，真实结果图表直接嵌入，缺少结果、交互记录或播放证据时为草稿。交互附录只来自已保存的用户可见提示、回复和执行证据；不可补造无法访问的历史对话、模型版本或隐藏推理。提交前在 Word 中更新目录、填写姓名学号并检查图片、分页及参考文献。
 
