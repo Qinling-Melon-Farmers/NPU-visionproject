@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "reviewer_type": "agent",
+  "timestamp": "2026-10-23T07:39:45.650176+00:00",
+  "method": "FFplay软件渲染器离屏按正常时钟完整播放三段，逐帧showinfo检查0到末帧和进程退出；逐帧比对导出图像与原片选帧的低分辨率RGB误差。主代理另查看三预算代表帧。未声称人类观看连续播放。",
+  "media": [
+    {
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_05.mp4",
+      "sha256": "bd8744960ef9b11a99e87b25ca19cd48f561a78d563430278dfc2541ec988fb7",
+      "status": "passed",
+      "budget": 0.05,
+      "player": "FFplay with SDL dummy video driver and software renderer",
+      "human_continuous_viewing": false,
+      "played_frames": 529,
+      "elapsed_seconds": 17.76600000000053,
+      "command": [
+        "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Library\\bin\\ffplay.exe",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-autoexit",
+        "-an",
+        "-vf",
+        "showinfo",
+        "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_05.mp4"
+      ],
+      "player_log": "vision\\outputs\\visual-20261023-fp32\\summary\\ffplay_05.log",
+      "source_export_alignment": {
+        "compared_frames": 529,
+        "thumbnail_rgb_mae_mean": 1.3789790665695232,
+        "thumbnail_rgb_mae_max": 1.7264539930555556,
+        "tolerance": 8
+      }
+    },
+    {
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_10.mp4",
+      "sha256": "a73e5face95ebca332d6f0ce23d6f7c3d89fd3337d69ab6b75a83bc53b15537f",
+      "status": "passed",
+      "budget": 0.1,
+      "player": "FFplay with SDL dummy video driver and software renderer",
+      "human_continuous_viewing": false,
+      "played_frames": 1055,
+      "elapsed_seconds": 35.29600000000028,
+      "command": [
+        "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Library\\bin\\ffplay.exe",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-autoexit",
+        "-an",
+        "-vf",
+        "showinfo",
+        "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_10.mp4"
+      ],
+      "player_log": "vision\\outputs\\visual-20261023-fp32\\summary\\ffplay_10.log",
+      "source_export_alignment": {
+        "compared_frames": 1055,
+        "thumbnail_rgb_mae_mean": 1.3884301770668774,
+        "thumbnail_rgb_mae_max": 1.796875,
+        "tolerance": 8
+      }
+    },
+    {
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_15.mp4",
+      "sha256": "c9cca6fa5119b8f929a6ce521e806fd36cba351f218b4f1e418efdd8e3dc20e9",
+      "status": "passed",
+      "budget": 0.15,
+      "player": "FFplay with SDL dummy video driver and software renderer",
+      "human_continuous_viewing": false,
+      "played_frames": 1585,
+      "elapsed_seconds": 52.98499999999967,
+      "command": [
+        "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Library\\bin\\ffplay.exe",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-autoexit",
+        "-an",
+        "-vf",
+        "showinfo",
+        "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_15.mp4"
+      ],
+      "player_log": "vision\\outputs\\visual-20261023-fp32\\summary\\ffplay_15.log",
+      "source_export_alignment": {
+        "compared_frames": 1585,
+        "thumbnail_rgb_mae_mean": 1.385685709121977,
+        "thumbnail_rgb_mae_max": 1.796875,
+        "tolerance": 8
+      }
+    }
+  ],
+  "visual_observation": "三种预算均保留轮胎/轮辋、手部工具操作和部分工作台画面；时间顺序递增，无选段倒放。5%片段更短更碎，不能完整保留维修动作和解释；视频无音轨，操作含义可能不完整。"
+}

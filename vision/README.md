@@ -125,3 +125,5 @@ Word 报告生成于 `vision/reports/`，真实结果图表直接嵌入，缺少
 交互记录已专项审计，见 [reports/INTERACTION_AUDIT.md](reports/INTERACTION_AUDIT.md)。学生与主代理记录位于附录 C，代理协作位于附录 D，后者不计入学生交互轮数。旧版混合日志保留，新报告根据 `logs/interaction_audit_latest.json` 读取分类快照。两批结构化问答已经补回；62 次代理协作的历史正文仅有加密持久化记录，无法读取，故“全部历史交互严格完整”未通过。报告封面、附录及打包清单明确此边界，不把实验验证通过等同于历史记录无缺口。当前报告适合审阅；学生个人信息和本人复核情况需据实补充。
 
 最终提交一份涵盖三个实验及完整可见交互附录的 `.docx`，另附代码、配置、来源清单、许可证、必要运行说明及依赖信息。按明确文件清单复制或打包：保留 `vision` 的课程代码、测试、说明、配置、作者来源/许可证及所需结果证据；选择最终报告。不要把整个资源根目录、Conda环境、数据、权重、特征缓存或本地摘要MP4加入提交包，也不要为打包删除这些本地资源。摘要MP4只留本地检查。
+
+当前审阅版为 [reports/delivery-final-20261023/vision_report.docx](reports/delivery-final-20261023/vision_report.docx)，提交包为 `submission/vision_review_20261023_v2.zip`。Word 16 已更新目录并检查页面：正文第3—22页，共20页；全篇112页，学生交互从第50页开始，代理协作从第86页开始。姓名学号等个人信息仍为占位。交互历史缺口不会因排版和打包而消除，请结合 [reports/INTERACTION_AUDIT.md](reports/INTERACTION_AUDIT.md) 审阅。打包与独立解压验证脚本分别为 `scripts/package_submission.py` 和 `scripts/verify_submission.py`。

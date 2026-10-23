@@ -1,0 +1,44 @@
+{
+    "source":  "C:\\Users\\ASUS\\Desktop\\多媒体技术\\vision\\reports\\视觉实验报告_visual-20261023-fp32_20261023T161824408420.docx",
+    "formatted_docx":  "C:\\Users\\ASUS\\Desktop\\多媒体技术\\vision\\reports\\delivery-final-20261023\\vision_report.docx",
+    "pdf":  null,
+    "pages":  112,
+    "figures":  32,
+    "tables":  23,
+    "headings":  [
+                     {
+                         "title":  "附录 A",
+                         "page":  23
+                     },
+                     {
+                         "title":  "附录 B",
+                         "page":  31
+                     },
+                     {
+                         "title":  "附录 C",
+                         "page":  50
+                     },
+                     {
+                         "title":  "附录 D",
+                         "page":  86
+                     }
+                 ],
+    "preview_pages":  [
+                          1,
+                          2,
+                          6,
+                          10,
+                          14,
+                          18,
+                          22,
+                          23,
+                          24,
+                          31,
+                          50,
+                          86
+                      ],
+    "application_name":  "Microsoft Word",
+    "application_path":  "C:\\Program Files\\Microsoft Office\\Root\\Office16",
+    "word_version":  "16.0",
+    "fields_updated":  true
+}

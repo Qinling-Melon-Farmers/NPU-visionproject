@@ -1,0 +1,849 @@
+{
+  "status": "completed",
+  "method": "DSNet anchor-free attention",
+  "video_key": "video_1",
+  "video_name": "AwmHb44_ouw",
+  "video_path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\AwmHb44_ouw.mp4",
+  "selection": "first numeric official split test key with original/H5 frame-count and official annotation-curve verified mapping",
+  "split": {
+    "h5": "E:\\MultimediaCourseAssets\\vision\\data\\dsnet\\eccv16_dataset_tvsum_google_pool5.h5",
+    "checkpoint": "E:\\MultimediaCourseAssets\\vision\\weights\\dsnet\\pretrain_af_basic\\checkpoint\\tvsum.yml.0.pt",
+    "resources_ready": true,
+    "test_keys": [
+      "video_1",
+      "video_15",
+      "video_16",
+      "video_21",
+      "video_31",
+      "video_33",
+      "video_34",
+      "video_35",
+      "video_38",
+      "video_43"
+    ],
+    "train_keys": [
+      "video_3",
+      "video_17",
+      "video_44",
+      "video_7",
+      "video_50",
+      "video_26",
+      "video_25",
+      "video_47",
+      "video_28",
+      "video_11",
+      "video_12",
+      "video_18",
+      "video_10",
+      "video_49",
+      "video_6",
+      "video_41",
+      "video_4",
+      "video_48",
+      "video_36",
+      "video_29",
+      "video_37",
+      "video_23",
+      "video_14",
+      "video_20",
+      "video_19",
+      "video_5",
+      "video_2",
+      "video_45",
+      "video_9",
+      "video_13",
+      "video_30",
+      "video_8",
+      "video_39",
+      "video_46",
+      "video_32",
+      "video_24",
+      "video_27",
+      "video_40",
+      "video_42",
+      "video_22"
+    ],
+    "split_index": 0
+  },
+  "mapping_evidence": {
+    "status": "verified",
+    "n_frames": 10597,
+    "n_steps": 707,
+    "picks_min": 0,
+    "picks_max": 10590,
+    "frame_count_candidates": [
+      "AwmHb44_ouw"
+    ],
+    "candidate_evidence": [
+      {
+        "video_id": "AwmHb44_ouw",
+        "original": {
+          "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\AwmHb44_ouw.mp4",
+          "sha256": "82ecca1de0363253060bb3c19e2f5dbd4080bfc0cd790db23c3e73ffd76a602f",
+          "probe": {
+            "width": 540,
+            "height": 360,
+            "fps": 29.97002997002997,
+            "frame_count": 10597,
+            "duration": 353.586567
+          },
+          "annotation_users": 20,
+          "annotation_frames": 10597,
+          "category": "VT",
+          "title": "#1306 How to change tires for off road vehicles [Davidsfarm]"
+        },
+        "transforms": {
+          "raw_mean": {
+            "max_abs_error": 3.1000000119209288,
+            "rmse": 1.7926902987117148,
+            "correlation": 0.999999999999998
+          },
+          "divide_by_5": {
+            "max_abs_error": 0.2,
+            "rmse": 0.15410794070813214,
+            "correlation": 0.9999999999999983
+          },
+          "fixed_rating_1_to_5": {
+            "max_abs_error": 2.384185793236071e-08,
+            "rmse": 6.756498076622001e-09,
+            "correlation": 0.999999999999998
+          },
+          "minmax_full_then_picks": {
+            "max_abs_error": 0.30000001192092896,
+            "rmse": 0.1234040657217961,
+            "correlation": 0.9999999999999989
+          },
+          "picks_then_minmax": {
+            "max_abs_error": 0.30000001192092896,
+            "rmse": 0.1234040657217961,
+            "correlation": 0.9999999999999989
+          }
+        },
+        "best_transform": "fixed_rating_1_to_5",
+        "score_verified": true,
+        "original_minus_h5_frames": 0,
+        "annotation_minus_h5_frames": 0,
+        "score_samples": [
+          {
+            "pick": 0,
+            "official_mean": 2.9,
+            "h5_gtscore": 0.4749999940395355,
+            "normalized_official": 0.475
+          },
+          {
+            "pick": 15,
+            "official_mean": 2.9,
+            "h5_gtscore": 0.4749999940395355,
+            "normalized_official": 0.475
+          },
+          {
+            "pick": 30,
+            "official_mean": 2.9,
+            "h5_gtscore": 0.4749999940395355,
+            "normalized_official": 0.475
+          },
+          {
+            "pick": 45,
+            "official_mean": 2.9,
+            "h5_gtscore": 0.4749999940395355,
+            "normalized_official": 0.475
+          },
+          {
+            "pick": 60,
+            "official_mean": 1.7,
+            "h5_gtscore": 0.17499999701976776,
+            "normalized_official": 0.175
+          },
+          {
+            "pick": 75,
+            "official_mean": 1.7,
+            "h5_gtscore": 0.17499999701976776,
+            "normalized_official": 0.175
+          },
+          {
+            "pick": 90,
+            "official_mean": 1.7,
+            "h5_gtscore": 0.17499999701976776,
+            "normalized_official": 0.175
+          },
+          {
+            "pick": 105,
+            "official_mean": 1.7,
+            "h5_gtscore": 0.17499999701976776,
+            "normalized_official": 0.175
+          },
+          {
+            "pick": 120,
+            "official_mean": 1.25,
+            "h5_gtscore": 0.0625,
+            "normalized_official": 0.0625
+          },
+          {
+            "pick": 135,
+            "official_mean": 1.25,
+            "h5_gtscore": 0.0625,
+            "normalized_official": 0.0625
+          },
+          {
+            "pick": 150,
+            "official_mean": 1.25,
+            "h5_gtscore": 0.0625,
+            "normalized_official": 0.0625
+          },
+          {
+            "pick": 165,
+            "official_mean": 1.25,
+            "h5_gtscore": 0.0625,
+            "normalized_official": 0.0625
+          }
+        ]
+      }
+    ],
+    "video_id": "AwmHb44_ouw",
+    "video_path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\AwmHb44_ouw.mp4"
+  },
+  "mapping_file": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\vision\\manifests\\tvsum_h5_mapping.json",
+  "weight_sha256": "78fdfe7e43809dc2f39a927f6797461854ca6f56669c02bfe99789d7d1ca89fc",
+  "h5_sha256": "ec9cbcc715887d30ba2ad46764cb810f07eb6d6241e96c0eac5fca51d398228b",
+  "video_sha256": "82ecca1de0363253060bb3c19e2f5dbd4080bfc0cd790db23c3e73ffd76a602f",
+  "nms": 0.4,
+  "results": [
+    {
+      "budget": 0.05,
+      "selected_frames": 529,
+      "total_frames": 10597,
+      "ratio": 0.04991978861942059,
+      "avg_f1": 0.3978301959945535,
+      "segments": [
+        {
+          "shot": 0,
+          "first_frame": 0,
+          "last_frame_inclusive": 32,
+          "start_seconds": 0.0,
+          "end_seconds_exclusive": 1.1011
+        },
+        {
+          "shot": 1,
+          "first_frame": 33,
+          "last_frame_inclusive": 63,
+          "start_seconds": 1.1011,
+          "end_seconds_exclusive": 2.135466666666667
+        },
+        {
+          "shot": 2,
+          "first_frame": 64,
+          "last_frame_inclusive": 101,
+          "start_seconds": 2.135466666666667,
+          "end_seconds_exclusive": 3.4034
+        },
+        {
+          "shot": 8,
+          "first_frame": 1693,
+          "last_frame_inclusive": 1727,
+          "start_seconds": 56.48976666666667,
+          "end_seconds_exclusive": 57.6576
+        },
+        {
+          "shot": 9,
+          "first_frame": 1728,
+          "last_frame_inclusive": 1758,
+          "start_seconds": 57.6576,
+          "end_seconds_exclusive": 58.691966666666666
+        },
+        {
+          "shot": 10,
+          "first_frame": 1759,
+          "last_frame_inclusive": 1786,
+          "start_seconds": 58.691966666666666,
+          "end_seconds_exclusive": 59.62623333333333
+        },
+        {
+          "shot": 16,
+          "first_frame": 2462,
+          "last_frame_inclusive": 2522,
+          "start_seconds": 82.14873333333334,
+          "end_seconds_exclusive": 84.1841
+        },
+        {
+          "shot": 24,
+          "first_frame": 3427,
+          "last_frame_inclusive": 3466,
+          "start_seconds": 114.34756666666667,
+          "end_seconds_exclusive": 115.68223333333333
+        },
+        {
+          "shot": 31,
+          "first_frame": 4214,
+          "last_frame_inclusive": 4266,
+          "start_seconds": 140.60713333333334,
+          "end_seconds_exclusive": 142.37556666666666
+        },
+        {
+          "shot": 35,
+          "first_frame": 4626,
+          "last_frame_inclusive": 4646,
+          "start_seconds": 154.3542,
+          "end_seconds_exclusive": 155.0549
+        },
+        {
+          "shot": 46,
+          "first_frame": 5917,
+          "last_frame_inclusive": 5947,
+          "start_seconds": 197.43056666666666,
+          "end_seconds_exclusive": 198.46493333333333
+        },
+        {
+          "shot": 52,
+          "first_frame": 6640,
+          "last_frame_inclusive": 6694,
+          "start_seconds": 221.55466666666666,
+          "end_seconds_exclusive": 223.38983333333334
+        },
+        {
+          "shot": 66,
+          "first_frame": 8901,
+          "last_frame_inclusive": 8972,
+          "start_seconds": 296.99670000000003,
+          "end_seconds_exclusive": 299.39910000000003
+        }
+      ],
+      "export": {
+        "path": "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_05.mp4",
+        "fps": 29.97002997002997,
+        "source_decoded_frames": 10597,
+        "selected_frames": 529,
+        "export_decoded_frames": 529,
+        "audio": false,
+        "programmatic_decode": "passed",
+        "human_playback": "pending",
+        "contactsheet": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\vision\\outputs\\visual-20261023-fp32\\summary\\contactsheet_05.png"
+      }
+    },
+    {
+      "budget": 0.1,
+      "selected_frames": 1055,
+      "total_frames": 10597,
+      "ratio": 0.09955647824856091,
+      "avg_f1": 0.5608429530537926,
+      "segments": [
+        {
+          "shot": 0,
+          "first_frame": 0,
+          "last_frame_inclusive": 32,
+          "start_seconds": 0.0,
+          "end_seconds_exclusive": 1.1011
+        },
+        {
+          "shot": 1,
+          "first_frame": 33,
+          "last_frame_inclusive": 63,
+          "start_seconds": 1.1011,
+          "end_seconds_exclusive": 2.135466666666667
+        },
+        {
+          "shot": 2,
+          "first_frame": 64,
+          "last_frame_inclusive": 101,
+          "start_seconds": 2.135466666666667,
+          "end_seconds_exclusive": 3.4034
+        },
+        {
+          "shot": 5,
+          "first_frame": 593,
+          "last_frame_inclusive": 685,
+          "start_seconds": 19.786433333333335,
+          "end_seconds_exclusive": 22.889533333333333
+        },
+        {
+          "shot": 8,
+          "first_frame": 1693,
+          "last_frame_inclusive": 1727,
+          "start_seconds": 56.48976666666667,
+          "end_seconds_exclusive": 57.6576
+        },
+        {
+          "shot": 9,
+          "first_frame": 1728,
+          "last_frame_inclusive": 1758,
+          "start_seconds": 57.6576,
+          "end_seconds_exclusive": 58.691966666666666
+        },
+        {
+          "shot": 10,
+          "first_frame": 1759,
+          "last_frame_inclusive": 1786,
+          "start_seconds": 58.691966666666666,
+          "end_seconds_exclusive": 59.62623333333333
+        },
+        {
+          "shot": 11,
+          "first_frame": 1787,
+          "last_frame_inclusive": 1857,
+          "start_seconds": 59.62623333333333,
+          "end_seconds_exclusive": 61.995266666666666
+        },
+        {
+          "shot": 16,
+          "first_frame": 2462,
+          "last_frame_inclusive": 2522,
+          "start_seconds": 82.14873333333334,
+          "end_seconds_exclusive": 84.1841
+        },
+        {
+          "shot": 22,
+          "first_frame": 3259,
+          "last_frame_inclusive": 3331,
+          "start_seconds": 108.74196666666667,
+          "end_seconds_exclusive": 111.17773333333334
+        },
+        {
+          "shot": 24,
+          "first_frame": 3427,
+          "last_frame_inclusive": 3466,
+          "start_seconds": 114.34756666666667,
+          "end_seconds_exclusive": 115.68223333333333
+        },
+        {
+          "shot": 30,
+          "first_frame": 4144,
+          "last_frame_inclusive": 4213,
+          "start_seconds": 138.27146666666667,
+          "end_seconds_exclusive": 140.60713333333334
+        },
+        {
+          "shot": 31,
+          "first_frame": 4214,
+          "last_frame_inclusive": 4266,
+          "start_seconds": 140.60713333333334,
+          "end_seconds_exclusive": 142.37556666666666
+        },
+        {
+          "shot": 35,
+          "first_frame": 4626,
+          "last_frame_inclusive": 4646,
+          "start_seconds": 154.3542,
+          "end_seconds_exclusive": 155.0549
+        },
+        {
+          "shot": 40,
+          "first_frame": 5170,
+          "last_frame_inclusive": 5234,
+          "start_seconds": 172.50566666666666,
+          "end_seconds_exclusive": 174.6745
+        },
+        {
+          "shot": 46,
+          "first_frame": 5917,
+          "last_frame_inclusive": 5947,
+          "start_seconds": 197.43056666666666,
+          "end_seconds_exclusive": 198.46493333333333
+        },
+        {
+          "shot": 52,
+          "first_frame": 6640,
+          "last_frame_inclusive": 6694,
+          "start_seconds": 221.55466666666666,
+          "end_seconds_exclusive": 223.38983333333334
+        },
+        {
+          "shot": 63,
+          "first_frame": 8489,
+          "last_frame_inclusive": 8552,
+          "start_seconds": 283.24963333333335,
+          "end_seconds_exclusive": 285.3851
+        },
+        {
+          "shot": 66,
+          "first_frame": 8901,
+          "last_frame_inclusive": 8972,
+          "start_seconds": 296.99670000000003,
+          "end_seconds_exclusive": 299.39910000000003
+        },
+        {
+          "shot": 67,
+          "first_frame": 8973,
+          "last_frame_inclusive": 9062,
+          "start_seconds": 299.39910000000003,
+          "end_seconds_exclusive": 302.4021
+        }
+      ],
+      "export": {
+        "path": "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_10.mp4",
+        "fps": 29.97002997002997,
+        "source_decoded_frames": 10597,
+        "selected_frames": 1055,
+        "export_decoded_frames": 1055,
+        "audio": false,
+        "programmatic_decode": "passed",
+        "human_playback": "pending",
+        "contactsheet": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\vision\\outputs\\visual-20261023-fp32\\summary\\contactsheet_10.png"
+      }
+    },
+    {
+      "budget": 0.15,
+      "selected_frames": 1585,
+      "total_frames": 10597,
+      "ratio": 0.14957063319807493,
+      "avg_f1": 0.6805121414324116,
+      "segments": [
+        {
+          "shot": 0,
+          "first_frame": 0,
+          "last_frame_inclusive": 32,
+          "start_seconds": 0.0,
+          "end_seconds_exclusive": 1.1011
+        },
+        {
+          "shot": 1,
+          "first_frame": 33,
+          "last_frame_inclusive": 63,
+          "start_seconds": 1.1011,
+          "end_seconds_exclusive": 2.135466666666667
+        },
+        {
+          "shot": 2,
+          "first_frame": 64,
+          "last_frame_inclusive": 101,
+          "start_seconds": 2.135466666666667,
+          "end_seconds_exclusive": 3.4034
+        },
+        {
+          "shot": 5,
+          "first_frame": 593,
+          "last_frame_inclusive": 685,
+          "start_seconds": 19.786433333333335,
+          "end_seconds_exclusive": 22.889533333333333
+        },
+        {
+          "shot": 8,
+          "first_frame": 1693,
+          "last_frame_inclusive": 1727,
+          "start_seconds": 56.48976666666667,
+          "end_seconds_exclusive": 57.6576
+        },
+        {
+          "shot": 9,
+          "first_frame": 1728,
+          "last_frame_inclusive": 1758,
+          "start_seconds": 57.6576,
+          "end_seconds_exclusive": 58.691966666666666
+        },
+        {
+          "shot": 10,
+          "first_frame": 1759,
+          "last_frame_inclusive": 1786,
+          "start_seconds": 58.691966666666666,
+          "end_seconds_exclusive": 59.62623333333333
+        },
+        {
+          "shot": 11,
+          "first_frame": 1787,
+          "last_frame_inclusive": 1857,
+          "start_seconds": 59.62623333333333,
+          "end_seconds_exclusive": 61.995266666666666
+        },
+        {
+          "shot": 16,
+          "first_frame": 2462,
+          "last_frame_inclusive": 2522,
+          "start_seconds": 82.14873333333334,
+          "end_seconds_exclusive": 84.1841
+        },
+        {
+          "shot": 22,
+          "first_frame": 3259,
+          "last_frame_inclusive": 3331,
+          "start_seconds": 108.74196666666667,
+          "end_seconds_exclusive": 111.17773333333334
+        },
+        {
+          "shot": 24,
+          "first_frame": 3427,
+          "last_frame_inclusive": 3466,
+          "start_seconds": 114.34756666666667,
+          "end_seconds_exclusive": 115.68223333333333
+        },
+        {
+          "shot": 25,
+          "first_frame": 3467,
+          "last_frame_inclusive": 3523,
+          "start_seconds": 115.68223333333333,
+          "end_seconds_exclusive": 117.58413333333334
+        },
+        {
+          "shot": 26,
+          "first_frame": 3524,
+          "last_frame_inclusive": 3599,
+          "start_seconds": 117.58413333333334,
+          "end_seconds_exclusive": 120.12
+        },
+        {
+          "shot": 30,
+          "first_frame": 4144,
+          "last_frame_inclusive": 4213,
+          "start_seconds": 138.27146666666667,
+          "end_seconds_exclusive": 140.60713333333334
+        },
+        {
+          "shot": 31,
+          "first_frame": 4214,
+          "last_frame_inclusive": 4266,
+          "start_seconds": 140.60713333333334,
+          "end_seconds_exclusive": 142.37556666666666
+        },
+        {
+          "shot": 35,
+          "first_frame": 4626,
+          "last_frame_inclusive": 4646,
+          "start_seconds": 154.3542,
+          "end_seconds_exclusive": 155.0549
+        },
+        {
+          "shot": 38,
+          "first_frame": 4951,
+          "last_frame_inclusive": 5035,
+          "start_seconds": 165.19836666666666,
+          "end_seconds_exclusive": 168.03453333333334
+        },
+        {
+          "shot": 40,
+          "first_frame": 5170,
+          "last_frame_inclusive": 5234,
+          "start_seconds": 172.50566666666666,
+          "end_seconds_exclusive": 174.6745
+        },
+        {
+          "shot": 43,
+          "first_frame": 5605,
+          "last_frame_inclusive": 5698,
+          "start_seconds": 187.02016666666668,
+          "end_seconds_exclusive": 190.15663333333333
+        },
+        {
+          "shot": 46,
+          "first_frame": 5917,
+          "last_frame_inclusive": 5947,
+          "start_seconds": 197.43056666666666,
+          "end_seconds_exclusive": 198.46493333333333
+        },
+        {
+          "shot": 50,
+          "first_frame": 6383,
+          "last_frame_inclusive": 6468,
+          "start_seconds": 212.97943333333333,
+          "end_seconds_exclusive": 215.84896666666668
+        },
+        {
+          "shot": 52,
+          "first_frame": 6640,
+          "last_frame_inclusive": 6694,
+          "start_seconds": 221.55466666666666,
+          "end_seconds_exclusive": 223.38983333333334
+        },
+        {
+          "shot": 60,
+          "first_frame": 8115,
+          "last_frame_inclusive": 8184,
+          "start_seconds": 270.7705,
+          "end_seconds_exclusive": 273.1061666666667
+        },
+        {
+          "shot": 61,
+          "first_frame": 8185,
+          "last_frame_inclusive": 8246,
+          "start_seconds": 273.1061666666667,
+          "end_seconds_exclusive": 275.1749
+        },
+        {
+          "shot": 63,
+          "first_frame": 8489,
+          "last_frame_inclusive": 8552,
+          "start_seconds": 283.24963333333335,
+          "end_seconds_exclusive": 285.3851
+        },
+        {
+          "shot": 66,
+          "first_frame": 8901,
+          "last_frame_inclusive": 8972,
+          "start_seconds": 296.99670000000003,
+          "end_seconds_exclusive": 299.39910000000003
+        },
+        {
+          "shot": 67,
+          "first_frame": 8973,
+          "last_frame_inclusive": 9062,
+          "start_seconds": 299.39910000000003,
+          "end_seconds_exclusive": 302.4021
+        }
+      ],
+      "export": {
+        "path": "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_15.mp4",
+        "fps": 29.97002997002997,
+        "source_decoded_frames": 10597,
+        "selected_frames": 1585,
+        "export_decoded_frames": 1585,
+        "audio": false,
+        "programmatic_decode": "passed",
+        "human_playback": "pending",
+        "contactsheet": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\vision\\outputs\\visual-20261023-fp32\\summary\\contactsheet_15.png"
+      }
+    }
+  ],
+  "random_baseline": {
+    "runs": [
+      {
+        "seed": 0,
+        "avg_f1": 0.12462159350994942,
+        "ratio": 0.14872133622723413
+      },
+      {
+        "seed": 1,
+        "avg_f1": 0.16494499536255902,
+        "ratio": 0.14985373218835518
+      },
+      {
+        "seed": 2,
+        "avg_f1": 0.17853926523652894,
+        "ratio": 0.14796640558648674
+      },
+      {
+        "seed": 3,
+        "avg_f1": 0.26601297041489563,
+        "ratio": 0.14975936585826177
+      },
+      {
+        "seed": 4,
+        "avg_f1": 0.19342721637435423,
+        "ratio": 0.14853260356704728
+      },
+      {
+        "seed": 5,
+        "avg_f1": 0.2995063903787918,
+        "ratio": 0.14881570255732754
+      },
+      {
+        "seed": 6,
+        "avg_f1": 0.17615474594779645,
+        "ratio": 0.14966499952816836
+      },
+      {
+        "seed": 7,
+        "avg_f1": 0.1907472328800816,
+        "ratio": 0.14928753420779467
+      },
+      {
+        "seed": 8,
+        "avg_f1": 0.2683743944261907,
+        "ratio": 0.14957063319807493
+      },
+      {
+        "seed": 9,
+        "avg_f1": 0.20919478250202053,
+        "ratio": 0.14928753420779467
+      },
+      {
+        "seed": 10,
+        "avg_f1": 0.13096664898245414,
+        "ratio": 0.14891006888742098
+      },
+      {
+        "seed": 11,
+        "avg_f1": 0.0717897212746643,
+        "ratio": 0.14881570255732754
+      },
+      {
+        "seed": 12,
+        "avg_f1": 0.07875840288005272,
+        "ratio": 0.14994809851844862
+      },
+      {
+        "seed": 13,
+        "avg_f1": 0.19764434786606966,
+        "ratio": 0.14872133622723413
+      },
+      {
+        "seed": 14,
+        "avg_f1": 0.1240895456364329,
+        "ratio": 0.14938190053788808
+      },
+      {
+        "seed": 15,
+        "avg_f1": 0.12749264270177402,
+        "ratio": 0.14938190053788808
+      },
+      {
+        "seed": 16,
+        "avg_f1": 0.244848830350135,
+        "ratio": 0.14957063319807493
+      },
+      {
+        "seed": 17,
+        "avg_f1": 0.31123860752285004,
+        "ratio": 0.14909880154760782
+      },
+      {
+        "seed": 18,
+        "avg_f1": 0.24777756219085392,
+        "ratio": 0.14872133622723413
+      },
+      {
+        "seed": 19,
+        "avg_f1": 0.16572933421817235,
+        "ratio": 0.14957063319807493
+      },
+      {
+        "seed": 20,
+        "avg_f1": 0.14578364459963028,
+        "ratio": 0.14806077191658015
+      },
+      {
+        "seed": 21,
+        "avg_f1": 0.12229847697939977,
+        "ratio": 0.14919316787770123
+      },
+      {
+        "seed": 22,
+        "avg_f1": 0.15285022655212524,
+        "ratio": 0.14994809851844862
+      },
+      {
+        "seed": 23,
+        "avg_f1": 0.119809191011536,
+        "ratio": 0.14975936585826177
+      },
+      {
+        "seed": 24,
+        "avg_f1": 0.14894866293193715,
+        "ratio": 0.14957063319807493
+      },
+      {
+        "seed": 25,
+        "avg_f1": 0.31776048607123475,
+        "ratio": 0.14957063319807493
+      },
+      {
+        "seed": 26,
+        "avg_f1": 0.1613053214161822,
+        "ratio": 0.14985373218835518
+      },
+      {
+        "seed": 27,
+        "avg_f1": 0.31948763010168224,
+        "ratio": 0.14975936585826177
+      },
+      {
+        "seed": 28,
+        "avg_f1": 0.3903975842227864,
+        "ratio": 0.14947626686798152
+      },
+      {
+        "seed": 29,
+        "avg_f1": 0.2074277062540204,
+        "ratio": 0.14928753420779467
+      }
+    ],
+    "mean_f1": 0.19526427202657207,
+    "std_f1": 0.07689191578105758
+  },
+  "playback_check": "programmatic decoding complete; player review recorded separately"
+}

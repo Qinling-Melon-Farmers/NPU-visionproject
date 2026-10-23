@@ -1,0 +1,1130 @@
+{
+  "schema_version": 2,
+  "created_utc": "2026-10-23T08:10:59.885571+00:00",
+  "transcript_path": "vision\\logs\\interactions_20261023_audit02.jsonl",
+  "transcript_sha256": "03c1c06dc4ed5e6f4e2c2790c6ba79bae578cd3a7e118852666fcce054d42bff",
+  "coverage": "explicit main session and declared children; visible text only; snapshot cut-off",
+  "sources": [
+    {
+      "file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "sha256": "156c21ca68e1b4bbb207df8a1aeb96680889a911bf6a4b97dfd692f129df7e38",
+      "bytes": 14985961,
+      "parse_error_lines": [],
+      "thread": "/root",
+      "models": [
+        "gpt-6-astra"
+      ]
+    },
+    {
+      "file": "rollout-2026-10-23T14-35-57-01a16779-2cdb-70f0-8c93-076ac06e85fd.jsonl",
+      "sha256": "0d65ce91e9dd02a86ab4808833020ce9f800baa6a56dfc0b2e8c09b747a55fbe",
+      "bytes": 574646,
+      "parse_error_lines": [],
+      "thread": "/root/review_experiment_plan",
+      "models": [
+        "gpt-6.1-sol"
+      ]
+    },
+    {
+      "file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "sha256": "569aab7b99a96c2e29a8ab38032152765609468d457badd8ac9312346c32481d",
+      "bytes": 1521996,
+      "parse_error_lines": [],
+      "thread": "/root/image_experiment",
+      "models": [
+        "gpt-6.1-sol"
+      ]
+    },
+    {
+      "file": "rollout-2026-10-23T14-44-33-01a16781-0fbe-7e73-b063-81041ab8a483.jsonl",
+      "sha256": "739892837460b8be4b097bbb3eabe32ed7244079ac628743ac891d9fdac3ccca",
+      "bytes": 1245538,
+      "parse_error_lines": [],
+      "thread": "/root/video_experiment",
+      "models": [
+        "gpt-6.1-sol"
+      ]
+    },
+    {
+      "file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "sha256": "9120f187b3c9ed58993bf13a1752aa26942a45ca047d16797476c9e488e10ce6",
+      "bytes": 1690010,
+      "parse_error_lines": [],
+      "thread": "/root/summary_experiment",
+      "models": [
+        "gpt-6.1-sol"
+      ]
+    }
+  ],
+  "counts": {
+    "student_main_records": 46,
+    "student_free_text_prompts": 9,
+    "structured_question_batches": 2,
+    "structured_answer_batches": 2,
+    "main_agent_visible_replies": 33,
+    "agent_coordination_records": 79,
+    "unavailable_coordination_bodies": 62,
+    "encrypted_delivery_receipts": 62
+  },
+  "model_metadata_by_thread": {
+    "/root": [
+      "gpt-6-astra"
+    ],
+    "/root/review_experiment_plan": [
+      "gpt-6.1-sol"
+    ],
+    "/root/image_experiment": [
+      "gpt-6.1-sol"
+    ],
+    "/root/video_experiment": [
+      "gpt-6.1-sol"
+    ],
+    "/root/summary_experiment": [
+      "gpt-6.1-sol"
+    ]
+  },
+  "spawn_model_checks": [
+    {
+      "timestamp": "2026-10-23T06:35:57.012Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 126,
+      "task_name": "review_experiment_plan",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol"
+    },
+    {
+      "timestamp": "2026-10-23T06:44:01.450Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 213,
+      "task_name": "image_experiment",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol"
+    },
+    {
+      "timestamp": "2026-10-23T06:44:33.849Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 219,
+      "task_name": "video_experiment",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol"
+    },
+    {
+      "timestamp": "2026-10-23T06:46:10.819Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 234,
+      "task_name": "summary_experiment",
+      "fork_turns": "none",
+      "model": "gpt-6.1-sol"
+    }
+  ],
+  "all_spawn_models_explicit_6_1_sol": true,
+  "record_gaps": [
+    {
+      "record_id": "5e6686ac417beef9a685694d2e33645d231c78b6db6becb4df37884f20dd64d5",
+      "timestamp": "2026-10-23T06:35:57.012Z",
+      "sender": "/root",
+      "recipient": "review_experiment_plan",
+      "kind": "coordination_spawn_agent"
+    },
+    {
+      "record_id": "baeefe6af7947a1f952c65a2be69ebf9d72d3ed0529bee9350bc5b5946b331f4",
+      "timestamp": "2026-10-23T06:44:01.450Z",
+      "sender": "/root",
+      "recipient": "image_experiment",
+      "kind": "coordination_spawn_agent"
+    },
+    {
+      "record_id": "f9537f6044dda89c99728799f7d1e6a0209de0b769ff289946a1eb358e2ca05d",
+      "timestamp": "2026-10-23T06:44:33.849Z",
+      "sender": "/root",
+      "recipient": "video_experiment",
+      "kind": "coordination_spawn_agent"
+    },
+    {
+      "record_id": "a3524c5609653c387ef4787284740f8b3059c4da93d777b847b00efa48f37754",
+      "timestamp": "2026-10-23T06:46:10.819Z",
+      "sender": "/root",
+      "recipient": "summary_experiment",
+      "kind": "coordination_spawn_agent"
+    },
+    {
+      "record_id": "b5c1107aabc9f40d4b978804c3da8d35d3451b66113733ab3f3da50e120762b4",
+      "timestamp": "2026-10-23T06:46:35.882Z",
+      "sender": "/root/video_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "c164a97868ff3133780668e46eec98afca5b674fcc1263bb185913ec1a4dc7db",
+      "timestamp": "2026-10-23T06:47:53.326Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "3f4132086d79ec24d3e12ff42f9d3710004310b34b51a41520e604a7b9ef09d1",
+      "timestamp": "2026-10-23T06:48:37.133Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "37b28336e6e367acbf67be68c9945deb37a1f75e8927808cb5288b589fc54d7e",
+      "timestamp": "2026-10-23T06:50:02.304Z",
+      "sender": "/root/video_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "fc4108011ec9d9a85fe3f820a2676b406ec35d04ce62a8bac448117f6371eb3f",
+      "timestamp": "2026-10-23T06:50:19.284Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "eb9f9b7a700bbaae2b9cf4434f20114c453519b375a30211532bac5ff3031301",
+      "timestamp": "2026-10-23T06:50:28.348Z",
+      "sender": "/root",
+      "recipient": "image_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "310fbce74de01c786ea2aaebc2d103e27530489f3d6610c692c1aec57c90fdd6",
+      "timestamp": "2026-10-23T06:50:38.728Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "c1cb501f451c2ca5036924b8c56a366ff6f462695cadbd86c044c2666d0e65cc",
+      "timestamp": "2026-10-23T06:51:09.729Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "00f02c0a3a3a3e2c5959481b54a62d21b4e962bca06b6f67123769d6d0d0e084",
+      "timestamp": "2026-10-23T06:51:13.581Z",
+      "sender": "/root/video_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "7d346041177146b616ad16fbe312b4368c8de65dc89accefb5e23b933fb62304",
+      "timestamp": "2026-10-23T06:52:21.931Z",
+      "sender": "/root/video_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "7cc245e6f640d5e9c9c2a96fbb14a30838c97c04fa93ce180ee17cd87466931e",
+      "timestamp": "2026-10-23T06:52:54.304Z",
+      "sender": "/root",
+      "recipient": "image_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "411c36e9c967ca23a3b1f23beb7f20e56c15e3509ed5835e8a31b5b819fecb88",
+      "timestamp": "2026-10-23T06:53:05.545Z",
+      "sender": "/root",
+      "recipient": "summary_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "abcd17e342c53c2ec7049b44db9f162822bdf5253f9e7e95ea0f343bd0b0cd42",
+      "timestamp": "2026-10-23T06:53:07.884Z",
+      "sender": "/root/image_experiment",
+      "recipient": "/root/video_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "1fa9105acb8431c3fed35d90c78d3e550766aa6cc2d8637886a38fd7afee9dd8",
+      "timestamp": "2026-10-23T06:53:28.875Z",
+      "sender": "/root/video_experiment",
+      "recipient": "/root/image_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "4e3f5351d09d6d75ba183e9d5157db9d0c41367822c9128ccb1094e2a9b0d681",
+      "timestamp": "2026-10-23T06:53:37.298Z",
+      "sender": "/root/video_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "9105de8367392caa18ad5f817d87e678be79c8155cab4c9e14969272bfe992ef",
+      "timestamp": "2026-10-23T06:54:29.013Z",
+      "sender": "/root/image_experiment",
+      "recipient": "/root/video_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "eab5357c59e99ba1fbfd5146fe3fbfd9095298e4076b703fe6978c6edf75f0cc",
+      "timestamp": "2026-10-23T06:55:01.732Z",
+      "sender": "/root",
+      "recipient": "video_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "f7ed109019b87d9255915610032fd9f9d35891ce544279c68a0f0ab02383bf3c",
+      "timestamp": "2026-10-23T06:55:35.167Z",
+      "sender": "/root",
+      "recipient": "summary_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "6a6d90d4b2e6d1daf9ae3b9248e1c69b30a55637390630fb9b2576fb450f9922",
+      "timestamp": "2026-10-23T06:55:36.453Z",
+      "sender": "/root/video_experiment",
+      "recipient": "/root/image_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "af36a86445d4cb116db19e597c0dbd06d3bcbf2582ce262e384a6e0ca2927583",
+      "timestamp": "2026-10-23T06:55:54.059Z",
+      "sender": "/root/image_experiment",
+      "recipient": "/root/video_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "e9fe8e4614a6972707a6bdbfe686ec1128a35c85a2aef690569f3139521a9c76",
+      "timestamp": "2026-10-23T06:56:29.524Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "a3ba9c02c118e8e79e97d2757816cebbc373c7a6df108c7987130de506bbffae",
+      "timestamp": "2026-10-23T06:56:37.980Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "24de1b671c9c9fe5671a735ae6003ea1018304a16a72e4dc8d464179ba4150af",
+      "timestamp": "2026-10-23T06:57:33.935Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "1f00c856135b39437e60cce29d3515ab5fa936f879f4f8ab9c5adeaf5cd59321",
+      "timestamp": "2026-10-23T06:58:03.939Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "bb56acc1a92d7066143761f1db9cbd9a7cee8bc069b682b0daac54dcb86e8dc0",
+      "timestamp": "2026-10-23T06:58:59.765Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "acb22a5868dc5b3933017c3d1e9934c56e356adf3f58cf9287081ee8a180c6be",
+      "timestamp": "2026-10-23T07:00:32.656Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "cc70f3d537c287bcdafa0d1d5fcca225b5ea6c03fa995f63ba6329b120896a27",
+      "timestamp": "2026-10-23T07:00:53.447Z",
+      "sender": "/root/video_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "9ba7a8c2a6a586094e337ba0a2a1c7d5c093ebe82e2dbe790998db73e3c513a1",
+      "timestamp": "2026-10-23T07:01:45.916Z",
+      "sender": "/root",
+      "recipient": "video_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "6c8579d4ee27b58d5be5edb42ac7c7e4d79ee52e5d770fe84900ce575e1f3b38",
+      "timestamp": "2026-10-23T07:07:55.398Z",
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "1959bf9eeff8c00c9bc30be800ddc644fb1d742d2065ddb02adad43810328deb",
+      "timestamp": "2026-10-23T07:08:06.085Z",
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "d3e18cce64a8f2e3d1096b7fd4a4d3ba7b4e09aba867fd9ea56559b023ccd4a9",
+      "timestamp": "2026-10-23T07:08:30.788Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "b54cfb167bc275f18ca050d51b54da202f69654f9ca86ec0128568858d40acc3",
+      "timestamp": "2026-10-23T07:09:46.090Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "894dad0b7e7cdd37fad3034c7f7be3bca7e2c27025ed7ebfe06f8b142075ffec",
+      "timestamp": "2026-10-23T07:10:00.910Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "c970caf62d6c23817b1e91f1b2274e8b31e6415619b6447d31889007e066f2fe",
+      "timestamp": "2026-10-23T07:10:05.187Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "fdb34b6b84cd81831627fa0dd7f039c9f33c6bb809b42b81b85c72bfac44a50e",
+      "timestamp": "2026-10-23T07:12:01.134Z",
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "e2344c0371e6e66cd02bb29a2359ce47cf2f531210ffb259c8ddccfcb3de3d3a",
+      "timestamp": "2026-10-23T07:12:33.411Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "99f76c77f4ac66e9e4e20d375defcf0a765f064edd5e9d76ec1384527ef7f5bc",
+      "timestamp": "2026-10-23T07:16:35.437Z",
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "9d8c3a0e3190aa20274f6189c1dcb4355dcd0dceab0c70807cbd26b8a431151e",
+      "timestamp": "2026-10-23T07:17:43.151Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "9bdf422dddf5d41cac1ed5a42bb6a38f3fb7399dd14370430b7c116e0045264a",
+      "timestamp": "2026-10-23T07:20:01.779Z",
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "c333500e139fd34d6bd509e987ff87f6c06c9dfaee7278ca795bbc4bbfd16853",
+      "timestamp": "2026-10-23T07:20:24.910Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "ac139e6a80045b2987486ce0e0ade1d9c44ec9407c0b9a4ab8f3a047983b3c2d",
+      "timestamp": "2026-10-23T07:20:46.863Z",
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "08fe04324f71eb15336470fb7df730c21035aa86d52e3ced7f19debe20379920",
+      "timestamp": "2026-10-23T07:21:13.261Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "efd94c61903927c40f6ec6ada632a28a3d690f966b5fb47f2089ca4ae11ef402",
+      "timestamp": "2026-10-23T07:21:17.069Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "7f5c2fb33d4dbd0ab43e891c2348f06657b64a9fe96f0bca64aed37ff6cab366",
+      "timestamp": "2026-10-23T07:21:56.405Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "a948900fdd44eb00839588174975dc0e8767a49eb69f7faea0fddb0af03636fd",
+      "timestamp": "2026-10-23T07:22:22.069Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "9005eec26cb96d180e9282c511a6d9d9e72917c8dbbdc334b4d93b751fdc10f3",
+      "timestamp": "2026-10-23T07:23:48.608Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "fcafe5f9e26d1a5c151fa745e1c555f807969309e43245c9a2ed6226360f75b6",
+      "timestamp": "2026-10-23T07:24:09.473Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "da3d1bba8744728a6da0d31c1e8f76391f44bf76bc3db111b6c3765deb8db816",
+      "timestamp": "2026-10-23T07:28:28.008Z",
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "dd4e02637f6b559c4159555d3583b549eb8d2a6479d2a7f675f3f652da0ac234",
+      "timestamp": "2026-10-23T07:28:41.016Z",
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "8d80279d2f00e87cee88e367fd7f87ac53c33cd2728c1037a7ed1cb91ded7073",
+      "timestamp": "2026-10-23T07:30:15.841Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "75d4bfdb899bbae54576c57788dccac186f296ad96aca308b09c03cf796f72b0",
+      "timestamp": "2026-10-23T07:31:35.481Z",
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "57be18092a6b69af2f2fb0a4a7ad9305197abd5e9b1ab9c761c3fd8eb032fab8",
+      "timestamp": "2026-10-23T07:33:09.111Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "0c9d6240d844780ea0c55d470484b0081537d148a11fe44d9445bfb52a8cf396",
+      "timestamp": "2026-10-23T07:33:54.733Z",
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "5d978f2fa3d469e78eca58aed2c835b1261be88aad2f4b5c6e19aa4a5b56c87b",
+      "timestamp": "2026-10-23T07:33:56.703Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "298179a65de0150bd238a93d33113e97730a77a53d0a7d0ce7a9bd94f6f7ab00",
+      "timestamp": "2026-10-23T07:34:05.816Z",
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "55b15535e7d7d02628a6a01fd9562a08c67be5d968fd671519faeb9118d78cae",
+      "timestamp": "2026-10-23T07:34:21.553Z",
+      "sender": "/root/image_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    },
+    {
+      "record_id": "e96a94d8db98a5dc94c468f2078124a8cc2d708c7c16c05dd74e59f106d7d0c0",
+      "timestamp": "2026-10-23T07:34:39.241Z",
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "kind": "coordination_followup_task"
+    },
+    {
+      "record_id": "16c199a246153be2509c3ccf0b51c31c95c498859cbb606f514d7fb1a9eac3aa",
+      "timestamp": "2026-10-23T07:35:04.068Z",
+      "sender": "/root/summary_experiment",
+      "recipient": "main_agent",
+      "kind": "coordination_send_message"
+    }
+  ],
+  "encrypted_receipts": [
+    {
+      "timestamp": "2026-10-23T06:47:11.928Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 252,
+      "sender": "/root/video_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:49:26.787Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 262,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:49:26.793Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 264,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:50:11.071Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 273,
+      "sender": "/root/video_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:50:28.530Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 280,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:51:00.404Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 289,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:51:12.627Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 293,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:51:44.533Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 298,
+      "sender": "/root/video_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:52:27.899Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 305,
+      "sender": "/root/video_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:53:40.796Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 327,
+      "sender": "/root/video_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:56:44.009Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 362,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:56:44.012Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 364,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:57:48.962Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 378,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:58:18.057Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 382,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:59:19.534Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 392,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:00:51.995Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 407,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:01:20.379Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 413,
+      "sender": "/root/video_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:08:33.005Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 482,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:09:46.098Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 509,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:10:01.275Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 517,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:10:12.943Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 527,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:12:36.231Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 570,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:18:07.660Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 644,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:20:36.426Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 683,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:21:18.748Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 700,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:21:18.752Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 702,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:22:16.882Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 716,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:22:27.341Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 720,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:23:56.758Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 745,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:24:49.029Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 756,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:30:16.960Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 800,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:33:12.848Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 829,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:34:06.937Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 849,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:34:30.469Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 860,
+      "sender": "/root/image_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:35:21.646Z",
+      "thread": "/root",
+      "source_file": "rollout-2026-10-23T14-22-24-01a1676c-c78a-7e83-ade4-598417d906cc.jsonl",
+      "source_line": 877,
+      "sender": "/root/summary_experiment",
+      "recipient": "/root",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:35:58.741Z",
+      "thread": "/root/review_experiment_plan",
+      "source_file": "rollout-2026-10-23T14-35-57-01a16779-2cdb-70f0-8c93-076ac06e85fd.jsonl",
+      "source_line": 10,
+      "sender": "/root",
+      "recipient": "/root/review_experiment_plan",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:44:03.720Z",
+      "thread": "/root/image_experiment",
+      "source_file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "source_line": 10,
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:52:54.331Z",
+      "thread": "/root/image_experiment",
+      "source_file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "source_line": 139,
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:52:54.334Z",
+      "thread": "/root/image_experiment",
+      "source_file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "source_line": 141,
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:54:21.345Z",
+      "thread": "/root/image_experiment",
+      "source_file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "source_line": 172,
+      "sender": "/root/video_experiment",
+      "recipient": "/root/image_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:55:38.411Z",
+      "thread": "/root/image_experiment",
+      "source_file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "source_line": 200,
+      "sender": "/root/video_experiment",
+      "recipient": "/root/image_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:07:55.427Z",
+      "thread": "/root/image_experiment",
+      "source_file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "source_line": 257,
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:16:35.470Z",
+      "thread": "/root/image_experiment",
+      "source_file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "source_line": 292,
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:20:01.813Z",
+      "thread": "/root/image_experiment",
+      "source_file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "source_line": 327,
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:28:28.035Z",
+      "thread": "/root/image_experiment",
+      "source_file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "source_line": 430,
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:33:54.760Z",
+      "thread": "/root/image_experiment",
+      "source_file": "rollout-2026-10-23T14-44-01-01a16780-9130-7d91-a809-8bfa0ee9f5ee.jsonl",
+      "source_line": 476,
+      "sender": "/root",
+      "recipient": "/root/image_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:44:35.939Z",
+      "thread": "/root/video_experiment",
+      "source_file": "rollout-2026-10-23T14-44-33-01a16781-0fbe-7e73-b063-81041ab8a483.jsonl",
+      "source_line": 10,
+      "sender": "/root",
+      "recipient": "/root/video_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:53:09.357Z",
+      "thread": "/root/video_experiment",
+      "source_file": "rollout-2026-10-23T14-44-33-01a16781-0fbe-7e73-b063-81041ab8a483.jsonl",
+      "source_line": 173,
+      "sender": "/root/image_experiment",
+      "recipient": "/root/video_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:55:01.756Z",
+      "thread": "/root/video_experiment",
+      "source_file": "rollout-2026-10-23T14-44-33-01a16781-0fbe-7e73-b063-81041ab8a483.jsonl",
+      "source_line": 221,
+      "sender": "/root/image_experiment",
+      "recipient": "/root/video_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:55:01.759Z",
+      "thread": "/root/video_experiment",
+      "source_file": "rollout-2026-10-23T14-44-33-01a16781-0fbe-7e73-b063-81041ab8a483.jsonl",
+      "source_line": 223,
+      "sender": "/root",
+      "recipient": "/root/video_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:59:42.736Z",
+      "thread": "/root/video_experiment",
+      "source_file": "rollout-2026-10-23T14-44-33-01a16781-0fbe-7e73-b063-81041ab8a483.jsonl",
+      "source_line": 247,
+      "sender": "/root/image_experiment",
+      "recipient": "/root/video_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:02:04.629Z",
+      "thread": "/root/video_experiment",
+      "source_file": "rollout-2026-10-23T14-44-33-01a16781-0fbe-7e73-b063-81041ab8a483.jsonl",
+      "source_line": 301,
+      "sender": "/root",
+      "recipient": "/root/video_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:46:29.949Z",
+      "thread": "/root/summary_experiment",
+      "source_file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "source_line": 10,
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:55:35.781Z",
+      "thread": "/root/summary_experiment",
+      "source_file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "source_line": 117,
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T06:55:35.783Z",
+      "thread": "/root/summary_experiment",
+      "source_file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "source_line": 119,
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:08:06.112Z",
+      "thread": "/root/summary_experiment",
+      "source_file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "source_line": 270,
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:12:01.163Z",
+      "thread": "/root/summary_experiment",
+      "source_file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "source_line": 324,
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:20:58.887Z",
+      "thread": "/root/summary_experiment",
+      "source_file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "source_line": 381,
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:28:41.043Z",
+      "thread": "/root/summary_experiment",
+      "source_file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "source_line": 471,
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:33:03.376Z",
+      "thread": "/root/summary_experiment",
+      "source_file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "source_line": 495,
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:34:39.269Z",
+      "thread": "/root/summary_experiment",
+      "source_file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "source_line": 522,
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "body_available": false
+    },
+    {
+      "timestamp": "2026-10-23T07:34:39.272Z",
+      "thread": "/root/summary_experiment",
+      "source_file": "rollout-2026-10-23T14-46-10-01a16782-8abd-7e71-a9c6-32f85c56409f.jsonl",
+      "source_line": 524,
+      "sender": "/root",
+      "recipient": "/root/summary_experiment",
+      "body_available": false
+    }
+  ],
+  "strict_full_history_complete": false,
+  "student_and_agent_records_separated": true,
+  "last_visible_message_utc": "2026-10-23T08:04:10.537Z",
+  "limitations": [
+    "代理间加密正文未恢复；不把元数据或事后概述冒充原始提示词。",
+    "交互轮数按学生自由文本提示和结构化问答批次分别统计；子代理活动不计入学生轮数。",
+    "会话跨度不是学生劳动时长；下载、排队与并发任务不能从消息时间差精确拆分，未完整测量项记为未知。",
+    "模型名称来自会话元数据，学生提示的model字段不适用；子代理模型限制独立核验。"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "status": "completed_with_record_gaps",
+  "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\vision\\reports\\视觉实验报告_visual-20261023-fp32_20261023T161416390370.docx",
+  "experiment_status": {
+    "image": "completed",
+    "video": "completed",
+    "summary": "completed"
+  },
+  "embedded_figures": 32,
+  "missing_figures": [],
+  "visible_transcript_records": 125,
+  "transcript_parse_error_lines": [],
+  "interaction_audit": {
+    "audit_path": "vision\\logs\\interactions_20261023_audit02.audit.json",
+    "transcript_path": "vision\\logs\\interactions_20261023_audit02.jsonl"
+  },
+  "strict_full_history_complete": false,
+  "playback_complete": true,
+  "verification": {
+    "status": "passed",
+    "checks": [
+      {
+        "image": "six archives; exact IDs, permutations, ordering, relevance and all CSV/JSON metrics verified"
+      },
+      {
+        "video": "20x90 main/control scores, provenance labels, exact rankings/metrics, full media decode and actual sampling verified"
+      },
+      {
+        "summary": "raw confidence, exact shot masks, budgets/F1/baselines, actual silent MP4 frame counts verified",
+        "media": [
+          {
+            "path": "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_05.mp4",
+            "sha256": "bd8744960ef9b11a99e87b25ca19cd48f561a78d563430278dfc2541ec988fb7",
+            "budget": 0.05,
+            "decoded_frames": 529
+          },
+          {
+            "path": "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_10.mp4",
+            "sha256": "a73e5face95ebca332d6f0ce23d6f7c3d89fd3337d69ab6b75a83bc53b15537f",
+            "budget": 0.1,
+            "decoded_frames": 1055
+          },
+          {
+            "path": "E:\\MultimediaCourseAssets\\vision\\cache\\summary\\visual-20261023-fp32\\AwmHb44_ouw_15.mp4",
+            "sha256": "c9cca6fa5119b8f929a6ce521e806fd36cba351f218b4f1e418efdd8e3dc20e9",
+            "budget": 0.15,
+            "decoded_frames": 1585
+          }
+        ],
+        "playback_reviewer_type": "agent"
+      }
+    ],
+    "pending": [],
+    "scope": "saved arrays and actual decoded files; model inference not repeated"
+  },
+  "page_count": "not measured; update fields and inspect in Word",
+  "main_text_target": "18–25 pages; actual length depends on real figures/tables"
+}

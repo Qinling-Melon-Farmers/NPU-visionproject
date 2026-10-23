@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "report": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\vision\\reports\\视觉实验报告_visual-20261023-fp32_20261023T161416390370.docx",
+  "report_sha256": "d2f62ae5d6596fc7e5e2512890d879c7e66a3519d9892eb2557e3fc7ca911106",
+  "snapshot_sha256": "03c1c06dc4ed5e6f4e2c2790c6ba79bae578cd3a7e118852666fcce054d42bff",
+  "verified_records": 125,
+  "embedded_figures": 32,
+  "student_agent_appendices_separate": true,
+  "full_visible_text_verified": true,
+  "strict_history_complete": false,
+  "cover_status": "报告状态：实验验证通过；交互归档存在已明示的历史原文缺口，见附录 C、D。",
+  "scope": "Document-to-snapshot fidelity, not recovery of encrypted historical text"
+}

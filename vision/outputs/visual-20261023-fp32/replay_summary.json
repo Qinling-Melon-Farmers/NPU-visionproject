@@ -1,0 +1,49 @@
+{
+  "kind": "summary",
+  "timestamp_utc": "2026-10-23T07:36:56.827130+00:00",
+  "tolerance": 1e-05,
+  "interpreter": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\python.exe",
+  "process_id": 29796,
+  "config_sha256": "90b19a747d0c5955e106dddaf7a42ee9150870b4155ca8bb6f65a4735b06c1e4",
+  "script_sha256": "5cbd7031f5783661e6881f78808d0a32111c6ee7f87de5e64a2d34ba59af67cd",
+  "status": "passed",
+  "device": "cuda",
+  "numerics": {
+    "dtype": "float32",
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": false,
+    "matmul_precision": "highest",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true
+  },
+  "video_key": "video_1",
+  "arrays": {
+    "importance": {
+      "max_abs_error": 0.0,
+      "shape": [
+        707
+      ],
+      "passed": true
+    },
+    "offsets": {
+      "max_abs_error": 0.0,
+      "shape": [
+        707,
+        2
+      ],
+      "passed": true
+    },
+    "centerness": {
+      "max_abs_error": 0.0,
+      "shape": [
+        707
+      ],
+      "passed": true
+    }
+  },
+  "inputs": {
+    "h5_sha256": "ec9cbcc715887d30ba2ad46764cb810f07eb6d6241e96c0eac5fca51d398228b",
+    "checkpoint_sha256": "78fdfe7e43809dc2f39a927f6797461854ca6f56669c02bfe99789d7d1ca89fc",
+    "prediction_sha256": "47e20e0eb5991a00deaa680b3ef2f808547558aef48fe7e269dc313d1702fb84"
+  }
+}

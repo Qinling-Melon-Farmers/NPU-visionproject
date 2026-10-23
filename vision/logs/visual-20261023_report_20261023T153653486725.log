@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\多媒体技术\vision\__main__.py", line 82, in main
+    from vision.reports.build_report import build
+  File "C:\Users\ASUS\Desktop\多媒体技术\vision\reports\build_report.py", line 268
+    table(['文件','可复核内容'],[['image/per_query.csv','全部方法、图库、查询 P@5 与 AP'],['image/top5.csv','全部 Top-5 标识、真实相似度及相关标签'],['image/rankings_*.npz','完整候选排名与分数'],['video/results.json','主方法和对照完整评分、Top-3、命中与AP'],['video/relevance_labels.csv','全部查询—候选相关性标签'],['summary/prediction.npz','重要性、中心度、置信度、偏移、候选区间及NMS结果'],['summary/summary_*.npz','每种预算的选帧掩码、分段与恢复分数']]],True)
+                                                                                                                                                                                                                                                                                                                                                            ^
+SyntaxError: closing parenthesis ']' does not match opening parenthesis '('

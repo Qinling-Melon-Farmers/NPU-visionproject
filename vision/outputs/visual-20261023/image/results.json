@@ -1,0 +1,218 @@
+{
+  "status": "completed",
+  "methods": [
+    {
+      "gallery": "full",
+      "method": "gem",
+      "queries": 400,
+      "gallery_size": 6800,
+      "mean_p_at_5": 0.9880000000000004,
+      "map": 0.7278270044660418
+    },
+    {
+      "gallery": "full",
+      "method": "avg",
+      "queries": 400,
+      "gallery_size": 6800,
+      "mean_p_at_5": 0.9875000000000004,
+      "map": 0.7095041517116732
+    },
+    {
+      "gallery": "full",
+      "method": "max",
+      "queries": 400,
+      "gallery_size": 6800,
+      "mean_p_at_5": 0.9900000000000003,
+      "map": 0.7306195405717213
+    },
+    {
+      "gallery": "sparse",
+      "method": "gem",
+      "queries": 400,
+      "gallery_size": 800,
+      "mean_p_at_5": 0.7970000000000013,
+      "map": 0.7422541969155186
+    },
+    {
+      "gallery": "sparse",
+      "method": "avg",
+      "queries": 400,
+      "gallery_size": 800,
+      "mean_p_at_5": 0.779000000000001,
+      "map": 0.7229173618793864
+    },
+    {
+      "gallery": "sparse",
+      "method": "max",
+      "queries": 400,
+      "gallery_size": 800,
+      "mean_p_at_5": 0.7965000000000012,
+      "map": 0.7447176857733412
+    }
+  ],
+  "metrics": [
+    {
+      "gallery": "full",
+      "method": "gem",
+      "queries": 400,
+      "gallery_size": 6800,
+      "mean_p_at_5": 0.9880000000000004,
+      "map": 0.7278270044660418
+    },
+    {
+      "gallery": "full",
+      "method": "avg",
+      "queries": 400,
+      "gallery_size": 6800,
+      "mean_p_at_5": 0.9875000000000004,
+      "map": 0.7095041517116732
+    },
+    {
+      "gallery": "full",
+      "method": "max",
+      "queries": 400,
+      "gallery_size": 6800,
+      "mean_p_at_5": 0.9900000000000003,
+      "map": 0.7306195405717213
+    },
+    {
+      "gallery": "sparse",
+      "method": "gem",
+      "queries": 400,
+      "gallery_size": 800,
+      "mean_p_at_5": 0.7970000000000013,
+      "map": 0.7422541969155186
+    },
+    {
+      "gallery": "sparse",
+      "method": "avg",
+      "queries": 400,
+      "gallery_size": 800,
+      "mean_p_at_5": 0.779000000000001,
+      "map": 0.7229173618793864
+    },
+    {
+      "gallery": "sparse",
+      "method": "max",
+      "queries": 400,
+      "gallery_size": 800,
+      "mean_p_at_5": 0.7965000000000012,
+      "map": 0.7447176857733412
+    }
+  ],
+  "bootstrap": [
+    {
+      "gallery": "full",
+      "contrast": "gem-avg",
+      "unit": "object",
+      "replicates": 2000,
+      "seed": 20261023,
+      "p_at_5_difference": 0.0004999999999999996,
+      "p_at_5_ci95": [
+        -0.004000000000000001,
+        0.005
+      ],
+      "ap_difference": 0.018322852754368943,
+      "ap_ci95": [
+        0.009203934921031349,
+        0.02754700956048554
+      ]
+    },
+    {
+      "gallery": "full",
+      "contrast": "gem-max",
+      "unit": "object",
+      "replicates": 2000,
+      "seed": 20261023,
+      "p_at_5_difference": -0.002,
+      "p_at_5_ci95": [
+        -0.0045,
+        0.0004999999999999994
+      ],
+      "ap_difference": -0.0027925361056790575,
+      "ap_ci95": [
+        -0.007628244418659144,
+        0.002254270580439944
+      ]
+    },
+    {
+      "gallery": "sparse",
+      "contrast": "gem-avg",
+      "unit": "object",
+      "replicates": 2000,
+      "seed": 20261023,
+      "p_at_5_difference": 0.018,
+      "p_at_5_ci95": [
+        0.005999999999999998,
+        0.030499999999999992
+      ],
+      "ap_difference": 0.01933683503613261,
+      "ap_ci95": [
+        0.009385035958081484,
+        0.02979226022238233
+      ]
+    },
+    {
+      "gallery": "sparse",
+      "contrast": "gem-max",
+      "unit": "object",
+      "replicates": 2000,
+      "seed": 20261023,
+      "p_at_5_difference": 0.0004999999999999999,
+      "p_at_5_ci95": [
+        -0.0069999999999999975,
+        0.008
+      ],
+      "ap_difference": -0.0024634888578227467,
+      "ap_ci95": [
+        -0.007980497135570027,
+        0.0036037839315217865
+      ]
+    }
+  ],
+  "figures": [
+    "full_best_top5.png",
+    "full_worst_top5.png",
+    "sparse_best_top5.png",
+    "sparse_worst_top5.png",
+    "method_comparison.png"
+  ],
+  "data": {
+    "name": "COIL-100",
+    "source": "https://www.cs.columbia.edu/CAVE/software/softlib/coil-100.php",
+    "images": 7200,
+    "queries": 400,
+    "relevance": "same object ID",
+    "query_angles": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "sparse_angles": [
+      20,
+      65,
+      110,
+      155,
+      200,
+      245,
+      290,
+      335
+    ]
+  },
+  "model": {
+    "name": "retrievalSfM120k-vgg16-gem-b4dcdc6.pth",
+    "source": "https://cmp.felk.cvut.cz/cnnimageretrieval/data/networks/retrieval-SfM-120k/retrievalSfM120k-vgg16-gem-b4dcdc6.pth",
+    "author_code": "https://github.com/filipradenovic/cnnimageretrieval-pytorch",
+    "author_commit": "1e66a417afa2247edde6d35f3a9a2a465778a3a8",
+    "sha256": "b4dcdc6b1dc22d9291a27417034a9fa608f697556d26116fafbfa99b5ce0ab95",
+    "p": 2.9208486080169678,
+    "dimension": 512,
+    "single_scale": true,
+    "whitening": false,
+    "preprocessing": "RGB; PIL thumbnail LANCZOS longest side limit 362 (no upsampling); checkpoint mean/std; L2 normalization",
+    "ablations": "same GeM retrieval-trained backbone, pooling replaced only",
+    "cache_fingerprint": "06515ccd2641d5b1ceb98f1f50583ae05fc3ec60ece4b42e41e151a2a32c937f"
+  },
+  "elapsed_seconds": 40.533265590667725
+}

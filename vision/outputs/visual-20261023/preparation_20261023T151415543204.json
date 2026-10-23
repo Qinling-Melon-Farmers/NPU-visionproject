@@ -1,0 +1,120 @@
+{
+  "video": {
+    "status": "sources_selected_pending_visual_review",
+    "dataset": "TVSum 1.1 adapted from summarization to near-duplicate retrieval",
+    "selection": "first ID per category with duration >=80 seconds and ffprobe readable",
+    "sources": [
+      {
+        "id": "EE-bNr36nyA",
+        "category": "BK",
+        "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\EE-bNr36nyA.mp4",
+        "full_decode_verified": true,
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30000/1001",
+        "duration": 98.131367,
+        "nb_frames": "2941"
+      },
+      {
+        "id": "EYqVtI9YWJA",
+        "category": "BT",
+        "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\EYqVtI9YWJA.mp4",
+        "full_decode_verified": true,
+        "width": 540,
+        "height": 360,
+        "r_frame_rate": "30000/1001",
+        "duration": 198.164633,
+        "nb_frames": "5939"
+      },
+      {
+        "id": "-esJrBWj2d8",
+        "category": "DS",
+        "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\-esJrBWj2d8.mp4",
+        "full_decode_verified": true,
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30/1",
+        "duration": 230.4,
+        "nb_frames": "6912"
+      },
+      {
+        "id": "JKpqYvAdIsw",
+        "category": "FM",
+        "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\JKpqYvAdIsw.mp4",
+        "full_decode_verified": true,
+        "width": 480,
+        "height": 360,
+        "r_frame_rate": "25/1",
+        "duration": 152.08,
+        "nb_frames": "3802"
+      },
+      {
+        "id": "0tmA_C6XwfM",
+        "category": "GA",
+        "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\0tmA_C6XwfM.mp4",
+        "full_decode_verified": true,
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "25/1",
+        "duration": 141.28,
+        "nb_frames": "3532"
+      },
+      {
+        "id": "37rzWOQsNIw",
+        "category": "MS",
+        "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\37rzWOQsNIw.mp4",
+        "full_decode_verified": true,
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30000/1001",
+        "duration": 191.5914,
+        "nb_frames": "5742"
+      },
+      {
+        "id": "GsAD1KT1xo8",
+        "category": "PK",
+        "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\GsAD1KT1xo8.mp4",
+        "full_decode_verified": true,
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30000/1001",
+        "duration": 145.3452,
+        "nb_frames": "4356"
+      },
+      {
+        "id": "4wU_LUjG5Ic",
+        "category": "PR",
+        "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\4wU_LUjG5Ic.mp4",
+        "full_decode_verified": true,
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "24000/1001",
+        "duration": 167.041875,
+        "nb_frames": "4005"
+      },
+      {
+        "id": "98MoyGZKHXc",
+        "category": "VT",
+        "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\98MoyGZKHXc.mp4",
+        "full_decode_verified": true,
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "25/1",
+        "duration": 187.52,
+        "nb_frames": "4688"
+      },
+      {
+        "id": "HT5vyqe0Xaw",
+        "category": "VU",
+        "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\HT5vyqe0Xaw.mp4",
+        "full_decode_verified": true,
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30000/1001",
+        "duration": 322.689033,
+        "nb_frames": "9671"
+      }
+    ],
+    "decisions": []
+  }
+}

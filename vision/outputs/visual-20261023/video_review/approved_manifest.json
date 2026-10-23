@@ -1,0 +1,2081 @@
+{
+  "status": "clips_reviewed_ready_for_scoring",
+  "dataset": "TVSum 1.1 adapted from summarization to near-duplicate retrieval",
+  "selection": "first ID per category with duration >=80 seconds and ffprobe readable",
+  "sources": [
+    {
+      "id": "EE-bNr36nyA",
+      "category": "BK",
+      "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\EE-bNr36nyA.mp4",
+      "full_decode_verified": true,
+      "width": 640,
+      "height": 360,
+      "r_frame_rate": "30000/1001",
+      "duration": 98.131367,
+      "nb_frames": "2941",
+      "sha256": "0e11bb5bb60ac4842b2ee500c9cf985395a083ae92c3f498f1e91f12aa8e1691"
+    },
+    {
+      "id": "EYqVtI9YWJA",
+      "category": "BT",
+      "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\EYqVtI9YWJA.mp4",
+      "full_decode_verified": true,
+      "width": 540,
+      "height": 360,
+      "r_frame_rate": "30000/1001",
+      "duration": 198.164633,
+      "nb_frames": "5939",
+      "sha256": "6ffcc966ab00a6096d7b256cffd09408efa7db376df7732644f875b8ff27f390"
+    },
+    {
+      "id": "-esJrBWj2d8",
+      "category": "DS",
+      "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\-esJrBWj2d8.mp4",
+      "full_decode_verified": true,
+      "width": 640,
+      "height": 360,
+      "r_frame_rate": "30/1",
+      "duration": 230.4,
+      "nb_frames": "6912",
+      "sha256": "811186cdec40ef58049f0cc951c07a9f6f7d2b5cb27511e01094b829bbd10a9e"
+    },
+    {
+      "id": "JKpqYvAdIsw",
+      "category": "FM",
+      "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\JKpqYvAdIsw.mp4",
+      "full_decode_verified": true,
+      "width": 480,
+      "height": 360,
+      "r_frame_rate": "25/1",
+      "duration": 152.08,
+      "nb_frames": "3802",
+      "sha256": "da63a55d05c49f042699b366f3026ba77c8695208b40eb40b506867604caf905"
+    },
+    {
+      "id": "0tmA_C6XwfM",
+      "category": "GA",
+      "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\0tmA_C6XwfM.mp4",
+      "full_decode_verified": true,
+      "width": 640,
+      "height": 360,
+      "r_frame_rate": "25/1",
+      "duration": 141.28,
+      "nb_frames": "3532",
+      "sha256": "63a2f711416d2a911a4f00166fedb7ce01e2eaab18946c0222071322111b961b"
+    },
+    {
+      "id": "37rzWOQsNIw",
+      "category": "MS",
+      "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\37rzWOQsNIw.mp4",
+      "full_decode_verified": true,
+      "width": 640,
+      "height": 360,
+      "r_frame_rate": "30000/1001",
+      "duration": 191.5914,
+      "nb_frames": "5742",
+      "sha256": "c4fb034705c03a890fed5cc46ff79d1e9aef5cd9edec1d22dfe7cc653b5fd98a"
+    },
+    {
+      "id": "GsAD1KT1xo8",
+      "category": "PK",
+      "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\GsAD1KT1xo8.mp4",
+      "full_decode_verified": true,
+      "width": 640,
+      "height": 360,
+      "r_frame_rate": "30000/1001",
+      "duration": 145.3452,
+      "nb_frames": "4356",
+      "sha256": "a195fc9d8e5330ee55c62dfc0a99eb5d130bf0444bb412992d1204eecd8f3a86"
+    },
+    {
+      "id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\4wU_LUjG5Ic.mp4",
+      "full_decode_verified": true,
+      "width": 640,
+      "height": 360,
+      "r_frame_rate": "24000/1001",
+      "duration": 167.041875,
+      "nb_frames": "4005",
+      "sha256": "2779762f2c332931c9fb4e61783b81df6e34b487dc3a94c882781c981e6c4869"
+    },
+    {
+      "id": "98MoyGZKHXc",
+      "category": "VT",
+      "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\98MoyGZKHXc.mp4",
+      "full_decode_verified": true,
+      "width": 640,
+      "height": 360,
+      "r_frame_rate": "25/1",
+      "duration": 187.52,
+      "nb_frames": "4688",
+      "sha256": "e293ceb35a8f1ec514707c579ab9b78e678a0c686f895d25945b9a50432c000c"
+    },
+    {
+      "id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "path": "E:\\MultimediaCourseAssets\\vision\\data\\tvsum\\extracted\\video\\HT5vyqe0Xaw.mp4",
+      "full_decode_verified": true,
+      "width": 640,
+      "height": 360,
+      "r_frame_rate": "30000/1001",
+      "duration": 322.689033,
+      "nb_frames": "9671",
+      "sha256": "85fdd93e61fb670b5437666c9eb90aa1798889edbe07394749c00ca0d044c886"
+    }
+  ],
+  "decisions": [],
+  "queries": [
+    {
+      "id": "EE-bNr36nyA_q1_query",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 9.813136700000001,
+      "end": 29.8131367,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q1_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q1_query_contact.jpg",
+      "sha256": "1a09ca63f80508f4eca8e749555c136946f0b8acb0459845c769c64c22935081"
+    },
+    {
+      "id": "EE-bNr36nyA_q2_query",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 39.0656835,
+      "end": 59.0656835,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q2_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q2_query_contact.jpg",
+      "sha256": "697c011a3db717395332aa66ca03f5797cdd45852b646abf3c386179eac2b6a5"
+    },
+    {
+      "id": "EYqVtI9YWJA_q1_query",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 19.816463300000002,
+      "end": 39.8164633,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q1_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=540:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q1_query_contact.jpg",
+      "sha256": "45b0b77a5243c9b0624311eb5fb8752af2542b284721728cb1997f26924f2c29"
+    },
+    {
+      "id": "EYqVtI9YWJA_q2_query",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 89.0823165,
+      "end": 109.0823165,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q2_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=540:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q2_query_contact.jpg",
+      "sha256": "0e1d18259a48083005a9809ce5b319d3e7e06c076bae43ecfe9bd03ffe29b188"
+    },
+    {
+      "id": "-esJrBWj2d8_q1_query",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 23.040000000000003,
+      "end": 43.040000000000006,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q1_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q1_query_contact.jpg",
+      "sha256": "e4de171b708eb1c75a6c24f598ee25dfcdbe4c5d9c624019ea887ea8db481f77"
+    },
+    {
+      "id": "-esJrBWj2d8_q2_query",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 105.2,
+      "end": 125.2,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q2_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q2_query_contact.jpg",
+      "sha256": "18294db6e65257d3897b7a2ff401fb4f21a9bc074ecb47c4aedf48c564e87d6a"
+    },
+    {
+      "id": "JKpqYvAdIsw_q1_query",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 15.208000000000002,
+      "end": 35.208,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q1_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=480:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q1_query_contact.jpg",
+      "sha256": "95eea330625b6f72f78fe0c2eea3c5185fff85ba22d081a4e1dc89928c5487ef"
+    },
+    {
+      "id": "JKpqYvAdIsw_q2_query",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 66.04,
+      "end": 86.04,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q2_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=480:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q2_query_contact.jpg",
+      "sha256": "8109770288eafbe2450255385cd8a76aa0a9ab1cf874f6ed078b5ae2ccf7826b"
+    },
+    {
+      "id": "0tmA_C6XwfM_q1_query",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 14.128,
+      "end": 34.128,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q1_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q1_query_contact.jpg",
+      "sha256": "a0d9679900193067718b5715915a639bd141b958b958a5a419e2b4585351f4b1"
+    },
+    {
+      "id": "0tmA_C6XwfM_q2_query",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 60.64,
+      "end": 80.64,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q2_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q2_query_contact.jpg",
+      "sha256": "5aae4f3f04634b62cfe98280a5688a79e26390aa780efb06699ce40ee73e3d64"
+    },
+    {
+      "id": "37rzWOQsNIw_q1_query",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 19.15914,
+      "end": 39.15914,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q1_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q1_query_contact.jpg",
+      "sha256": "dca7bb8ec5e9a4a8f07fbf7ecd535990df3c0f4d7297cf3c86b39765a7baa465"
+    },
+    {
+      "id": "37rzWOQsNIw_q2_query",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 85.7957,
+      "end": 105.7957,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q2_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q2_query_contact.jpg",
+      "sha256": "e652e9d839432a643cab5faf7c1466899af1a479a95530f77fed99c987001c23"
+    },
+    {
+      "id": "GsAD1KT1xo8_q1_query",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 14.53452,
+      "end": 34.53452,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q1_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q1_query_contact.jpg",
+      "sha256": "ad89262ef0dd3b4a8f481332a1d7cd1b14d528239626687536f41e30de3ffb2b"
+    },
+    {
+      "id": "GsAD1KT1xo8_q2_query",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 62.6726,
+      "end": 82.6726,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q2_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q2_query_contact.jpg",
+      "sha256": "6ae7284a3e9f3ef59c4e4e3c9994592606c00d1a1b0ec494fc394917f2c492ea"
+    },
+    {
+      "id": "4wU_LUjG5Ic_q1_query",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 16.7041875,
+      "end": 36.7041875,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q1_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q1_query_contact.jpg",
+      "sha256": "debf04e534c63649440f77668fa939d741354cfa4c1b227330d28689c8478fd4"
+    },
+    {
+      "id": "4wU_LUjG5Ic_q2_query",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 73.5209375,
+      "end": 93.5209375,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q2_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q2_query_contact.jpg",
+      "sha256": "db719c20a5fb6e7c9d87f768cd04b46186b5dff1e7edabe8e809aa24cab22bf2"
+    },
+    {
+      "id": "98MoyGZKHXc_q1_query",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 18.752000000000002,
+      "end": 38.752,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q1_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q1_query_contact.jpg",
+      "sha256": "dfc6004326fc951d727cbf863675aa85044eb3ec53c6ac09bde7a524cb9a172d"
+    },
+    {
+      "id": "98MoyGZKHXc_q2_query",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 83.76,
+      "end": 103.76,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q2_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q2_query_contact.jpg",
+      "sha256": "5c84d63bc9271ba3036f017f486bf8e66a8ce8bacf3aa825529771cc6892f700"
+    },
+    {
+      "id": "HT5vyqe0Xaw_q1_query",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 32.2689033,
+      "end": 52.2689033,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q1_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q1_query_contact.jpg",
+      "sha256": "cefd4f3f8d47112ad35a0e50f9bdf9619e47bb6dfa7f9e32de842679027db8c7"
+    },
+    {
+      "id": "HT5vyqe0Xaw_q2_query",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 151.3445165,
+      "end": 171.3445165,
+      "variant": "query",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q2_query.mp4",
+      "encoder": "mpeg4",
+      "qscale": 2,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q2_query_contact.jpg",
+      "sha256": "8a7b2f1937584ad6d867f00b1291e9bd9c3e48103eb96cbbe1419b76b1eb280c"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "EE-bNr36nyA_q1_reencode",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 9.813136700000001,
+      "end": 29.8131367,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q1_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q1_reencode_contact.jpg",
+      "sha256": "0622c604d137346de877707e3f552ba7cb8c998a6fc0d3b1937657ea6838a495"
+    },
+    {
+      "id": "EE-bNr36nyA_q1_crop",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 9.813136700000001,
+      "end": 29.8131367,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q1_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q1_crop_contact.jpg",
+      "sha256": "644cb6a8831456deb7745e89ecb442ba059f6aecda0075031b5230b430b397eb"
+    },
+    {
+      "id": "EE-bNr36nyA_q1_overlay",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 9.813136700000001,
+      "end": 29.8131367,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q1_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q1_overlay_contact.jpg",
+      "sha256": "8a322ea38af9954f8ac32573c498953bcd32e6c7438a8bbb994691912ddada21"
+    },
+    {
+      "id": "EE-bNr36nyA_q2_reencode",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 39.0656835,
+      "end": 59.0656835,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q2_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q2_reencode_contact.jpg",
+      "sha256": "d38d2de07ddb1198c5cd737ecf510cdb2e8739309bc39a32a8f48ec5062e0695"
+    },
+    {
+      "id": "EE-bNr36nyA_q2_crop",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 39.0656835,
+      "end": 59.0656835,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q2_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q2_crop_contact.jpg",
+      "sha256": "833992b2044240c09e9a37a4e6e149c47f8327136383f4342f24fb78fe8eea0b"
+    },
+    {
+      "id": "EE-bNr36nyA_q2_overlay",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 39.0656835,
+      "end": 59.0656835,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q2_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_q2_overlay_contact.jpg",
+      "sha256": "f5eae498b65a771c260edb4dd1ccdca057916c38a7ea015cdf068f2d71c5e5c7"
+    },
+    {
+      "id": "EE-bNr36nyA_negative_reencode",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 78.131367,
+      "end": 98.131367,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_negative_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_negative_reencode_contact.jpg",
+      "sha256": "ee3dd75ded844613a59ec6918bdf5faeb87d2ac5ec1b133dcdcc3cd31e0513d7"
+    },
+    {
+      "id": "EE-bNr36nyA_negative_crop",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 78.131367,
+      "end": 98.131367,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_negative_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_negative_crop_contact.jpg",
+      "sha256": "911db1b0d1144f1cd6308fc03939c6bb67cb78a4b34754510bd188d3b53354af"
+    },
+    {
+      "id": "EE-bNr36nyA_negative_overlay",
+      "source_id": "EE-bNr36nyA",
+      "category": "BK",
+      "start": 78.131367,
+      "end": 98.131367,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_negative_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_negative_overlay_contact.jpg",
+      "sha256": "342b4cc3ff668c01b2a4303fb280a9181040a1726d8bda199feec83081051962"
+    },
+    {
+      "id": "EYqVtI9YWJA_q1_reencode",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 19.816463300000002,
+      "end": 39.8164633,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q1_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=540:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q1_reencode_contact.jpg",
+      "sha256": "0f088977ec4260af6ab809d747bec6d3de8ebbfed0c7cfa991879e7aa4481a66"
+    },
+    {
+      "id": "EYqVtI9YWJA_q1_crop",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 19.816463300000002,
+      "end": 39.8164633,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q1_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=540:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q1_crop_contact.jpg",
+      "sha256": "45cff9ab0474d474285855723619921addb4d2d91af91ba796cc40004f99b753"
+    },
+    {
+      "id": "EYqVtI9YWJA_q1_overlay",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 19.816463300000002,
+      "end": 39.8164633,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q1_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=540:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q1_overlay_contact.jpg",
+      "sha256": "659d07373c97fd3c8f631a57d324139d812be1c3cd469c02eebbcad27dd2c425"
+    },
+    {
+      "id": "EYqVtI9YWJA_q2_reencode",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 89.0823165,
+      "end": 109.0823165,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q2_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=540:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q2_reencode_contact.jpg",
+      "sha256": "86efa58b0d4eac5cf3b7052bb9c83b1d840cc360098e0692dcfefd4963852c71"
+    },
+    {
+      "id": "EYqVtI9YWJA_q2_crop",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 89.0823165,
+      "end": 109.0823165,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q2_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=540:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q2_crop_contact.jpg",
+      "sha256": "0b59dbacdc529ac38fc5b55e3fcebebeaf6ffed68a99dbada1bf8fb787672b5e"
+    },
+    {
+      "id": "EYqVtI9YWJA_q2_overlay",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 89.0823165,
+      "end": 109.0823165,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q2_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=540:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_q2_overlay_contact.jpg",
+      "sha256": "0c8d4920a8f444b997fe075ce06ad4a7b2d23f32210846750e9f5588f163a67b"
+    },
+    {
+      "id": "EYqVtI9YWJA_negative_reencode",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 178.164633,
+      "end": 198.164633,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_negative_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=540:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_negative_reencode_contact.jpg",
+      "sha256": "581e166d0eb9ffa2aabe5578bc34ed9bfb46b62fb0d69ff8fb7c6bb74df08d6f"
+    },
+    {
+      "id": "EYqVtI9YWJA_negative_crop",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 178.164633,
+      "end": 198.164633,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_negative_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=540:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_negative_crop_contact.jpg",
+      "sha256": "8d19e9c2a39e2dc4a62a0e87d455da3ffaa8e21eee9baf430a55b00809fe0c52"
+    },
+    {
+      "id": "EYqVtI9YWJA_negative_overlay",
+      "source_id": "EYqVtI9YWJA",
+      "category": "BT",
+      "start": 178.164633,
+      "end": 198.164633,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_negative_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=540:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_negative_overlay_contact.jpg",
+      "sha256": "8aec2c448d5a28a9d5bf76081e3125f5fed8c4e01edd0f68437556dcd5f899af"
+    },
+    {
+      "id": "-esJrBWj2d8_q1_reencode",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 23.040000000000003,
+      "end": 43.040000000000006,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q1_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q1_reencode_contact.jpg",
+      "sha256": "668931a7511ccc2e59baed99f61000a9f22c8aa0edf2824c34b34056decc2fd1"
+    },
+    {
+      "id": "-esJrBWj2d8_q1_crop",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 23.040000000000003,
+      "end": 43.040000000000006,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q1_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q1_crop_contact.jpg",
+      "sha256": "62cb3724e5375776ad159e615992471d31ce0b9aeec8c9096db4f7ed37636053"
+    },
+    {
+      "id": "-esJrBWj2d8_q1_overlay",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 23.040000000000003,
+      "end": 43.040000000000006,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q1_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q1_overlay_contact.jpg",
+      "sha256": "48d6c54ac4a1799a09508e0ec2ed2b1a914b4a7080efb5236280b15db00ae2da"
+    },
+    {
+      "id": "-esJrBWj2d8_q2_reencode",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 105.2,
+      "end": 125.2,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q2_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q2_reencode_contact.jpg",
+      "sha256": "aef2fd7ef78f7b4eb72634718529095bdde47b12df1ae2984d967ae9498f0b78"
+    },
+    {
+      "id": "-esJrBWj2d8_q2_crop",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 105.2,
+      "end": 125.2,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q2_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q2_crop_contact.jpg",
+      "sha256": "77ddf15092c6cef96540577ad0c8d5f03c1776d35e9c52c74d6b5f1d726f0163"
+    },
+    {
+      "id": "-esJrBWj2d8_q2_overlay",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 105.2,
+      "end": 125.2,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q2_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_q2_overlay_contact.jpg",
+      "sha256": "eb72b9d57ba1e7a300d6bb5922108ff79cc45f462975a45a5d8c1ced0e9426be"
+    },
+    {
+      "id": "-esJrBWj2d8_negative_reencode",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 210.4,
+      "end": 230.4,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_negative_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_negative_reencode_contact.jpg",
+      "sha256": "b9971ee257f7dbf7b0a4854f32b775c85fe74cd8978065c971b6b0c0fba60a6c"
+    },
+    {
+      "id": "-esJrBWj2d8_negative_crop",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 210.4,
+      "end": 230.4,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_negative_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_negative_crop_contact.jpg",
+      "sha256": "18a7cf623c52fbcb4e9a8f8bb1774b79332332df4d27434914c0734ddd6adcc8"
+    },
+    {
+      "id": "-esJrBWj2d8_negative_overlay",
+      "source_id": "-esJrBWj2d8",
+      "category": "DS",
+      "start": 210.4,
+      "end": 230.4,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_negative_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_negative_overlay_contact.jpg",
+      "sha256": "e933575dcccc2e453f69a51714f6be59c8e51d0235911a8e015a92e08adc82ca"
+    },
+    {
+      "id": "JKpqYvAdIsw_q1_reencode",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 15.208000000000002,
+      "end": 35.208,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q1_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=480:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q1_reencode_contact.jpg",
+      "sha256": "079fca8e6b5f8e2bbcd890bb63188326ac06ed40f87a4672543fc03052d9d5aa"
+    },
+    {
+      "id": "JKpqYvAdIsw_q1_crop",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 15.208000000000002,
+      "end": 35.208,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q1_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=480:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q1_crop_contact.jpg",
+      "sha256": "ca7d440bfe8aaf4841859272d95a34f67d183c28bd50c2b2ac804a6335f52094"
+    },
+    {
+      "id": "JKpqYvAdIsw_q1_overlay",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 15.208000000000002,
+      "end": 35.208,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q1_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=480:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q1_overlay_contact.jpg",
+      "sha256": "5dd3e3c433a4db3a002152dc7a976f10b646a018a2c2ba8d7a465b36390f20dc"
+    },
+    {
+      "id": "JKpqYvAdIsw_q2_reencode",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 66.04,
+      "end": 86.04,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q2_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=480:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q2_reencode_contact.jpg",
+      "sha256": "67fd18b42886abc90ff1442c89ca8fe46c8134ba90a4bcdc8de95f46535dca84"
+    },
+    {
+      "id": "JKpqYvAdIsw_q2_crop",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 66.04,
+      "end": 86.04,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q2_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=480:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q2_crop_contact.jpg",
+      "sha256": "b46c2f7fb6d55b46e2dc319393f296daaa6e7fb73934a3e1be553b0b9c97ee14"
+    },
+    {
+      "id": "JKpqYvAdIsw_q2_overlay",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 66.04,
+      "end": 86.04,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q2_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=480:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_q2_overlay_contact.jpg",
+      "sha256": "75b2b07e92c68a0682df724418514bb347c1cb6c207a701e8a2d36f90f84b58c"
+    },
+    {
+      "id": "JKpqYvAdIsw_negative_reencode",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 132.08,
+      "end": 152.08,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_negative_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=480:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_negative_reencode_contact.jpg",
+      "sha256": "5b418494881a137336940fe423a5220749e1aabdc7eadca2095d6d72f1586f21"
+    },
+    {
+      "id": "JKpqYvAdIsw_negative_crop",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 132.08,
+      "end": 152.08,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_negative_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=480:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_negative_crop_contact.jpg",
+      "sha256": "5d1e1b70dd11972af8d592bf1eedcb57f9b61347860ef4fdf78905d7976415ab"
+    },
+    {
+      "id": "JKpqYvAdIsw_negative_overlay",
+      "source_id": "JKpqYvAdIsw",
+      "category": "FM",
+      "start": 132.08,
+      "end": 152.08,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_negative_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=480:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_negative_overlay_contact.jpg",
+      "sha256": "06cd1dcc63936f2717ceab7c422217144ca10069d99c33f60492838be45ddf0b"
+    },
+    {
+      "id": "0tmA_C6XwfM_q1_reencode",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 14.128,
+      "end": 34.128,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q1_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q1_reencode_contact.jpg",
+      "sha256": "f2597e4dcc990eab51ac5663c91c12aec84f2125388d42889da004ef3c9c47db"
+    },
+    {
+      "id": "0tmA_C6XwfM_q1_crop",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 14.128,
+      "end": 34.128,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q1_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q1_crop_contact.jpg",
+      "sha256": "57e5a21b0601970dddb457d65b7e26977b28ea1c119839b6c91ec3dd38e497a5"
+    },
+    {
+      "id": "0tmA_C6XwfM_q1_overlay",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 14.128,
+      "end": 34.128,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q1_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q1_overlay_contact.jpg",
+      "sha256": "136ae419c62d57bafb72ce397d98d702990a0b120120597b007263601076fec3"
+    },
+    {
+      "id": "0tmA_C6XwfM_q2_reencode",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 60.64,
+      "end": 80.64,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q2_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q2_reencode_contact.jpg",
+      "sha256": "08ddabd01f4cd284fa9290f8857af52568344073fea9b3be08a347f3f850ef8e"
+    },
+    {
+      "id": "0tmA_C6XwfM_q2_crop",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 60.64,
+      "end": 80.64,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q2_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q2_crop_contact.jpg",
+      "sha256": "8f6807f7109662f2411bf2bd7eb68a5a6de915a96dadda360820db2ea2272ab1"
+    },
+    {
+      "id": "0tmA_C6XwfM_q2_overlay",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 60.64,
+      "end": 80.64,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q2_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_q2_overlay_contact.jpg",
+      "sha256": "cc474ec4c84285df4b41763dc8cf906b5d5ca00cea048ec70096390664470d8a"
+    },
+    {
+      "id": "0tmA_C6XwfM_negative_reencode",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 121.28,
+      "end": 141.28,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_negative_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_negative_reencode_contact.jpg",
+      "sha256": "8640cec3c5fe02e91fe2369d670495aa4a0ae09d4d3e1c9e29bfda628c99b0b5"
+    },
+    {
+      "id": "0tmA_C6XwfM_negative_crop",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 121.28,
+      "end": 141.28,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_negative_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_negative_crop_contact.jpg",
+      "sha256": "2dbcb9b396d37602222999139b93e19012ee46359f37bfb6b0d036ea37365b85"
+    },
+    {
+      "id": "0tmA_C6XwfM_negative_overlay",
+      "source_id": "0tmA_C6XwfM",
+      "category": "GA",
+      "start": 121.28,
+      "end": 141.28,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_negative_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_negative_overlay_contact.jpg",
+      "sha256": "2fa52f1175c05aa60e56ca81209b3d8bb4be16e27590da6ce8fd86230aecd65a"
+    },
+    {
+      "id": "37rzWOQsNIw_q1_reencode",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 19.15914,
+      "end": 39.15914,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q1_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q1_reencode_contact.jpg",
+      "sha256": "3a7d65836de06366c18e55d8da70b8ea20dec851ccb599cb2ef922c85212438d"
+    },
+    {
+      "id": "37rzWOQsNIw_q1_crop",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 19.15914,
+      "end": 39.15914,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q1_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q1_crop_contact.jpg",
+      "sha256": "a055db1b677886b85f48ee1d55e72966671a25afb035c394ec645bd9bee93a24"
+    },
+    {
+      "id": "37rzWOQsNIw_q1_overlay",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 19.15914,
+      "end": 39.15914,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q1_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q1_overlay_contact.jpg",
+      "sha256": "ac7d4d0c0a115d7463df3067934ee435dc349843100443107251dc3a8910ac8d"
+    },
+    {
+      "id": "37rzWOQsNIw_q2_reencode",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 85.7957,
+      "end": 105.7957,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q2_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q2_reencode_contact.jpg",
+      "sha256": "98fdb32845e161d44c4351c8925c892e2b23cb3e8ea81c5dc4a7675f64941cc1"
+    },
+    {
+      "id": "37rzWOQsNIw_q2_crop",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 85.7957,
+      "end": 105.7957,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q2_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q2_crop_contact.jpg",
+      "sha256": "b074d9bf54d2ad035afcdaa68ed08ef868e24400826bbfdc21910fe05077137b"
+    },
+    {
+      "id": "37rzWOQsNIw_q2_overlay",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 85.7957,
+      "end": 105.7957,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q2_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_q2_overlay_contact.jpg",
+      "sha256": "4159225d83d259d966579901dca198907dd60816a248fd263b9ad54af24eb1ea"
+    },
+    {
+      "id": "37rzWOQsNIw_negative_reencode",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 171.5914,
+      "end": 191.5914,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_negative_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_negative_reencode_contact.jpg",
+      "sha256": "85a62cfd46b9f333eeec0b2d9071613ce03341ca9413058220f4caa64180b9a7"
+    },
+    {
+      "id": "37rzWOQsNIw_negative_crop",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 171.5914,
+      "end": 191.5914,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_negative_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_negative_crop_contact.jpg",
+      "sha256": "201c9a6e631a8ebff75ec8549df628b89098141fc40cf7654026781f6947e4a9"
+    },
+    {
+      "id": "37rzWOQsNIw_negative_overlay",
+      "source_id": "37rzWOQsNIw",
+      "category": "MS",
+      "start": 171.5914,
+      "end": 191.5914,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_negative_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_negative_overlay_contact.jpg",
+      "sha256": "018f3ffda017fa9c9e9ef401526614ccc3a10354038cacaf61e70855f279b9e7"
+    },
+    {
+      "id": "GsAD1KT1xo8_q1_reencode",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 14.53452,
+      "end": 34.53452,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q1_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q1_reencode_contact.jpg",
+      "sha256": "6325e589c942984248a4f482473d91f3fa6979ad818688683a15a1eed3476d1a"
+    },
+    {
+      "id": "GsAD1KT1xo8_q1_crop",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 14.53452,
+      "end": 34.53452,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q1_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q1_crop_contact.jpg",
+      "sha256": "2f8d9f2f3fbf1e7362f1578244ed3f36f8aa43e422e0177ea3a6dbb62148567d"
+    },
+    {
+      "id": "GsAD1KT1xo8_q1_overlay",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 14.53452,
+      "end": 34.53452,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q1_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q1_overlay_contact.jpg",
+      "sha256": "1d47f614976cc490c005de9dadee2d60a23820ffe212603c3ce89e5c0b50a40c"
+    },
+    {
+      "id": "GsAD1KT1xo8_q2_reencode",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 62.6726,
+      "end": 82.6726,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q2_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q2_reencode_contact.jpg",
+      "sha256": "7dc9d64f0c5fdc8a8ed57b4afe46e087c65f0c8a727f3515e100c376a5612246"
+    },
+    {
+      "id": "GsAD1KT1xo8_q2_crop",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 62.6726,
+      "end": 82.6726,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q2_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q2_crop_contact.jpg",
+      "sha256": "83ad956e00f579d07f014b286cfdfdfdd4cb08453e669421844199ce936977e0"
+    },
+    {
+      "id": "GsAD1KT1xo8_q2_overlay",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 62.6726,
+      "end": 82.6726,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q2_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_q2_overlay_contact.jpg",
+      "sha256": "add6ee5c4f8f6fa6ca4ee31d36f9d4c7713fdae236f5376f3e9107c9a916f0fd"
+    },
+    {
+      "id": "GsAD1KT1xo8_negative_reencode",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 125.3452,
+      "end": 145.3452,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_negative_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_negative_reencode_contact.jpg",
+      "sha256": "686d74a25e587bd2e3e7f04473c6d7cee2ddf957750f7d3fa18185f9f004619e"
+    },
+    {
+      "id": "GsAD1KT1xo8_negative_crop",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 125.3452,
+      "end": 145.3452,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_negative_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_negative_crop_contact.jpg",
+      "sha256": "4b0b19bea8c2c00a3a33fdc1c88a04cc88c2ee10fc43eee2f0d5132b7053baeb"
+    },
+    {
+      "id": "GsAD1KT1xo8_negative_overlay",
+      "source_id": "GsAD1KT1xo8",
+      "category": "PK",
+      "start": 125.3452,
+      "end": 145.3452,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_negative_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_negative_overlay_contact.jpg",
+      "sha256": "823def02aad99074da89cb81d76c190abb5ff73defb95b3ea8f40d6d00fd954a"
+    },
+    {
+      "id": "4wU_LUjG5Ic_q1_reencode",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 16.7041875,
+      "end": 36.7041875,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q1_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q1_reencode_contact.jpg",
+      "sha256": "68aaeb723e663ede8cb046e4d5fae2e89f1863b13736fd60fd646a7ab6b390f5"
+    },
+    {
+      "id": "4wU_LUjG5Ic_q1_crop",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 16.7041875,
+      "end": 36.7041875,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q1_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q1_crop_contact.jpg",
+      "sha256": "6aadf9641ea3ccb7a78bd06c9da2e22fc6c44bdc981be9b9c7713edcc2bcd0a4"
+    },
+    {
+      "id": "4wU_LUjG5Ic_q1_overlay",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 16.7041875,
+      "end": 36.7041875,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q1_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q1_overlay_contact.jpg",
+      "sha256": "8cb5fe9288cba5bd4e80b025b27c017cba936ca3d31108fe9a885ea87af1b023"
+    },
+    {
+      "id": "4wU_LUjG5Ic_q2_reencode",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 73.5209375,
+      "end": 93.5209375,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q2_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q2_reencode_contact.jpg",
+      "sha256": "ad0ab33dd597aa36a5cf9a8c87135353d5bd7a1713e354816c25680369ba572c"
+    },
+    {
+      "id": "4wU_LUjG5Ic_q2_crop",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 73.5209375,
+      "end": 93.5209375,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q2_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q2_crop_contact.jpg",
+      "sha256": "7a7028d354f42df8a36305ff9ea1db9fbbfe17dfa6af8173a509c28da6c46b6b"
+    },
+    {
+      "id": "4wU_LUjG5Ic_q2_overlay",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 73.5209375,
+      "end": 93.5209375,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q2_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_q2_overlay_contact.jpg",
+      "sha256": "cc2f9c8b67eaba8810eeda5cc63140f9b4e32c5073ff8db18a3be0b389a31dd3"
+    },
+    {
+      "id": "4wU_LUjG5Ic_negative_reencode",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 147.041875,
+      "end": 167.041875,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_negative_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_negative_reencode_contact.jpg",
+      "sha256": "214b7180618fdcac340c388409770fc6b8e894d722b3e0d6542f5bfcdb47e0b0"
+    },
+    {
+      "id": "4wU_LUjG5Ic_negative_crop",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 147.041875,
+      "end": 167.041875,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_negative_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_negative_crop_contact.jpg",
+      "sha256": "c7494bdb62f0e06b5aae5d42145d710c3b51b86514895fc9015afe90fc788255"
+    },
+    {
+      "id": "4wU_LUjG5Ic_negative_overlay",
+      "source_id": "4wU_LUjG5Ic",
+      "category": "PR",
+      "start": 147.041875,
+      "end": 167.041875,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_negative_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_negative_overlay_contact.jpg",
+      "sha256": "30ff2ff8284822f550de34c1caa83941bf3a869d4f5a275b321ff7f3b8b136ed"
+    },
+    {
+      "id": "98MoyGZKHXc_q1_reencode",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 18.752000000000002,
+      "end": 38.752,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q1_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q1_reencode_contact.jpg",
+      "sha256": "3eb7d8352c4a3cca14f21d86620400747a19610f5f422d5ef9518f58342e6c32"
+    },
+    {
+      "id": "98MoyGZKHXc_q1_crop",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 18.752000000000002,
+      "end": 38.752,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q1_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q1_crop_contact.jpg",
+      "sha256": "5e3fb541bca4aa4790bec8249df246eca06216ec139b8eaddb62bd2dd3442221"
+    },
+    {
+      "id": "98MoyGZKHXc_q1_overlay",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 18.752000000000002,
+      "end": 38.752,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q1_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q1_overlay_contact.jpg",
+      "sha256": "4ecd71c1f4481ba6b45a0a9ceb9fe396ec9066d9d96cb1b3b36ebc23440d13df"
+    },
+    {
+      "id": "98MoyGZKHXc_q2_reencode",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 83.76,
+      "end": 103.76,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q2_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q2_reencode_contact.jpg",
+      "sha256": "7a456167cf562eabeb0222c7487ce74d3a97079023d6ab00f57a1dc493874809"
+    },
+    {
+      "id": "98MoyGZKHXc_q2_crop",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 83.76,
+      "end": 103.76,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q2_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q2_crop_contact.jpg",
+      "sha256": "408700e8b20e9d8e048ba371dd08b9d11183c5fe7d37d2bf8a346d7168d40aa0"
+    },
+    {
+      "id": "98MoyGZKHXc_q2_overlay",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 83.76,
+      "end": 103.76,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q2_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_q2_overlay_contact.jpg",
+      "sha256": "a06b667042f577604f7960ead9f266037fe1363654a39185e6ec00b84e64e2be"
+    },
+    {
+      "id": "98MoyGZKHXc_negative_reencode",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 167.52,
+      "end": 187.52,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_negative_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_negative_reencode_contact.jpg",
+      "sha256": "6eed220b00f8d1dbf596afd91416a5e17c4e90e409070f6f3e99e6b425b804e8"
+    },
+    {
+      "id": "98MoyGZKHXc_negative_crop",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 167.52,
+      "end": 187.52,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_negative_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_negative_crop_contact.jpg",
+      "sha256": "2e9d311b281010b568b38ffe0c11c26f86ed66d38e679ddb03f80dc87efa2224"
+    },
+    {
+      "id": "98MoyGZKHXc_negative_overlay",
+      "source_id": "98MoyGZKHXc",
+      "category": "VT",
+      "start": 167.52,
+      "end": 187.52,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_negative_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_negative_overlay_contact.jpg",
+      "sha256": "6add9e40ad6bd1625ad567b471bea544cf4a3d5c018552cfdd14dad692a3eeb4"
+    },
+    {
+      "id": "HT5vyqe0Xaw_q1_reencode",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 32.2689033,
+      "end": 52.2689033,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q1_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q1_reencode_contact.jpg",
+      "sha256": "4002ca0a5300c5f6364b290bc6be6787ae18baa9f20139ae94efed974c7473bf"
+    },
+    {
+      "id": "HT5vyqe0Xaw_q1_crop",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 32.2689033,
+      "end": 52.2689033,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q1_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q1_crop_contact.jpg",
+      "sha256": "b9e527ab546cf089b52d29fa54d36ff6083e0afaec9739294e9fcbf3443940af"
+    },
+    {
+      "id": "HT5vyqe0Xaw_q1_overlay",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 32.2689033,
+      "end": 52.2689033,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q1_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q1_overlay_contact.jpg",
+      "sha256": "803802f60a2236fd0c72433e751ecca382846187a819a6ae3824c1a568a7074a"
+    },
+    {
+      "id": "HT5vyqe0Xaw_q2_reencode",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 151.3445165,
+      "end": 171.3445165,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q2_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q2_reencode_contact.jpg",
+      "sha256": "16f30be0fee202292865959a710155eaaa6471d9bb2d5687d21e90fee21c23c2"
+    },
+    {
+      "id": "HT5vyqe0Xaw_q2_crop",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 151.3445165,
+      "end": 171.3445165,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q2_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q2_crop_contact.jpg",
+      "sha256": "25eaff1398ee32e4ec595de20e541278ca785befee64a692560fe5c4474f4dbf"
+    },
+    {
+      "id": "HT5vyqe0Xaw_q2_overlay",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 151.3445165,
+      "end": 171.3445165,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q2_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_q2_overlay_contact.jpg",
+      "sha256": "408f502856674cb63c42d3f662ca2afd8f5b00dd82153b1b272f7a75fc903f50"
+    },
+    {
+      "id": "HT5vyqe0Xaw_negative_reencode",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 302.689033,
+      "end": 322.689033,
+      "variant": "reencode",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_negative_reencode.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_negative_reencode_contact.jpg",
+      "sha256": "61c34aae42bd110c36ed21226d711b825c9814f91f871ad48b95a334cb228f42"
+    },
+    {
+      "id": "HT5vyqe0Xaw_negative_crop",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 302.689033,
+      "end": 322.689033,
+      "variant": "crop",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_negative_crop.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "crop=trunc(iw*.8/2)*2:trunc(ih*.8/2)*2,scale=640:360",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_negative_crop_contact.jpg",
+      "sha256": "c241f0aea4b3e77347708244eb37d166cd33f383911c79c2b30631f2283a7ce1"
+    },
+    {
+      "id": "HT5vyqe0Xaw_negative_overlay",
+      "source_id": "HT5vyqe0Xaw",
+      "category": "VU",
+      "start": 302.689033,
+      "end": 322.689033,
+      "variant": "overlay",
+      "path": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_negative_overlay.mp4",
+      "encoder": "mpeg4",
+      "qscale": 5,
+      "filters": "scale=640:360,drawbox=x=0:y=0:w=iw:h=ih*.1:color=gray@0.5:t=fill",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_negative_overlay_contact.jpg",
+      "sha256": "75709559b083ad21ad456a9aff50efcd8c1723ca4b60a23a93ea17a234d521e2"
+    }
+  ],
+  "review": [
+    {
+      "source_id": "EE-bNr36nyA",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EE-bNr36nyA_source_contact.jpg",
+      "suspected_repeated_frames": [
+        {
+          "a": 61,
+          "b": 84,
+          "gray_mae": 2.66015625
+        },
+        {
+          "a": 61,
+          "b": 83,
+          "gray_mae": 2.70703125
+        },
+        {
+          "a": 61,
+          "b": 85,
+          "gray_mae": 2.70703125
+        },
+        {
+          "a": 54,
+          "b": 84,
+          "gray_mae": 2.7421875
+        },
+        {
+          "a": 64,
+          "b": 84,
+          "gray_mae": 2.8046875
+        },
+        {
+          "a": 54,
+          "b": 85,
+          "gray_mae": 2.9140625
+        },
+        {
+          "a": 55,
+          "b": 83,
+          "gray_mae": 2.98046875
+        },
+        {
+          "a": 60,
+          "b": 84,
+          "gray_mae": 3.015625
+        },
+        {
+          "a": 60,
+          "b": 85,
+          "gray_mae": 3.0234375
+        },
+        {
+          "a": 58,
+          "b": 83,
+          "gray_mae": 3.02734375
+        },
+        {
+          "a": 55,
+          "b": 84,
+          "gray_mae": 3.06640625
+        },
+        {
+          "a": 55,
+          "b": 85,
+          "gray_mae": 3.07421875
+        },
+        {
+          "a": 59,
+          "b": 84,
+          "gray_mae": 3.07421875
+        },
+        {
+          "a": 57,
+          "b": 84,
+          "gray_mae": 3.09375
+        },
+        {
+          "a": 53,
+          "b": 84,
+          "gray_mae": 3.09765625
+        },
+        {
+          "a": 58,
+          "b": 85,
+          "gray_mae": 3.09765625
+        },
+        {
+          "a": 54,
+          "b": 83,
+          "gray_mae": 3.140625
+        },
+        {
+          "a": 64,
+          "b": 85,
+          "gray_mae": 3.140625
+        },
+        {
+          "a": 58,
+          "b": 84,
+          "gray_mae": 3.14453125
+        },
+        {
+          "a": 59,
+          "b": 85,
+          "gray_mae": 3.14453125
+        },
+        {
+          "a": 59,
+          "b": 83,
+          "gray_mae": 3.16015625
+        },
+        {
+          "a": 63,
+          "b": 83,
+          "gray_mae": 3.1640625
+        },
+        {
+          "a": 63,
+          "b": 84,
+          "gray_mae": 3.171875
+        },
+        {
+          "a": 60,
+          "b": 83,
+          "gray_mae": 3.234375
+        },
+        {
+          "a": 57,
+          "b": 85,
+          "gray_mae": 3.28125
+        },
+        {
+          "a": 53,
+          "b": 85,
+          "gray_mae": 3.34765625
+        },
+        {
+          "a": 65,
+          "b": 85,
+          "gray_mae": 3.37890625
+        },
+        {
+          "a": 63,
+          "b": 85,
+          "gray_mae": 3.4453125
+        },
+        {
+          "a": 57,
+          "b": 83,
+          "gray_mae": 3.484375
+        },
+        {
+          "a": 53,
+          "b": 83,
+          "gray_mae": 3.49609375
+        },
+        {
+          "a": 62,
+          "b": 84,
+          "gray_mae": 3.5703125
+        },
+        {
+          "a": 62,
+          "b": 83,
+          "gray_mae": 3.6015625
+        },
+        {
+          "a": 56,
+          "b": 85,
+          "gray_mae": 3.73046875
+        },
+        {
+          "a": 56,
+          "b": 83,
+          "gray_mae": 3.78515625
+        },
+        {
+          "a": 52,
+          "b": 84,
+          "gray_mae": 3.875
+        },
+        {
+          "a": 56,
+          "b": 84,
+          "gray_mae": 3.88671875
+        },
+        {
+          "a": 62,
+          "b": 85,
+          "gray_mae": 3.984375
+        },
+        {
+          "a": 52,
+          "b": 85,
+          "gray_mae": 4.125
+        },
+        {
+          "a": 52,
+          "b": 83,
+          "gray_mae": 4.25
+        }
+      ]
+    },
+    {
+      "source_id": "EYqVtI9YWJA",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\EYqVtI9YWJA_source_contact.jpg",
+      "suspected_repeated_frames": [
+        {
+          "a": 0,
+          "b": 195,
+          "gray_mae": 0.0
+        },
+        {
+          "a": 0,
+          "b": 196,
+          "gray_mae": 0.0
+        },
+        {
+          "a": 0,
+          "b": 197,
+          "gray_mae": 0.01171875
+        }
+      ]
+    },
+    {
+      "source_id": "-esJrBWj2d8",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\-esJrBWj2d8_source_contact.jpg",
+      "suspected_repeated_frames": []
+    },
+    {
+      "source_id": "JKpqYvAdIsw",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\JKpqYvAdIsw_source_contact.jpg",
+      "suspected_repeated_frames": []
+    },
+    {
+      "source_id": "0tmA_C6XwfM",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\0tmA_C6XwfM_source_contact.jpg",
+      "suspected_repeated_frames": [
+        {
+          "a": 5,
+          "b": 139,
+          "gray_mae": 0.234375
+        },
+        {
+          "a": 3,
+          "b": 137,
+          "gray_mae": 0.31640625
+        },
+        {
+          "a": 6,
+          "b": 140,
+          "gray_mae": 0.3359375
+        },
+        {
+          "a": 4,
+          "b": 138,
+          "gray_mae": 0.37890625
+        },
+        {
+          "a": 1,
+          "b": 135,
+          "gray_mae": 0.6640625
+        },
+        {
+          "a": 5,
+          "b": 140,
+          "gray_mae": 1.25390625
+        },
+        {
+          "a": 2,
+          "b": 136,
+          "gray_mae": 1.29296875
+        },
+        {
+          "a": 6,
+          "b": 139,
+          "gray_mae": 1.60546875
+        },
+        {
+          "a": 6,
+          "b": 141,
+          "gray_mae": 1.7578125
+        },
+        {
+          "a": 0,
+          "b": 135,
+          "gray_mae": 1.80859375
+        },
+        {
+          "a": 4,
+          "b": 139,
+          "gray_mae": 2.140625
+        },
+        {
+          "a": 5,
+          "b": 138,
+          "gray_mae": 2.52734375
+        },
+        {
+          "a": 5,
+          "b": 141,
+          "gray_mae": 3.02734375
+        },
+        {
+          "a": 4,
+          "b": 140,
+          "gray_mae": 3.36328125
+        },
+        {
+          "a": 6,
+          "b": 138,
+          "gray_mae": 3.75
+        },
+        {
+          "a": 3,
+          "b": 138,
+          "gray_mae": 4.6171875
+        },
+        {
+          "a": 4,
+          "b": 141,
+          "gray_mae": 4.69140625
+        },
+        {
+          "a": 2,
+          "b": 137,
+          "gray_mae": 4.9765625
+        }
+      ]
+    },
+    {
+      "source_id": "37rzWOQsNIw",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\37rzWOQsNIw_source_contact.jpg",
+      "suspected_repeated_frames": []
+    },
+    {
+      "source_id": "GsAD1KT1xo8",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\GsAD1KT1xo8_source_contact.jpg",
+      "suspected_repeated_frames": []
+    },
+    {
+      "source_id": "4wU_LUjG5Ic",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\4wU_LUjG5Ic_source_contact.jpg",
+      "suspected_repeated_frames": [
+        {
+          "a": 5,
+          "b": 155,
+          "gray_mae": 0.0
+        },
+        {
+          "a": 5,
+          "b": 165,
+          "gray_mae": 0.0
+        },
+        {
+          "a": 5,
+          "b": 166,
+          "gray_mae": 0.0
+        },
+        {
+          "a": 0,
+          "b": 155,
+          "gray_mae": 1.0
+        },
+        {
+          "a": 0,
+          "b": 165,
+          "gray_mae": 1.0
+        },
+        {
+          "a": 0,
+          "b": 166,
+          "gray_mae": 1.0
+        }
+      ]
+    },
+    {
+      "source_id": "98MoyGZKHXc",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\98MoyGZKHXc_source_contact.jpg",
+      "suspected_repeated_frames": []
+    },
+    {
+      "source_id": "HT5vyqe0Xaw",
+      "contact_sheet": "E:\\MultimediaCourseAssets\\vision\\cache\\video\\clips\\HT5vyqe0Xaw_source_contact.jpg",
+      "suspected_repeated_frames": []
+    }
+  ],
+  "relevance": "same source and intersection/query duration >= 0.8",
+  "visual_review_approved": true,
+  "visual_review": {
+    "status": "passed",
+    "reviewer_type": "agent",
+    "timestamp": "2026-10-23T07:24:48.929706+00:00",
+    "performed_before_model_scoring": true,
+    "method": "主代理逐一查看10张全片每5秒接触表、5张查询/同源干扰汇总图（30段，每段5帧）及1fps灰度重复候选清单。按80%覆盖标准检查重复镜头歧义；此为抽帧视觉审查，不声称逐帧人工观看。",
+    "sources": {
+      "EE-bNr36nyA": "蜂巢插图和固定机位人物镜头在不同时段出现；查询一含蜂巢/远景，查询二含人物近景/木墙，末段含蜂巢/淡出片尾。重复局部没有覆盖任一20秒查询的80%，保留并在局限讨论局部重复。",
+      "EYqVtI9YWJA": "访谈与摩托车动作交替；末段为黑衣骑手和片尾，疑似重复为首尾黑帧，未覆盖查询。",
+      "-esJrBWj2d8": "查询一为儿童与喂猫准备，查询二为猫进食近景，末段为盘子和猫离开，未见重复播放。",
+      "JKpqYvAdIsw": "连续街头舞蹈多机位剪辑；查询分属开场与红裙舞者段，末段为观众/群舞收尾，未见查询80%重放。",
+      "0tmA_C6XwfM": "主持人场景与片头片尾标志重复；查询一含主持人及抱狗，查询二为剪爪特写，末段为主持人/玩具/标志，未见完整查询重复。",
+      "37rzWOQsNIw": "查询一三明治展示，查询二喂鸽子，末段其他食物/人物/字幕，未见重复播放。",
+      "GsAD1KT1xo8": "城市跑酷与旅行蒙太奇；多个地点相同但动作与镜头序列不同，末段跳跃/栏杆收尾，未见重复序列。",
+      "4wU_LUjG5Ic": "骑车游行与不同受访者；末段人群与赞助字幕，疑似重复为首尾黑帧，未覆盖查询。",
+      "98MoyGZKHXc": "轮胎维修连续步骤；查询一片头/车轮/车内，查询二压缩机/车轮操作，末段车内人物与订阅页，未见80%查询重复。",
+      "HT5vyqe0Xaw": "同一路段卡车救援连续记录；查询一走近卡车，查询二前侧视角，末段卡车离开后的道路，存在同场景相似但未见重复剪辑。"
+    },
+    "replacements": [],
+    "limitations": "稀疏抽帧不能排除所有局部相似；部分片尾字幕使干扰更易区分，十源受控结论不外推。"
+  }
+}
