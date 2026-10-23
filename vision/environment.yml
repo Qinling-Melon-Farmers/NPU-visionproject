@@ -1,0 +1,21 @@
+name: multimedia-vision
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.11
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - pytorch-cuda=11.8
+  - numpy=1.26.4
+  - opencv=4.10
+  - h5py
+  - scipy
+  - matplotlib
+  - pillow
+  - pyyaml
+  - python-docx
+  - ffmpeg
+  - pytest
+  - tqdm

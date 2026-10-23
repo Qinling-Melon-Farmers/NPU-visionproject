@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+vision/configs/local.yaml
+vision/vendor/**/.git/
+*.part
+.env
+*.pem
+*.key
