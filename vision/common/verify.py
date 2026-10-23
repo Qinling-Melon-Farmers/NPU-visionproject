@@ -266,4 +266,10 @@ def verify(cfg,experiment_root):
             result=load(root/name/'results.json');require(result.get('status')=='completed','result status not completed');checks.append(audit(cfg,root,result))
         except (OSError,ValueError,KeyError,TypeError,IndexError,AssertionError,RuntimeError,ZeroDivisionError,subprocess.SubprocessError) as exc:
             pending.append(f'{name}: {type(exc).__name__}: {exc}')
+    for name in ('image','video','summary'):
+        try:
+            replay=load(root/f'replay_{name}.json')
+            require(replay.get('status')=='passed',f'{name} fresh inference replay did not pass')
+        except (OSError,ValueError,KeyError,TypeError) as exc:
+            pending.append(f'{name} fresh replay: {exc}')
     return {'status':'passed' if len(checks)==3 and not pending else 'incomplete','checks':checks,'pending':pending,'scope':'saved arrays and actual decoded files; model inference not repeated'}

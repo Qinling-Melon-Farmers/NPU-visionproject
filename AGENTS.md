@@ -37,9 +37,9 @@
 
 ### 必须遵守
 
-1. **优先复用现有 Conda 环境 `pytorch`。** 所有课程 Python 脚本、依赖操作、测试、Notebook 内核均应明确绑定该环境或为本课程新建的 Conda 环境。
+1. **本项目使用已创建并通过验收的专用 Conda 环境 `multimedia-vision`。** 初始检查原计划优先复用 `pytorch`，但其用户级 OpenCV 混入及 NumPy ABI 问题已触发新建条件；不得再使用原环境运行本项目。
 2. **不得使用 `base`、系统 Python、原有全局 Python 执行课程代码或安装课程依赖。** 允许调用 Conda 自身管理环境，这不等于允许用 `base` 运行实验。
-3. 不能仅凭终端提示符判断环境。优先使用 `conda run -n pytorch ...`；交互式激活后仍需核验 `sys.executable`。禁止在环境未确认时直接运行裸 `python`、`pip` 或 `py`。
+3. 不能仅凭终端提示符判断环境。使用 `conda run -p <专用环境路径> python -s ...`；交互式激活后仍需核验 `sys.executable`。禁止在环境未确认时直接运行裸 `python`、`pip` 或 `py`。
 4. 安装依赖前先检查已有包与作者实现的版本要求。仅在现有环境兼容时复用；不得为兼容旧仓库而直接批量升级、降级或重装现有 Python、PyTorch、CUDA 相关包及其他核心依赖。
 5. 如需要不兼容版本、变更核心依赖或无法保证现有环境稳定，**必须通过 Conda 新建专用环境**，例如 `multimedia-vision`；有必要时按实验拆分。版本根据实际依赖核验确定，不猜测指定。不得以全局安装、`pip --user`、`venv` 或 `virtualenv` 替代用户要求的 Conda 隔离。
 6. Conda 包操作必须显式指定目标环境。确需 pip 时使用 `conda run -n <环境名> python -m pip ...`，限制在目标环境内，记录版本和理由；避免反复交叉覆盖 Conda 与 pip 管理的同一包。
@@ -59,8 +59,8 @@
 常用核验命令（PowerShell）：
 
 ```powershell
-conda run -n pytorch python -c "import sys; print(sys.executable)"
-conda run -n pytorch python -m pip --version
+conda run -p E:\MultimediaCourseAssets\envs\multimedia-vision python -s -c "import sys; print(sys.executable)"
+conda run -p E:\MultimediaCourseAssets\envs\multimedia-vision python -s vision/scripts/environment_check.py
 ```
 
 ## 3. 文件保护与删除审批
@@ -127,6 +127,8 @@ conda run -n pytorch python -m pip --version
 - 交互记录从实际发生的过程开始保存，包括：模型名称与日期、完整提示词与回复、采用的建议、修改文件与对应版本、执行命令、关键输出、报错、结果图、接受结果的依据或修正后重新运行的证据。
 - 失败尝试与一次成功的运行都要保留。记录交互轮数、返工和用时，同时注明任务与环境；下载、排队等外部等待时间单独列出。评分细则由教师确定，不自行虚构。
 - 完整交互记录最终放入同一份 Word 报告的附录，正文说明关键步骤。无法访问的历史对话或无法确认的模型版本必须标为缺失/未知，不能编造；只需保存用户可见的交互与运行证据，不记录隐藏推理或内部指令。
+- 学生与主代理交互、主代理与子代理协作必须分别归档并在 Word 单独列出。子代理任务、反馈、自动执行或检查不能写成学生亲自发起、执行或判断，也不得计入学生直接交互轮数。结构化问答的题目、选项和实际回答同样属于学生交互，必须保留。
+- 后续代理分派前，把完整任务正文、发送方、接收方、显式模型与时间先保存到项目的明文协作日志；收到回复后保存完整可见回复。不得依赖平台会话文件一定保存可读正文。历史加密消息只列元数据和缺口，不读取密钥、不凭记忆重建原文、不声称全部历史严格完整。
 
 ## 7. 目录与交付约定
 

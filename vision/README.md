@@ -1,6 +1,6 @@
 # 视觉实验复现说明
 
-本目录实现 GeM 图像检索、完整 ViSiL 视频检索与 DSNet 无锚框视频摘要。三个实验已产生 `outputs/visual-20261023` 的真实运行结果；最终完成状态还须结合独立验收、摘要播放记录及 Word 报告检查，不能仅凭代码或单元测试判断。根目录原始任务书和课件保留只读。语音实验不在本目录范围内。
+本目录实现 GeM 图像检索、完整 ViSiL 视频检索与 DSNet 无锚框视频摘要。正式结果为 `outputs/visual-20261023-fp32`，三个模型已真实加载权重并完成严格 FP32 推理、固定查询重放和文件验收，18 项测试通过。首轮 `visual-20261023` 保留作修正证据。根目录原始任务书和课件保留只读。语音实验不在本目录范围内。
 
 ## 环境与配置
 
@@ -19,6 +19,7 @@ device: cuda
 ```powershell
 $courseEnv = 'E:\MultimediaCourseAssets\envs\multimedia-vision'
 $env:CONDA_PKGS_DIRS = 'E:\MultimediaCourseAssets\conda-pkgs'
+$env:CONDA_REPORT_ERRORS = 'false'
 conda create -p $courseEnv --override-channels -c https://conda.anaconda.org/pytorch -c https://conda.anaconda.org/nvidia -c https://repo.anaconda.com/pkgs/main python=3.11 pytorch=2.5.1 torchvision=0.20.1 pytorch-cuda=11.8 numpy=1.26.4 opencv=4.10 h5py scipy matplotlib pillow pyyaml python-docx ffmpeg pytest tqdm --dry-run
 # 核对解算结果后，用同一命令去掉 --dry-run 创建环境。
 conda run -p $courseEnv python -s -c "import sys; print(sys.executable); print(sys.flags.no_user_site)"
@@ -27,7 +28,7 @@ conda list -p $courseEnv --explicit
 conda env export -p $courseEnv --no-builds
 ```
 
-`environment_check.py` 会实际检查包来源、CUDA 11.8、GPU 小矩阵运算、NumPy 桥接及环境内 FFmpeg/ffprobe。GPU 不可用时检查会失败，不能据安装成功推断可运行。保存实际环境检查输出及依赖清单；不要导出完整环境变量或带认证信息的源地址。当前机器环境安装由主代理统一处理，本说明不代表安装已完成。
+`environment_check.py` 会实际检查包来源、CUDA 11.8、GPU 小矩阵运算、NumPy 桥接及环境内 FFmpeg/ffprobe。GPU 不可用时检查会失败，不能据安装成功推断可运行。本机专用环境已经通过检查，证据见 `manifests/environment_validation.json`；PyTorch 使用官方 GPU 构建，实际安装包和来源由 `conda-explicit-win-64.txt` 及 `environment-lock-win-64.yml` 固定。不要导出完整环境变量或带认证信息的源地址。
 
 ## 公开资源与准备
 
@@ -95,6 +96,10 @@ conda run --no-capture-output -p $courseEnv python -s -m vision image --run-id v
 conda run --no-capture-output -p $courseEnv python -s -m vision video --run-id visual-run-01
 conda run --no-capture-output -p $courseEnv python -s -m vision summary --run-id visual-run-01
 conda run -p $courseEnv python -s -m pytest vision/tests
+conda run -p $courseEnv python -s vision/scripts/replay_image.py --config vision/configs/default.yaml --run-root vision/outputs/visual-run-01
+conda run -p $courseEnv python -s vision/scripts/replay_models.py --kind video --config vision/configs/default.yaml --run-root vision/outputs/visual-run-01
+conda run -p $courseEnv python -s vision/scripts/replay_models.py --kind summary --config vision/configs/default.yaml --run-root vision/outputs/visual-run-01
+conda run -p $courseEnv python -s -m vision.scripts.check_summary_playback --run-root vision/outputs/visual-run-01
 conda run -p $courseEnv python -s -m vision verify --run-id visual-run-01
 conda run -p $courseEnv python -s -m vision report --run-id visual-run-01
 ```
@@ -106,11 +111,17 @@ conda run -p $courseEnv python -s -m vision report --run-id visual-run-01
 图像可另外对固定4查询执行独立重放：
 
 ```powershell
-conda run -p $courseEnv python -s vision/scripts/replay_image.py --config vision/configs/default.yaml --run-root vision/outputs/visual-20261023
+conda run -p $courseEnv python -s vision/scripts/replay_image.py --config vision/configs/default.yaml --run-root vision/outputs/<新的运行编号>
 ```
 
 重放从原图和真实权重新计算查询特征，图库复用原指纹缓存；对主/稀疏图库和三池化方法检查保存NPZ的Top-5标识完全一致及所有候选分数最大误差不超过`1e-6`。输出`replay_image.json`拒绝覆盖，失败也保留实际差异，不自动放宽阈值。此命令会执行模型前向，应按GPU统一调度安排。
 
+正式运行显式关闭 CUDA/cuDNN 的 TF32，设置最高 FP32 矩阵精度、确定性卷积并关闭 benchmark。首轮发现改变批次后分数最大差 `4.798e-5`，因此统一重跑三个模型并更新缓存指纹；最终图像重放最大差 `4.1723e-7`，24 组 Top-5 完全一致。视频前两查询重新提取特征后两方法 Top-3 和分数均通过，摘要三个网络输出逐元素一致。`verify` 要求三份独立重放记录均通过。
+
+摘要播放脚本使用 FFplay 软件渲染器离屏、正常时钟播放完整三段，记录每一帧及退出码，并逐帧比较源片选帧与导出视频。当前记录属于代理工具检查，另检查代表帧，没有声称由人类连续观看。重新运行会拒绝覆盖已有播放证据。
+
 Word 报告生成于 `vision/reports/`，真实结果图表直接嵌入，缺少结果、交互记录或播放证据时为草稿。交互附录只来自已保存的用户可见提示、回复和执行证据；不可补造无法访问的历史对话、模型版本或隐藏推理。提交前在 Word 中更新目录、填写姓名学号并检查图片、分页及参考文献。
+
+交互记录已专项审计，见 [reports/INTERACTION_AUDIT.md](reports/INTERACTION_AUDIT.md)。学生与主代理记录位于附录 C，代理协作位于附录 D，后者不计入学生交互轮数。旧版混合日志保留，新报告根据 `logs/interaction_audit_latest.json` 读取分类快照。两批结构化问答已经补回；62 次代理协作的历史正文仅有加密持久化记录，无法读取，故“全部历史交互严格完整”未通过。报告封面、附录及打包清单明确此边界，不把实验验证通过等同于历史记录无缺口。当前报告适合审阅；学生个人信息和本人复核情况需据实补充。
 
 最终提交一份涵盖三个实验及完整可见交互附录的 `.docx`，另附代码、配置、来源清单、许可证、必要运行说明及依赖信息。按明确文件清单复制或打包：保留 `vision` 的课程代码、测试、说明、配置、作者来源/许可证及所需结果证据；选择最终报告。不要把整个资源根目录、Conda环境、数据、权重、特征缓存或本地摘要MP4加入提交包，也不要为打包删除这些本地资源。摘要MP4只留本地检查。

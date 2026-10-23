@@ -1,0 +1,1 @@
+"""Local Word report generation."""

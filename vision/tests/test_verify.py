@@ -11,7 +11,9 @@ class VerifyTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             result=verify({},Path(temporary))
         self.assertEqual(result['status'],'incomplete')
-        self.assertEqual(len(result['pending']),3)
+        for name in ('image','video','summary'):
+            self.assertTrue(any(p.startswith(name+':') for p in result['pending']))
+            self.assertTrue(any(p.startswith(name+' fresh replay:') for p in result['pending']))
         self.assertEqual(result['checks'],[])
 
     def test_completed_labels_without_evidence_never_pass(self):
@@ -22,7 +24,9 @@ class VerifyTests(unittest.TestCase):
                 (root/name/'results.json').write_text(json.dumps({'status':'completed','results':[],'data':{'queries':[],'candidates':[]}}))
             result=verify({},root)
         self.assertEqual(result['status'],'incomplete')
-        self.assertEqual(len(result['pending']),3)
+        for name in ('image','video','summary'):
+            self.assertTrue(any(p.startswith(name+':') for p in result['pending']))
+            self.assertTrue(any(p.startswith(name+' fresh replay:') for p in result['pending']))
         self.assertEqual(result['checks'],[])
 
     def test_hand_calculated_ap_and_precision(self):
