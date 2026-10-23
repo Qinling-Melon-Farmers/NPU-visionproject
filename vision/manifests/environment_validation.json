@@ -1,0 +1,64 @@
+{
+  "python": "3.11.17 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:16:54) [MSC v.1942 64 bit (AMD64)]",
+  "executable": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\python.exe",
+  "prefix": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision",
+  "user_site_enabled": false,
+  "packages": {
+    "torch": {
+      "version": "2.5.1",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\torch\\__init__.py"
+    },
+    "torchvision": {
+      "version": "0.20.1",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\torchvision\\__init__.py"
+    },
+    "numpy": {
+      "version": "1.26.4",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\numpy\\__init__.py"
+    },
+    "cv2": {
+      "version": "4.10.0",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\cv2.cp311-win_amd64.pyd"
+    },
+    "h5py": {
+      "version": "3.15.1",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\h5py\\__init__.py"
+    },
+    "scipy": {
+      "version": "1.16.0",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\scipy\\__init__.py"
+    },
+    "matplotlib": {
+      "version": "3.11.1",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\matplotlib\\__init__.py"
+    },
+    "PIL": {
+      "version": "12.0.0",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\PIL\\__init__.py"
+    },
+    "yaml": {
+      "version": "6.0.3",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\yaml\\__init__.py"
+    },
+    "docx": {
+      "version": "1.2.0",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\docx\\__init__.py"
+    },
+    "pytest": {
+      "version": "9.1.1",
+      "file": "E:\\MultimediaCourseAssets\\envs\\multimedia-vision\\Lib\\site-packages\\pytest\\__init__.py"
+    }
+  },
+  "cuda": {
+    "runtime": "11.8",
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "matrix_sum": 4096.0
+  },
+  "numpy_bridge": [
+    1.0,
+    2.0
+  ],
+  "ffmpeg": "ffmpeg version 4.3 Copyright (c) 2000-2020 the FFmpeg developers",
+  "ffprobe": "ffprobe version 4.3 Copyright (c) 2007-2020 the FFmpeg developers",
+  "status": "passed"
+}

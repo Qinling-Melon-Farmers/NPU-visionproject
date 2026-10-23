@@ -39,6 +39,7 @@
 实测现有 `pytorch` 会混入用户级 OpenCV；使用 `python -s` 后环境内 OpenCV 出现 NumPy ABI 错误。因此新建专用 Conda 环境，保留原环境，不进行清理或修复。
 
 - 核心组合：Python 3.11、PyTorch 2.5.1、torchvision 0.20.1、CUDA runtime 11.8、NumPy 1.26.4。
+- PyTorch/torchvision/CUDA runtime 使用官方 pytorch/nvidia 通道的 GPU 构建，禁止镜像源；记录实际下载 URL 并验证 GPU 运算。
 - 使用 Conda 管理 OpenCV、h5py、SciPy、Matplotlib、Pillow、PyYAML、python-docx、FFmpeg、pytest、tqdm。
 - 先依赖求解检查，再安装；成功后导出具体版本和构建锁定清单。
 - 统一使用 `conda run -p <环境路径> python -s ...`，禁止 base、全局 Python 和用户级包。
@@ -119,3 +120,6 @@
 
 - 2026-10-23：从已批准方案落盘；将视觉资源、日志和报告全部隔离至 vision；记录实际 Conda 新建原因。
 - 2026-10-23：按用户新指令加入 Git 远端、本地阶段提交和 Conventional Commits 规则；不扩大为自动 push 授权。
+- 2026-10-23：官方源 170 个 Conda 包均核验 SHA256。手工预取后缓存记录缺少来源 URL 导致 Conda 离线安装失败；备份本项目缓存元数据后恢复已核验的官方来源，再通过固定版本清单成功创建环境。原环境未修改。专用环境 CUDA 11.8 GPU 运算、包路径隔离及 13 项测试通过。
+- 2026-10-23：按作者 PIL thumbnail 语义，图像最长边 362 是上限，不放大小图；COIL 原始 128×128 输入保持原尺寸。
+- 2026-10-23：Conda 官方 FFmpeg 构建没有 libx264。正式评估前固定片段编码为 MPEG-4 Part 2：查询 qscale=2、所有候选 qscale=5、yuv420p、无音轨，候选正负样本使用相同编码及三种编辑；保留原始宽高比。此为可复现的编码实现选择，不改变标签与模型。

@@ -1,0 +1,97 @@
+# 视觉实验复现说明
+
+本目录实现 GeM 图像检索、完整 ViSiL 视频检索与 DSNet 无锚框视频摘要。当前代码、资源校验和单元测试不等于三个实验已经完成；正式结果以独立运行目录中的真实输出、验收记录及 Word 报告为准。根目录原始任务书和课件保留只读。语音实验不在本目录范围内。
+
+## 环境与配置
+
+从工作区根目录运行下列 PowerShell 命令。只使用专用 Conda 环境，课程 Python 命令均带 `-s`；不得改用系统 Python、base、`pip --user` 或修理其他课程环境。默认配置为 [configs/default.yaml](configs/default.yaml)：
+
+```yaml
+asset_root: E:/MultimediaCourseAssets/vision
+environment_prefix: E:/MultimediaCourseAssets/envs/multimedia-vision
+device: cuda
+```
+
+更换存储位置时，复制配置文件并修改这两个路径，后续命令用 `--config <新配置>`。CLI 核验当前 `sys.prefix` 与 `environment_prefix` 完全匹配，同时要求禁用用户级包。数据、下载档、权重、特征及视频缓存保存在 `asset_root`；代码中不需要修改盘符。
+
+环境定义见 [environment.yml](environment.yml)。下例通过单次命令限定官方源，不修改 Conda 全局配置；先解算检查，再移除 `--dry-run` 执行实际创建。不要对已经存在的环境盲目重跑创建或批量改核心依赖。
+
+```powershell
+$courseEnv = 'E:\MultimediaCourseAssets\envs\multimedia-vision'
+$env:CONDA_PKGS_DIRS = 'E:\MultimediaCourseAssets\conda-pkgs'
+conda create -p $courseEnv --override-channels -c https://conda.anaconda.org/pytorch -c https://conda.anaconda.org/nvidia -c https://repo.anaconda.com/pkgs/main python=3.11 pytorch=2.5.1 torchvision=0.20.1 pytorch-cuda=11.8 numpy=1.26.4 opencv=4.10 h5py scipy matplotlib pillow pyyaml python-docx ffmpeg pytest tqdm --dry-run
+# 核对解算结果后，用同一命令去掉 --dry-run 创建环境。
+conda run -p $courseEnv python -s -c "import sys; print(sys.executable); print(sys.flags.no_user_site)"
+conda run -p $courseEnv python -s vision/scripts/environment_check.py
+conda list -p $courseEnv --explicit
+conda env export -p $courseEnv --no-builds
+```
+
+`environment_check.py` 会实际检查包来源、CUDA 11.8、GPU 小矩阵运算、NumPy 桥接及环境内 FFmpeg/ffprobe。GPU 不可用时检查会失败，不能据安装成功推断可运行。保存实际环境检查输出及依赖清单；不要导出完整环境变量或带认证信息的源地址。当前机器环境安装由主代理统一处理，本说明不代表安装已完成。
+
+## 公开资源与准备
+
+作者代码随 `vendor/` 保留，版本和许可证见 [vendor/README.md](vendor/README.md)。公开 URL、实际 SHA256 在 `manifests/image_sources.json`、`summary_sources.json`、`video_resources.json`；`video_sources.json` 是后续生成的视频划分与审查清单，两者用途不同。
+
+空资源目录可顺序重建全部公开资源：
+
+```powershell
+conda run --no-capture-output -p $courseEnv python -s -m vision prepare --download --config vision/configs/default.yaml --run-id prepare-01
+# 或仅调用资源准备，不运行实验：
+.\vision\scripts\prepare_resources.ps1 -AssetRoot 'E:\MultimediaCourseAssets\vision' -EnvironmentPath $courseEnv
+```
+
+资源准备只发匿名公开 HTTP(S) 请求，不读取浏览器、Cookie、令牌或本机登录信息。已存在资源先核验 SHA256，匹配则复用；不匹配时保留原文件并报错。断点续传校验 URL 和服务器版本标识；服务器忽略 Range 时使用新的临时文件，失败记录与部分文件保留。归档解压拒绝路径逃逸和链接。网络失败后可重试同一资源命令；不得通过删除已有资源绕过校验。
+
+预期资源布局如下（归档及解压层级按清单生成）：
+
+```text
+asset_root/
+  downloads/coil-100.zip, tvsum50_ver_1_1.tgz, dsnet_datasets.zip, dsnet_pretrain_af_basic.zip
+  data/coil-100/coil-100/obj1__0.png ...
+  data/tvsum/extracted/data/*.tsv
+  data/tvsum/extracted/video/*.mp4
+  data/dsnet/eccv16_dataset_tvsum_google_pool5.h5
+  weights/gem/retrievalSfM120k-vgg16-gem-b4dcdc6.pth
+  weights/visil/visil.pth, pca_resnet50_vcdb_1M.pth, resnet50-19c8e357.pth
+  weights/dsnet/pretrain_af_basic/checkpoint/tvsum.yml.0.pt
+  cache/                         按输入、权重和预处理指纹隔离
+  resource_verification/         每次资源校验清单
+```
+
+GeM 使用作者检索权重的参数 `p`、RGB、单尺度512维、无额外白化。作者使用 PIL thumbnail：362为最长边上限，COIL 的128×128图片保持原大小；三个池化方法使用完全相同的预处理。400查询为每对象0/90/180/270度，主图库6800图，稀疏图库为20+45k度共800图，查询与图库不重叠。
+
+DSNet 使用官方 TVSum GoogLeNet1024维 H5 和对应 AF checkpoint，默认官方 split0；资源脚本仅提取需要的 H5 和配置对应的 checkpoint。摘要从完整原视频独立运行，不读取检索排名。预算为5%、10%、15%，帧预算、原帧映射及导出帧数均须依据真实输出验收。
+
+## 视频划分及视觉审查
+
+`prepare` 只下载、核验资源并返回准备状态，不自动完成视频选源、切片或视觉审查。环境就绪后显式调用：
+
+```powershell
+conda run --no-capture-output -p $courseEnv python -s -c "import yaml; from pathlib import Path; from vision.experiments.video import prepare_sources,prepare_clips; c=yaml.safe_load(Path('vision/configs/default.yaml').read_text(encoding='utf-8')); print(prepare_sources(c)); print(prepare_clips(c))"
+```
+
+选源按类别、视频 ID、可完整解码且至少80秒的规则生成10个源；20秒查询及同源干扰片段产生20查询、90候选，统一包含重编码、裁剪和遮挡条件。TVSum 原用于摘要，本实验将其改编为受控近重复检索；相关性定义为同源且原时间交集覆盖查询至少80%。
+
+必须在正式打分前查看 `video_sources.json` 的 `review`、源视频接触图、片段接触图及疑似重复帧，并按需播放原片段，检查重复镜头造成的标签歧义。存在歧义时先修订选源和清单、重新生成切片，保留理由；不可根据模型排名挑选数据。核验无误后在清单记录审查者、日期、查看对象和结论，再将 `visual_review_approved` 设为 `true`。这是实际视觉检查证据门禁，不能只为让运行通过而置位。重新调用 `prepare_sources/prepare_clips` 会重新写清单并将审查标志重置，修改前先保存已有清单版本。未通过审查的 `video` 命令会停止。
+
+## 正式运行、验证与报告
+
+所有命令从工作区根目录运行；三实验独立启动，避免旧作者代码包名相互污染。
+
+```powershell
+conda run --no-capture-output -p $courseEnv python -s -m vision image --run-id visual-run-01
+conda run --no-capture-output -p $courseEnv python -s -m vision video --run-id visual-run-01
+conda run --no-capture-output -p $courseEnv python -s -m vision summary --run-id visual-run-01
+conda run -p $courseEnv python -s -m pytest vision/tests
+conda run -p $courseEnv python -s -m vision verify --run-id visual-run-01
+conda run -p $courseEnv python -s -m vision report --run-id visual-run-01
+```
+
+默认配置以外的配置须在每条命令追加同一 `--config`。CLI 日志保存于 `vision/logs/`，元数据、配置、代码指纹、错误及结果保存在 `vision/outputs/<run-id>/`。三个实验目录一旦包含证据便拒绝重跑；失败后用新的 run-id，保留失败目录和日志，不能清空或覆盖。缓存可复用；算法或预处理改变后必须重新运行受影响实验。
+
+图像输出包括逐查询P@5/AP、Top-5 CSV、完整排名压缩档、两图库三方法对比、对象配对bootstrap和案例图。视频输出包含完整ViSiL与去CNN对照、Top-3、逐查询命中/AP、真实帧间矩阵及代表帧。摘要输出包含候选区间、各预算选帧、帧数验收和本地无音频MP4。实际播放摘要后保存有依据的播放审查记录；程序解码不等于人工播放。`verify` 会指出尚缺的记录，不能将待完成项描述为已验收。
+
+Word 报告生成于 `vision/reports/`，真实结果图表直接嵌入，缺少结果、交互记录或播放证据时为草稿。交互附录只来自已保存的用户可见提示、回复和执行证据；不可补造无法访问的历史对话、模型版本或隐藏推理。提交前在 Word 中更新目录、填写姓名学号并检查图片、分页及参考文献。
+
+最终提交一份涵盖三个实验及完整可见交互附录的 `.docx`，另附代码、配置、来源清单、许可证、必要运行说明及依赖信息。按明确文件清单复制或打包：保留 `vision` 的课程代码、测试、说明、配置、作者来源/许可证及所需结果证据；选择最终报告。不要把整个资源根目录、Conda环境、数据、权重、特征缓存或本地摘要MP4加入提交包，也不要为打包删除这些本地资源。摘要MP4只留本地检查。

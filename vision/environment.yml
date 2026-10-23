@@ -1,8 +1,8 @@
 name: multimedia-vision
 channels:
-  - pytorch
-  - nvidia
-  - defaults
+  - https://conda.anaconda.org/pytorch
+  - https://conda.anaconda.org/nvidia
+  - https://repo.anaconda.com/pkgs/main
 dependencies:
   - python=3.11
   - pytorch=2.5.1

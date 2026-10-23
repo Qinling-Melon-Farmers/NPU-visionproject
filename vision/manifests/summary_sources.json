@@ -1,0 +1,30 @@
+﻿{
+    "commit":  "1804176e2e8b57846beb063667448982273fca89",
+    "repository":  "https://github.com/li-plus/DSNet",
+    "files":  [
+                  {
+                      "path":  "E:\\MultimediaCourseAssets\\vision\\downloads\\dsnet_datasets.zip",
+                      "sha256":  "d7f42e604bde05bad4aa14c2cb4bed32f15db55965ef78f8278a874091586532",
+                      "bytes":  185891012
+                  },
+                  {
+                      "path":  "E:\\MultimediaCourseAssets\\vision\\downloads\\dsnet_pretrain_af_basic.zip",
+                      "sha256":  "8941bf7973f8f896117947df7f506f1612a7e2da2bceb491f7b53bf959f67866",
+                      "bytes":  160092350
+                  },
+                  {
+                      "path":  "E:\\MultimediaCourseAssets\\vision\\data\\dsnet\\eccv16_dataset_tvsum_google_pool5.h5",
+                      "sha256":  "ec9cbcc715887d30ba2ad46764cb810f07eb6d6241e96c0eac5fca51d398228b",
+                      "bytes":  125126256
+                  },
+                  {
+                      "path":  "E:\\MultimediaCourseAssets\\vision\\weights\\dsnet\\pretrain_af_basic\\checkpoint\\tvsum.yml.0.pt",
+                      "sha256":  "78fdfe7e43809dc2f39a927f6797461854ca6f56669c02bfe99789d7d1ca89fc",
+                      "bytes":  17315948
+                  }
+              ],
+    "weights_url":  "https://www.dropbox.com/s/2hjngmb0f97nxj0/pretrain_af_basic.zip?dl=1",
+    "datasets_url":  "https://www.dropbox.com/s/tdknvkpz1jp6iuz/dsnet_datasets.zip?dl=1",
+    "compatibility":  "Local postprocessing replaces obsolete ORTools with exact integer DP; author model code unchanged",
+    "license":  "MIT"
+}

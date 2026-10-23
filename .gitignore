@@ -7,3 +7,11 @@ vision/vendor/**/.git/
 .env
 *.pem
 *.key
+vision/outputs/**/rankings_*.npz
+vision/outputs/**/prediction.npz
+vision/outputs/**/summary_*.npz
+vision/submission/*.zip
+vision/vendor/dsnet/custom_data/
+vision/vendor/visil/datasets/*.pickle
+vision/vendor/visil/datasets/test_groundtruth
+vision/vendor/visil/datasets/unlabeled-data-id

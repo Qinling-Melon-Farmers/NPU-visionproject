@@ -1,0 +1,39 @@
+{
+  "verified_date": "2026-10-23",
+  "dataset": {
+    "name": "COIL-100",
+    "landing_url": "https://www.cs.columbia.edu/CAVE/software/softlib/coil-100.php",
+    "download_url": "https://www.cs.columbia.edu/CAVE/databases/SLAM_coil-20_coil-100/coil-100/coil-100.zip",
+    "archive_sha256": "fcb4b8b01c0778f416d8d7a09f45082c4f7075cc74743dcddd5c44307bd4afe7",
+    "images": 7200,
+    "objects": 100,
+    "license": "官方公开学术数据；官方页面及压缩包未发现独立许可证文本，未将MIT代码许可证扩展到数据。",
+    "reference": "S. A. Nene, S. K. Nayar and H. Murase, Columbia Object Image Library (COIL-100), CUCS-006-96, 1996",
+    "local_path_relative_to_asset_root": "data/coil-100"
+  },
+  "author_code": {
+    "url": "https://github.com/filipradenovic/cnnimageretrieval-pytorch",
+    "commit": "1e66a417afa2247edde6d35f3a9a2a465778a3a8",
+    "license": "MIT",
+    "copyright": "2016-2019 VRG, CTU Prague",
+    "local_path": "vision/vendor/cirtorch",
+    "modifications": "作者代码保持原样；课程adapter在image.py中使用作者GeM/L2N函数并重建完全相同VGG16 features，避免默认ImageNet下载。Pillow ANTIALIAS兼容使用LANCZOS。"
+  },
+  "weight": {
+    "name": "retrievalSfM120k-vgg16-gem-b4dcdc6.pth",
+    "author_declared_url": "http://cmp.felk.cvut.cz/cnnimageretrieval/data/networks/retrieval-SfM-120k/retrievalSfM120k-vgg16-gem-b4dcdc6.pth",
+    "download_url": "https://cmp.felk.cvut.cz/cnnimageretrieval/data/networks/retrieval-SfM-120k/retrievalSfM120k-vgg16-gem-b4dcdc6.pth",
+    "sha256": "b4dcdc6b1dc22d9291a27417034a9fa608f697556d26116fafbfa99b5ce0ab95",
+    "local_path_relative_to_asset_root": "weights/gem/retrievalSfM120k-vgg16-gem-b4dcdc6.pth",
+    "license": "作者仓库公开提供；MIT LICENSE随作者代码保留，权重未另发现独立许可证。"
+  },
+  "split": {
+    "query_angles": [0,90,180,270],
+    "queries": 400,
+    "full_gallery": 6800,
+    "sparse_gallery_angles": [20,65,110,155,200,245,290,335],
+    "sparse_gallery": 800,
+    "relevance": "同一对象ID",
+    "no_query_self_match": true
+  }
+}

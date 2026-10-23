@@ -1,0 +1,7 @@
+﻿{
+    "repository":  "https://github.com/MKLab-ITI/visil/tree/pytorch",
+    "commit":  "5751de6d7fdd48098b35c694aa250f2f1dad6a9f",
+    "license":  "Apache-2.0",
+    "original_code_modified":  false,
+    "wrapper":  "vision/experiments/video.py substitutes local-only weight loading via scoped patches; algorithm unchanged"
+}

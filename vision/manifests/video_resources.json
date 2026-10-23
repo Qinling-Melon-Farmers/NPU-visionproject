@@ -1,0 +1,9 @@
+{
+  "resources": [
+    {"url": "https://people.csail.mit.edu/yalesong/tvsum/tvsum50_ver_1_1.tgz", "path": "downloads/tvsum50_ver_1_1.tgz", "sha256": "407d340bcd06fdc6d17374ebe6760b4a96816bcace228559c8283d9fb2520dea", "extract_to": "data/tvsum", "nested_extract_to": "data/tvsum/extracted"},
+    {"url": "https://ndd.iti.gr/visil/visil.pth", "path": "weights/visil/visil.pth", "sha256": "23f5991ed9c2cfeb7484da1144dd0a6540dedfe1eae040fe4602649b012adcef"},
+    {"url": "https://ndd.iti.gr/visil/pca_resnet50_vcdb_1M.pth", "path": "weights/visil/pca_resnet50_vcdb_1M.pth", "sha256": "78f451c7f2cd3979fbe276f1edd772e87526d0a777fed1431218a7c320f881d8"},
+    {"url": "https://download.pytorch.org/models/resnet50-19c8e357.pth", "path": "weights/visil/resnet50-19c8e357.pth", "sha256": "19c8e3572231adff6824a2da93fd67b5986919a2e65f8b6007eab4edee220097"}
+  ],
+  "required_vendor_files": ["vendor/visil/model/visil.py", "vendor/visil/model/layers.py", "vendor/visil/model/similarities.py", "vendor/visil/LICENSE"]
+}
