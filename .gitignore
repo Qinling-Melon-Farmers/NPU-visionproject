@@ -32,3 +32,16 @@ vision/reports/delivery-20261023/
 vision/logs/inspect_*.py
 vision/reports/delivery-audited-20261023/
 vision/reports/delivery-review-20261023/
+
+# speech / KWS
+speech/kws_hw/data/
+speech/kws_hw/data*
+speech/kws_hw/runs*/
+speech/kws_hw/my_recordings/
+speech/kws_hw/**/__pycache__/
+speech/kws_hw/**/*.pt
+speech/submission/*.zip
+speech/reports/*.docx
+speech/reports/*.pdf
+speech/reports/delivery-*/
+speech/outputs/**/*.npy

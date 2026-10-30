@@ -8,9 +8,17 @@
 - 视觉代码、配置、测试、日志、图表和报告均位于 `vision/`；未来语音使用平级 `speech/`。原始 DOCX/PPTX 保留根目录。
 - 大型资源使用 `E:\MultimediaCourseAssets\vision`；通过 Conda 创建和管理专用环境 `E:\MultimediaCourseAssets\envs\multimedia-vision`，依赖通过 Conda 管理。
 - 已实测现有 `pytorch` 普通运行会混入用户级 OpenCV，禁用用户级包后环境内 OpenCV 出现 NumPy ABI 错误。此事实构成新建环境的理由；不修理或改动原环境。所有课程 Python 命令使用显式环境并加 `-s`。
-- 本项目允许使用子代理；每次创建必须显式指定 `model="gpt-6.1-sol"`（使用自包含任务上下文），禁止 `gpt-6-astra`，不得依赖默认模型继承。子代理也必须遵守此约束。
+- 本项目允许使用子代理协作；**最多同时运行 1 个**，必要时才启用。子代理模型继承 ZCode 主代理同款默认模型，不再强制 `gpt-6.1-sol`，也不再禁止 `gpt-6-astra`（2026-10-31 用户更新，覆盖原决定）。子代理也必须遵守本文件其余约束。
 - 环境安装和 GPU 正式运行由主代理统一安排；子代理仅修改分配给自己的模块，避免并发覆盖共享文件。
 - PyTorch 必须从官方源下载指定 GPU 构建，禁止镜像源；本项目使用 PyTorch 2.5.1、torchvision 0.20.1、CUDA runtime 11.8。核验实际下载 URL、构建字符串及 CUDA 运行，不以普通 import 成功代替 GPU 验收。
+
+## 已批准的实施决定（2026-10-31，语音部分）
+
+- 用户已发布语音大作业：根目录 `音频大作业指导文档.pdf`（42 页）与 `kws_code.zip`（教师教学代码，含 8 个 .py、requirements.txt、README.md、demo_long.wav）。任务：Google Speech Commands v0.01 上从零训练 12 类关键词唤醒模型（DS-CNN，约 19.95K 参数，log-Mel 40×98），完成数据准备、训练、评估、推理与错误分析；消融至少一组（计划四组）；加分项为长音频唤醒检测与阈值实验。**语音部分不要求记录大模型使用情况与交互附录（用户确认）**，视觉部分的交互记录要求不变。
+- **语音部分使用原有 Conda 环境 `D:\Anaconda3\envs\pytorch`（用户明确决定，覆盖 2026-10-23 对原环境的禁用；该禁用继续适用于视觉部分）。** 运行约束：全部命令 `conda run -p D:\Anaconda3\envs\pytorch python -s ...`；禁止导入 cv2 或混入用户级包；不升级/降级 torch、numpy 等核心包；补装依赖仅限 `conda run -p ... python -m pip install <包>` 并记录版本与理由；出现 ABI 或兼容问题时先在该环境内最小化解决，需回退 `multimedia-vision` 或另建环境时先向用户确认。
+- 语音代码、日志、结果与报告位于 `speech/`；教师代码解压到 `speech/kws_hw/`，保留原 README 与署名，修改直接在其上进行。大型数据与解压目录放 `E:\MultimediaCourseAssets\speech`，通过脚本参数或 junction 接入运行目录，不入 Git。
+- 语音交付物：可运行代码 + `runs/best.pt` + 4~8 页 PDF 报告（按指导文档 8 章结构，数字与 metrics.json 一致）+ 结果图 + 提交包 `2023302610_肖怀瑾_kws.zip`（不含 data/ 与环境）。自录音频先行跑通并留 `my_recordings/` 入口，用户录音就位后重跑推理与检测并更新报告。
+- 语音改动复用现有 GitHub 仓库（origin 不变），只做本地 commit、不 push；仓库改名与 Description 由用户自行处理。
 
 ## Git 管理与阶段提交
 
@@ -23,7 +31,7 @@
 
 ## 1. 课程范围与材料依据
 
-- 课程分为**语音处理**和**图像处理（视觉）**两部分。目前已发布并读取的是视觉实验材料，不得将视觉要求套用于语音部分，也不得自行编造语音实验内容。
+- 课程分为**语音处理**和**图像处理（视觉）**两部分。视觉材料为任务书与课件；**2026-10-31 语音部分材料已发布**：`音频大作业指导文档.pdf` 与 `kws_code.zip`。两部分要求相互独立，不得把视觉要求套用于语音，也不得把语音要求套用于视觉。
 - 根目录原始材料：
   - `学生实验任务书.docx`：实验目标、评价指标、成果和提交要求。
   - `多媒体实验介绍.pptx`：21 页课件及讲稿，补充模型配置、执行流程、交互记录和评价要求。
@@ -37,7 +45,7 @@
 
 ### 必须遵守
 
-1. **本项目使用已创建并通过验收的专用 Conda 环境 `multimedia-vision`。** 初始检查原计划优先复用 `pytorch`，但其用户级 OpenCV 混入及 NumPy ABI 问题已触发新建条件；不得再使用原环境运行本项目。
+1. **视觉部分使用已创建并通过验收的专用 Conda 环境 `multimedia-vision`。** 初始检查原计划优先复用 `pytorch`，但其用户级 OpenCV 混入及 NumPy ABI 问题已触发新建条件；视觉不得使用原环境。**语音部分经用户 2026-10-31 决定使用原 `pytorch` 环境**，运行约束见"已批准的实施决定（2026-10-31，语音部分）"。
 2. **不得使用 `base`、系统 Python、原有全局 Python 执行课程代码或安装课程依赖。** 允许调用 Conda 自身管理环境，这不等于允许用 `base` 运行实验。
 3. 不能仅凭终端提示符判断环境。使用 `conda run -p <专用环境路径> python -s ...`；交互式激活后仍需核验 `sys.executable`。禁止在环境未确认时直接运行裸 `python`、`pip` 或 `py`。
 4. 安装依赖前先检查已有包与作者实现的版本要求。仅在现有环境兼容时复用；不得为兼容旧仓库而直接批量升级、降级或重装现有 Python、PyTorch、CUDA 相关包及其他核心依赖。
@@ -116,7 +124,20 @@ conda run -p E:\MultimediaCourseAssets\envs\multimedia-vision python -s vision/s
 - 展示代表帧，说明保留内容、可能遗漏内容及至少一项局限；实际播放检查摘要，若尚未播放或缺少检查条件，明确记录未完成，不能声称已检查。
 - 摘要视频留在本地用于检查，无须作为单独文件提交。
 
-## 6. 开发、运行与证据保存
+## 6. 语音实验验收要求（2026-10-31 发布）
+
+以下依据《音频大作业指导文档.pdf》与 kws_code.zip。所有指标、图表与结论均须来自真实运行；报告数字必须与 metrics.json 及结果图一致，对不上属于指导文档明确的扣分项。
+
+- **数据**：Google Speech Commands v0.01（16 kHz 单声道、30 词、约 6.5 万条、CC BY 4.0，仅用于课程学习）；10 个关键词（yes/no/up/down/left/right/on/off/stop/go）+ unknown（其余 20 词抽样）+ silence（背景噪声切片）共 12 类；严格沿用官方 `validation_list.txt` / `testing_list.txt` 的 speaker-disjoint 划分，训练/验证/测试应为 21470 / 3096 / 3307 条；特征为 40×98 log-Mel（25 ms 帧、10 ms 步、512 点 FFT、40 个 Mel 滤波器），归一化统计只能来自训练集。
+- **模型**：教师提供的 DS-CNN（约 19.95K 参数）：stem Conv3×3 + 4 个 DSBlock（深度可分离卷积 + BN + ReLU + MaxPool）+ GlobalAveragePool + Dropout(0.1) + Linear 128→12。允许自由修改与分析，但报告须注明教学代码来源与本人完成的工作。
+- **训练**：默认 40 epoch、batch 128、AdamW、CosineAnnealingLR、时间平移 + SpecAugment 增强、seed 42；`best.pt` 按验证集准确率选择；test 只在最终评估一次，不得用 test 调参。
+- **评估**：12 类准确率、per-class precision/recall/F1、混淆矩阵、misclassified 列表；唤醒词检测以 yes 为正类：ROC-AUC、EER、FAR=1%/0.1% 时的 FRR、DET 曲线与分数分布。参考区间：测试准确率 92%~95%、EER 1.5%~2.5%，明显超出先排查再写报告；不得声称"每小时误唤醒 N 次"这类需长音频才能下的结论。
+- **消融**：至少一组控制变量对比（epoch 数 / 增强 / 宽度 / 学习率），同一测试集同一评估脚本；计划完成 baseline(40ep+增强)、20 epoch、无增强、width 48 四组并汇总。
+- **加分项**：长音频滑动窗口检测（detect.py，0.25 s 步长、1 s 窗口、连续超阈合并去重），对 demo_long.wav 与阈值 0.5/0.9/0.99 对比实验；自录音频（第 7 步）与自录长音频（8.2 节）先行跑通留入口，用户录音就位后重跑并在报告如实标注当前状态。
+- **报告**：4~8 页 PDF，按 8 章结构（任务与背景 / 数据与特征 / 模型 / 训练设置 / 实验结果 / 错误分析 / 消融实验 / 总结反思）；必备图表：训练曲线、混淆矩阵、DET 曲线或分数分布、结果表（准确率/F1/EER）、消融表；错误分析挑 3~5 条 top 置信错误，基于波形/谱图的声学分析并如实说明分析方法。
+- **提交**：`学号_姓名_kws.zip` = code/ + runs/best.pt + confusion_matrix.png + det_curve.png + training_curves.png + metrics.json + report.pdf；不含 data/ 与 conda 环境。
+
+## 7. 开发、运行与证据保存
 
 - 每位学生独立完成三个实验。按课件要求，新代码和修改通过编程大模型生成；允许复用作者实现，保留原作者署名、许可证及来源，并说明本人完成的工作。
 - 开始实现前核对输入、输出、算法和验收条件。优先复用作者代码及已有资源，记录仓库版本、权重来源和必要的兼容性改动。
@@ -129,32 +150,37 @@ conda run -p E:\MultimediaCourseAssets\envs\multimedia-vision python -s vision/s
 - 完整交互记录最终放入同一份 Word 报告的附录，正文说明关键步骤。无法访问的历史对话或无法确认的模型版本必须标为缺失/未知，不能编造；只需保存用户可见的交互与运行证据，不记录隐藏推理或内部指令。
 - 学生与主代理交互、主代理与子代理协作必须分别归档并在 Word 单独列出。子代理任务、反馈、自动执行或检查不能写成学生亲自发起、执行或判断，也不得计入学生直接交互轮数。结构化问答的题目、选项和实际回答同样属于学生交互，必须保留。
 - 后续代理分派前，把完整任务正文、发送方、接收方、显式模型与时间先保存到项目的明文协作日志；收到回复后保存完整可见回复。不得依赖平台会话文件一定保存可读正文。历史加密消息只列元数据和缺口，不读取密钥、不凭记忆重建原文、不声称全部历史严格完整。
+- **2026-10-31 用户确认：语音部分大作业不要求记录大模型使用情况与交互附录。** 本节交互记录与协作归档要求仅适用于视觉部分；语音部分保留运行命令、环境、版本与关键输出等工程证据即可。
 
-## 7. 目录与交付约定
+## 8. 目录与交付约定
 
-以下为已批准的隔离布局，详细说明见 `EXPERIMENT_PLAN.md`。
+以下为已批准的隔离布局，详细说明见 `EXPERIMENT_PLAN.md`（视觉）与 `speech/EXPERIMENT_PLAN.md`（语音）。
 
 ```text
 AGENTS.md                    工作区约定
-EXPERIMENT_PLAN.md            完整实施计划与阶段记录
+EXPERIMENT_PLAN.md            视觉实施计划与阶段记录
 学生实验任务书.docx            原始任务书，默认只读
 多媒体实验介绍.pptx            原始课件，默认只读
+音频大作业指导文档.pdf         语音大作业指导（2026-10-31 发布）
+kws_code.zip                  语音教师教学代码包
 vision/                      三个视觉实验的代码、配置、测试、日志、结果与报告
-speech/                      后续语音实验，待发布要求
-E:\MultimediaCourseAssets\vision  本地大型数据、权重、特征与视频
+speech/                      语音大作业（关键词唤醒 KWS）的代码、日志、结果与报告
+E:\MultimediaCourseAssets\vision   视觉本地大型数据、权重、特征与视频
+E:\MultimediaCourseAssets\speech   语音本地大型数据（Speech Commands）与解压目录
 ```
 
 - 路径尽量相对工作区或由配置传入，兼容 Windows、中文路径及空格；不要把本机绝对路径写死在可提交代码里。
 - 数据、权重和特征缓存集中管理，避免重复下载及散落到根目录或全局位置。新增 Git 管理时排除凭据、大数据、权重、缓存和环境目录；忽略配置不等于删除授权。
 - 最终提交 **本人三个实验的相关代码、必要运行说明及依赖信息 + 一份涵盖三个实验的 `.docx` Word 报告（含完整交互附录）**。代码可整理为文件夹或打包，报告字数和页数不限。
+- **语音部分最终提交**见第 6 节提交条目：代码 + best.pt + 结果图 + metrics.json + 4~8 页 PDF 报告，打包为一个 zip。
 - 报告须说明数据来源、规模、划分方式、模型/方法、预训练资源、评价标准、真实结果、案例分析与参考文献。
 - 结果图、Top-K 图表、相似度图、表格和代表帧须直接嵌入 Word，配标题和说明，使报告可独立阅读，不能只提供外部链接。
 - 不提交数据集、模型权重或特征缓存；本地摘要 MP4 不作为必交文件。构建提交包时通过选择待提交文件来排除它们，不删除本地资源。
 - 阶段交付说明实际改动、验证结果和剩余事项；对未运行或尚未满足的验收项明确标注。
 
-## 8. 材料给出的公开资源
+## 9. 材料给出的公开资源
 
-下列链接从本地任务书和课件中提取，编写本文件时未联网核验；后续使用前核对公开来源与具体版本。
+下列链接从本地任务书、课件和语音指导文档中提取，编写本文件时未联网核验；后续使用前核对公开来源与具体版本。
 
 | 用途 | 论文 / 数据说明 | 作者实现 / 数据 |
 | --- | --- | --- |
@@ -163,3 +189,8 @@ E:\MultimediaCourseAssets\vision  本地大型数据、权重、特征与视频
 | DSNet | https://liplus.me/publication/dsnet/dsnet.pdf | https://github.com/li-plus/DSNet |
 | COIL-100 | 哥伦比亚大学官方数据与技术报告 | https://www.cs.columbia.edu/CAVE/software/softlib/coil-100.php |
 | TVSum | https://people.csail.mit.edu/yalesong/tvsum/ | https://github.com/yalesong/tvsum |
+| Speech Commands | Warden 2018, arXiv:1804.03209，CC BY 4.0 | http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz |
+| DS-CNN / Hello Edge | Zhang et al. 2017, arXiv:1711.07128 | 教学代码 kws_code.zip |
+| SpecAugment | Park et al. 2019, arXiv:1904.08779 | — |
+| MobileNets（深度可分离卷积） | Howard et al. 2017, arXiv:1704.04861 | — |
+| WeKWS（KWS 参考项目） | — | https://github.com/wenet-e2e/wekws |
