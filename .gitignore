@@ -38,6 +38,7 @@ speech/kws_hw/data/
 speech/kws_hw/data*
 speech/kws_hw/runs*/
 speech/kws_hw/my_recordings/
+speech/kws_hw/my_recordings_raw/
 speech/kws_hw/**/__pycache__/
 speech/kws_hw/**/*.pt
 speech/submission/*.zip
