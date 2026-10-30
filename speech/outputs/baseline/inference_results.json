@@ -1,0 +1,94 @@
+{
+  "checkpoint": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\runs\\best.pt",
+  "device": "cuda",
+  "target": "yes",
+  "infer_examples": {
+    "yes": {
+      "file": "004ae714_nohash_0.wav",
+      "path": "E:\\MultimediaCourseAssets\\speech\\data\\speech_commands\\yes\\004ae714_nohash_0.wav",
+      "top": [
+        {
+          "class": "yes",
+          "prob": 0.9992703795433044
+        },
+        {
+          "class": "unknown",
+          "prob": 0.0007291759829968214
+        },
+        {
+          "class": "left",
+          "prob": 2.9633483222824e-07
+        }
+      ]
+    },
+    "stop": {
+      "file": "004ae714_nohash_0.wav",
+      "path": "E:\\MultimediaCourseAssets\\speech\\data\\speech_commands\\stop\\004ae714_nohash_0.wav",
+      "top": [
+        {
+          "class": "stop",
+          "prob": 0.9998695850372314
+        },
+        {
+          "class": "unknown",
+          "prob": 0.0001296703121624887
+        },
+        {
+          "class": "off",
+          "prob": 6.374921213136986e-07
+        }
+      ]
+    }
+  },
+  "demo_long": {
+    "wav": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\demo_long.wav",
+    "duration_s": 7.0,
+    "num_windows": 25
+  },
+  "threshold_experiment": {
+    "0.5": {
+      "threshold": 0.5,
+      "num_detections": 2,
+      "detections": [
+        {
+          "t": 1.5,
+          "score": 1.0
+        },
+        {
+          "t": 5.5,
+          "score": 1.0
+        }
+      ]
+    },
+    "0.9": {
+      "threshold": 0.9,
+      "num_detections": 2,
+      "detections": [
+        {
+          "t": 1.5,
+          "score": 1.0
+        },
+        {
+          "t": 5.5,
+          "score": 1.0
+        }
+      ]
+    },
+    "0.99": {
+      "threshold": 0.99,
+      "num_detections": 2,
+      "detections": [
+        {
+          "t": 1.5,
+          "score": 1.0
+        },
+        {
+          "t": 5.5,
+          "score": 1.0
+        }
+      ]
+    }
+  },
+  "my_recordings": [],
+  "my_recordings_status": "自录音频尚未提供：请将 16 kHz 单声道 wav 放入 speech/kws_hw/my_recordings/ 后重跑本脚本"
+}

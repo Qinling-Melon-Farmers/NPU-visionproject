@@ -1,0 +1,21 @@
+{
+  "accuracy": 0.9461747807680677,
+  "num_errors": 178,
+  "target": "yes",
+  "roc_auc": 0.9992087635201573,
+  "eer": 0.014749262536873156,
+  "num_positive": 256,
+  "num_negative": 3051,
+  "frr_at_far": {
+    "0.01": {
+      "frr": 0.01953125,
+      "far_actual": 0.00819403474270731
+    },
+    "0.001": {
+      "frr": 0.03515625,
+      "far_actual": 0.0006555227794165847
+    }
+  },
+  "checkpoint_epoch": 30,
+  "checkpoint_val_acc": 0.9418604651162791
+}

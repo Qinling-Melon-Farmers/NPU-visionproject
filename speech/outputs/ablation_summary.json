@@ -1,0 +1,71 @@
+{
+  "protocol": "同一测试集(3307 条)、同一 evaluate.py、同一划分；唯一差异为命令行参数",
+  "commands": {
+    "runs": "python -s train.py  (默认 40 epoch, 增强, width 32)",
+    "runs_20": "python -s train.py --epochs 20 --save_dir runs_20",
+    "runs_noaug": "python -s train.py --no_augment --save_dir runs_noaug",
+    "runs_w48": "python -s train.py --width 48 --save_dir runs_w48"
+  },
+  "rows": [
+    {
+      "run": "runs",
+      "label": "基线：40 epoch + 增强（width 32）",
+      "status": "ok",
+      "params_k": 19.95,
+      "epochs": 40,
+      "best_val_acc": 94.19,
+      "test_accuracy": 94.62,
+      "macro_f1": 0.9489,
+      "eer_percent": 1.47,
+      "roc_auc": 0.9992,
+      "frr_at_far1": 1.95,
+      "checkpoint_epoch": 30,
+      "train_minutes": 3.7
+    },
+    {
+      "run": "runs_20",
+      "label": "少训练：20 epoch + 增强（width 32）",
+      "status": "ok",
+      "params_k": 19.95,
+      "epochs": 20,
+      "best_val_acc": 93.18,
+      "test_accuracy": 93.65,
+      "macro_f1": 0.9406,
+      "eer_percent": 2.72,
+      "roc_auc": 0.9983,
+      "frr_at_far1": 3.12,
+      "checkpoint_epoch": 16,
+      "train_minutes": 1.8
+    },
+    {
+      "run": "runs_noaug",
+      "label": "关闭增强：40 epoch 无增强（width 32）",
+      "status": "ok",
+      "params_k": 19.95,
+      "epochs": 40,
+      "best_val_acc": 92.47,
+      "test_accuracy": 93.29,
+      "macro_f1": 0.936,
+      "eer_percent": 2.13,
+      "roc_auc": 0.9991,
+      "frr_at_far1": 2.73,
+      "checkpoint_epoch": 20,
+      "train_minutes": 3.5
+    },
+    {
+      "run": "runs_w48",
+      "label": "加宽模型：40 epoch + 增强（width 48）",
+      "status": "ok",
+      "params_k": 41.44,
+      "epochs": 40,
+      "best_val_acc": 94.61,
+      "test_accuracy": 95.31,
+      "macro_f1": 0.9549,
+      "eer_percent": 2.1,
+      "roc_auc": 0.9987,
+      "frr_at_far1": 2.73,
+      "checkpoint_epoch": 27,
+      "train_minutes": 5.4
+    }
+  ]
+}

@@ -83,7 +83,7 @@ def detect_scores(model, ckpt, wav, device, target_idx, hop=0.25, batch_size=128
         starts.append(len(wav) - win)
     feats = np.stack([wav_to_logmel(wav[s:s + win]) for s in starts])
     x = (feats - mean[:, None]) / std[:, None]
-    x = torch.from_numpy(x).astype(np.float32).unsqueeze(1)
+    x = torch.from_numpy(x.astype(np.float32)).unsqueeze(1)
     scores = []
     with torch.no_grad():
         for i in range(0, len(x), batch_size):
