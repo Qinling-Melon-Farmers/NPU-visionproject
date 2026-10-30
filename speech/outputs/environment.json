@@ -1,0 +1,14 @@
+{
+  "python": "3.12.8",
+  "executable": "D:\\Anaconda3\\envs\\pytorch\\python.exe",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "soundfile": "0.14.0",
+  "sklearn": "1.6.1",
+  "matplotlib": "3.10.0",
+  "tqdm": "4.67.1",
+  "torch": "2.5.1",
+  "torch.version.cuda": "11.8",
+  "cuda.is_available": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}

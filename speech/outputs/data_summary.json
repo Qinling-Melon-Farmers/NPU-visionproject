@@ -1,0 +1,73 @@
+{
+  "source_url": "http://download.tensorflow.org/data/speech_commands_v0.01.tar.gz",
+  "md5": "3cd23799cb2bbdec517f1cc028f8d43c",
+  "md5_expected": "3cd23799cb2bbdec517f1cc028f8d43c",
+  "md5_ok": true,
+  "classes": [
+    "yes",
+    "no",
+    "up",
+    "down",
+    "left",
+    "right",
+    "on",
+    "off",
+    "stop",
+    "go",
+    "unknown",
+    "silence"
+  ],
+  "counts": {
+    "train": {
+      "yes": 1860,
+      "no": 1853,
+      "up": 1843,
+      "down": 1842,
+      "left": 1839,
+      "right": 1852,
+      "on": 1864,
+      "off": 1839,
+      "stop": 1885,
+      "go": 1861,
+      "unknown": 2500,
+      "silence": 432
+    },
+    "val": {
+      "yes": 261,
+      "no": 270,
+      "up": 260,
+      "down": 264,
+      "left": 247,
+      "right": 256,
+      "on": 257,
+      "off": 256,
+      "stop": 246,
+      "go": 260,
+      "unknown": 400,
+      "silence": 119
+    },
+    "test": {
+      "yes": 256,
+      "no": 252,
+      "up": 272,
+      "down": 253,
+      "left": 267,
+      "right": 259,
+      "on": 246,
+      "off": 262,
+      "stop": 249,
+      "go": 251,
+      "unknown": 500,
+      "silence": 240
+    }
+  },
+  "num_train": 21470,
+  "num_val": 3096,
+  "num_test": 3307,
+  "feature": {
+    "n_mels": 40,
+    "n_frames": 98,
+    "sample_rate": 16000
+  },
+  "failures": []
+}
