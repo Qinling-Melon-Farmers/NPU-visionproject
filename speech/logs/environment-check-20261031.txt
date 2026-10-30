@@ -1,0 +1,40 @@
+ERROR conda.cli.main_run:execute(125): `conda run python -s C:/Users/ASUS/Desktop/多媒体技术/speech/scripts/environment_check.py` failed. (See above for error)
+{
+  "python": "3.12.8",
+  "executable": "D:\\Anaconda3\\envs\\pytorch\\python.exe",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "soundfile": "MISSING (ModuleNotFoundError: No module named 'soundfile')",
+  "sklearn": "1.6.1",
+  "matplotlib": "3.10.0",
+  "tqdm": "4.67.1",
+  "torch": "2.5.1",
+  "torch.version.cuda": "11.8",
+  "cuda.is_available": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_matmul_ok": true,
+  "matplotlib_png": "ok"
+}
+
+[缺少依赖] soundfile
+
+{
+  "python": "3.12.8",
+  "executable": "D:\\Anaconda3\\envs\\pytorch\\python.exe",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "soundfile": "0.14.0",
+  "sklearn": "1.6.1",
+  "matplotlib": "3.10.0",
+  "tqdm": "4.67.1",
+  "torch": "2.5.1",
+  "torch.version.cuda": "11.8",
+  "cuda.is_available": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_matmul_ok": true,
+  "soundfile_io": "ok sr=16000 n=16000",
+  "matplotlib_png": "ok"
+}
+
+[OK] 环境核验通过
+
