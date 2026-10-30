@@ -128,13 +128,19 @@ def setup_document() -> Document:
         "Heading 2": (14, 12, 6, 1),
         "Heading 3": (12, 6, 3, 2),
     }
+    heading_fonts = {"Heading 1": "楷体", "Heading 2": "黑体", "Heading 3": "黑体"}
     for name, (size, before, after, outline) in specs.items():
         style = doc.styles[name]
-        style.font.name = CN_HEAD
+        font_name = heading_fonts[name]
+        style.font.name = font_name
         style.font.size = Pt(size)
         style.font.bold = True
         style.font.color.rgb = BLACK
-        style.element.rPr.rFonts.set(qn("w:eastAsia"), CN_HEAD)
+        rf = style.element.rPr.rFonts
+        rf.set(qn("w:eastAsia"), font_name)
+        for attr in ("w:asciiTheme", "w:hAnsiTheme", "w:eastAsiaTheme", "w:cstheme"):
+            if rf.get(qn(attr)) is not None:
+                del rf.attrib[qn(attr)]
         _clear_theme_color(style)
         pf = style.paragraph_format
         pf.space_before = Pt(before)
@@ -178,7 +184,7 @@ def setup_document() -> Document:
         code = doc.styles.add_style("Code Block", WD_STYLE_TYPE.PARAGRAPH)
         code.base_style = doc.styles["Normal"]
         code.font.name = CODE_FONT
-        code.font.size = Pt(8.5)
+        code.font.size = Pt(8.0)
         code.element.rPr.rFonts.set(qn("w:eastAsia"), CN_FONT)
         code.paragraph_format.line_spacing = 1.0
         code.paragraph_format.space_before = Pt(0)
@@ -613,7 +619,7 @@ def add_code_block(doc: Document, text: str):
     for line in text.split("\n"):
         paragraph = doc.add_paragraph(style="Code Block")
         run = paragraph.add_run(line if line else " ")
-        _set_run_fonts(run, CODE_FONT, 8.5, False, BLACK)
+        _set_run_fonts(run, CODE_FONT, 8.0, False, BLACK)
 
 
 # ---------------------------------------------------------------------------

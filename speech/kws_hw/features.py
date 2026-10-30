@@ -71,7 +71,7 @@ def wav_to_logmel(wav):
     else:
         wav = wav[:CLIP_SAMPLES]
 
-    # 2) 分帧 + 加 Hamming 窗，得到 (98, 400)
+    # 2) 分帧 + 加 Hann 窗（np.hanning；指导文档文字写 Hamming，代码实际为 Hann）
     frames = np.lib.stride_tricks.sliding_window_view(wav, WIN_LENGTH)[::HOP_LENGTH]
     frames = frames * _WINDOW
 

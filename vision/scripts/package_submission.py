@@ -114,9 +114,19 @@ def package(run_root,report,output,dry_run=False):
         ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
         paragraphs=[''.join(t.text or '' for t in p.findall('.//w:t',ns)) for p in document.findall('.//w:p',ns)]
         cover_status=next((p for p in paragraphs if p.startswith('报告状态：')),None)
-        if cover_status is None or '待完成草稿' in cover_status:
-            raise ValueError('Report is marked as an incomplete draft')
-        status['report_record_scope']={'cover_status':cover_status,'strict_history_complete':'历史原文缺口' not in cover_status}
+        if cover_status is None:
+            # The 2026-10-28 report uses a school-style cover without a
+            # status line. Accept it only when the title and appendices are
+            # present; the strict-history flag stays false because the
+            # encrypted agent records remain a known gap.
+            required=('多媒体技术','实验报告','附录 C','附录 D')
+            if not all(any(token in p for p in paragraphs) for token in required):
+                raise ValueError('Report is not the final multimedia report')
+            status['report_record_scope']={'cover_status':'无独立报告状态行；按标题和附录 C/D 判断','strict_history_complete':False}
+        else:
+            if '待完成草稿' in cover_status:
+                raise ValueError('Report is marked as an incomplete draft')
+            status['report_record_scope']={'cover_status':cover_status,'strict_history_complete':'历史原文缺口' not in cover_status}
     sources=select_sources()
     entries=[(p,'vision/'+p.relative_to(ROOT).as_posix()) for p in sources]+[(report,'report/'+report.name)]
     manifest={'created_utc':datetime.now(timezone.utc).isoformat(),'selection':'source allowlist plus explicitly selected final DOCX; excludes datasets, weights, features, videos, logs, Git and credentials','experiment_evidence':status,'files':[{'path':name,'bytes':path.stat().st_size,'sha256':digest(path)} for path,name in entries]}

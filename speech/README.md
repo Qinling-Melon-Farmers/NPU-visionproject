@@ -11,8 +11,8 @@
 - 已核验版本（见 `logs/environment-check-20261031.txt`）：
   Python 3.12.8 / PyTorch 2.5.1+cu118 / CUDA RTX 4060 Laptop GPU / numpy 2.2.6 /
   scipy 1.15.3 / scikit-learn 1.6.1 / matplotlib 3.10.0 / tqdm 4.67.1。
-- 本次仅在环境内补装 `soundfile 0.14.0`
-  （`conda run -p D:\Anaconda3\envs\pytorch python -m pip install soundfile`），
+- 本次在环境内补装 `soundfile 0.14.0` 与 `python-docx 1.2.0`
+  （`conda run -p D:\Anaconda3\envs\pytorch python -m pip install soundfile python-docx`），
   未升级/改动 torch、numpy 等任何核心包。
 - 统一运行方式（`-s` 隔离用户级包）：
 
@@ -65,10 +65,10 @@ conda run -p D:\Anaconda3\envs\pytorch python -s speech/scripts/summarize_ablati
 conda run -p D:\Anaconda3\envs\pytorch python -s speech/reports/build_report.py          # 生成 docx
 ```
 
-报告 docx 经 LibreOffice headless 转 PDF（`soffice --headless --convert-to pdf`），
-最终提交包由 `scripts/package_submission.py` 打成
-`submission/2023302610_肖怀瑾_kws.zip`（code/ + runs/ + report.pdf，
-不含 data/ 与环境）。
+报告 docx 用 LibreOffice Kit 转 PDF；本机没有独立 LibreOffice，Word 16 COM 在本机导出会卡住。
+当前提交材料放在 `submission/2023302610_肖怀瑾_kws/` 目录（自录音频待补）；录音补齐后
+可由 `scripts/package_submission.py` 打成同名 zip，最终包只含 code/、runs/、report.docx 和 report.pdf，
+不含 data/ 与环境。
 
 ## 自录音频入口
 

@@ -4,6 +4,7 @@ zip 内容：
     code/            教师代码 + demo_long.wav（本仓库 speech/kws_hw 下的代码文件）
     runs/            best.pt + 结果图 + metrics.json 等小型证据
     report.pdf       实验报告 PDF
+    report.docx      实验报告 Word 版
 
 不包含 data/、conda 环境与任何大文件。用法（在仓库根目录）:
     conda run -p D:/Anaconda3/envs/pytorch python -s speech/scripts/package_submission.py
@@ -44,18 +45,22 @@ def main():
     parser.add_argument("--runs_dir", type=str, default=str(ROOT / "kws_hw" / "runs"))
     parser.add_argument("--report_pdf", type=str,
                         default=str(ROOT / "reports" / "delivery-20261031" / "kws_report.pdf"))
+    parser.add_argument("--report_docx", type=str,
+                        default=str(ROOT / "reports" / "delivery-20261031" / "kws_report.docx"))
     parser.add_argument("--out", type=str,
                         default=str(ROOT / "submission" / "2023302610_肖怀瑾_kws.zip"))
     args = parser.parse_args()
 
     runs_dir = Path(args.runs_dir)
     report_pdf = Path(args.report_pdf)
+    report_docx = Path(args.report_docx)
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
 
     entries = [("code/" + name, ROOT / "kws_hw" / name) for name in CODE_FILES]
     entries += [("runs/" + name, runs_dir / name) for name in RUNS_FILES]
     entries.append(("report.pdf", report_pdf))
+    entries.append(("report.docx", report_docx))
 
     missing = [arc for arc, path in entries if not path.is_file()]
     if missing:

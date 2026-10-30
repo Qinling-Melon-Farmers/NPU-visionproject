@@ -124,7 +124,8 @@ def section_data(doc, data):
                 widths=[4.6, 3.2, 3.2, 3.2], align_center_cols={1, 2, 3})
     H.body(doc,
            "特征提取为纯 NumPy 实现的 log-Mel 频谱：25 ms 窗长（400 点）按 10 ms 帧移"
-           "（160 点）分帧共 98 帧，加 Hamming 窗后做 512 点 FFT 得到 257 维功率谱，经 "
+           "（160 点）分帧共 98 帧，加 Hann 窗（教师代码调用 np.hanning；指导文档文字"
+           "写作 Hamming，本文按代码实际实现说明）后做 512 点 FFT 得到 257 维功率谱，经 "
            "40 个三角 Mel 滤波器压缩为 40 维，取对数并转置成 40×98 的特征图；归一化使用的"
            "均值/标准差只在训练集上统计，避免验证/测试信息泄漏（数据泄漏）。图 1 展示一条"
            " yes 测试样本的波形与 log-Mel 特征：能量集中在 0.3~0.8 秒的低频段，与发音结构"
@@ -199,9 +200,11 @@ def section_results(doc, data, metrics, history, per_class):
                  ["ROC-AUC", f"{metrics['roc_auc']:.4f}", "yes 分数的排序能力"],
                  ["EER", pct(metrics["eer"]), "FAR = FRR 相等处的错误率"],
                  ["FAR=1% 时 FRR", pct(metrics["frr_at_far"]["0.01"]["frr"]),
-                  "允许 1% 误唤醒时的漏唤醒率"],
+                  "允许 1% 误唤醒时的漏唤醒率（实际 FAR "
+                  + pct(metrics["frr_at_far"]["0.01"]["far_actual"]) + "）"],
                  ["FAR=0.1% 时 FRR", pct(metrics["frr_at_far"]["0.001"]["frr"]),
-                  "更严苛工作点的漏唤醒率"]],
+                  "更严苛工作点的漏唤醒率（实际 FAR "
+                  + pct(metrics["frr_at_far"]["0.001"]["far_actual"]) + "）"]],
                 widths=[4.0, 3.2, 7.2])
     H.add_figure(doc, 2, FIG / "training_curves.png",
                  "训练曲线：损失（左）与准确率（右）随 epoch 变化", width_cm=11.0)
@@ -220,7 +223,7 @@ def section_results(doc, data, metrics, history, per_class):
     H.body(doc,
            "需要说明的是：本测试集是一条一条孤立的 1 秒单词，这里的 FAR/FRR 是测试集上的"
            "等价指标，不能外推为真实产品中“每小时误唤醒几次”的结论；后者需要小时级长音频"
-           "（见第 7 节加分项）。")
+           "（见第 8 节加分项）。")
 
 
 def per_class_macro_f1(per_class):
@@ -265,7 +268,7 @@ def section_ablation(doc, ablation):
                      minutes, f"{r['test_accuracy']:.2f}%",
                      f"{r['macro_f1']:.4f}", f"{r['eer_percent']:.2f}%"])
     H.add_table(doc, 5, "消融实验对比（同一测试集 3307 条）",
-                ["配置", "参数量", "epoch", "训练用时", "测试准确率", "宏 F1", "EER"],
+                ["配置", "参数量", "轮数", "训练用时", "测试准确率", "宏 F1", "EER"],
                 rows,
                 widths=[3.5, 1.8, 1.6, 1.8, 2.2, 1.9, 1.7],
                 align_center_cols={1, 2, 3, 4, 5, 6}, font_size=8.5)
@@ -366,18 +369,13 @@ def section_references(doc):
 
 def section_appendix(doc, data, env):
     H.heading(doc, "附录 A：运行环境与命令", 1)
-    rows = [
-        ["Python", env["python"], "Conda 环境 D:\\Anaconda3\\envs\\pytorch"],
-        ["PyTorch / CUDA", f"{env['torch']}（CUDA {env['torch.version.cuda']}）",
-         f"GPU：{env['gpu']}"],
-        ["numpy/scipy/sklearn",
-         f"{env['numpy']} / {env['scipy']} / {env['sklearn']}", ""],
-        ["soundfile/matplotlib/tqdm",
-         f"{env['soundfile']} / {env['matplotlib']} / {env['tqdm']}",
-         "soundfile、python-docx 为本次在环境内补装"],
-    ]
-    H.add_table(doc, 7, "运行环境", ["组件", "版本", "说明"], rows,
-                widths=[4.4, 5.0, 5.2], font_size=8.5)
+    H.body_no_indent(
+        doc,
+        f"运行环境：Python {env['python']}，PyTorch {env['torch']}（CUDA "
+        f"{env['torch.version.cuda']}，{env['gpu']}），numpy {env['numpy']}，scipy "
+        f"{env['scipy']}，scikit-learn {env['sklearn']}，soundfile {env['soundfile']}，"
+        f"matplotlib {env['matplotlib']}，tqdm {env['tqdm']}，python-docx 1.2.0；"
+        "Conda 环境 D:\\Anaconda3\\envs\\pytorch。soundfile 与 python-docx 为本次补装。")
     p = H.body_no_indent(doc, f"数据来源：{data['source_url']}（MD5 {data['md5']}，"
                               f"多连接分段下载后校验）。关键命令（均在上述环境的仓库"
                               f"根目录以 python -s 运行）：")
@@ -393,9 +391,8 @@ def section_appendix(doc, data, env):
         "python -s speech/scripts/run_inference_suite.py",
     ]))
     H.body_no_indent(doc,
-                     "以上训练与评估均由本人在教师教学代码（kws_code.zip，未改动算法部分）"
-                     "上实际运行；指标、图表全部来自上述命令的真实输出，报告数字由脚本从 "
-                     "metrics.json 等结果文件程序化写入。")
+                     "以上训练与评估均在教师教学代码（kws_code.zip，未改动算法）上实际运行；"
+                     "指标、图表与报告数字均来自 metrics.json 等结果文件。")
 
 
 def main():
@@ -412,7 +409,7 @@ def main():
     doc = H.setup_document()
     # 4~8 页的紧凑报告排版：一级标题不强制换页、正文 1.3 倍行距、压缩标题间距
     doc.styles["Heading 1"].paragraph_format.page_break_before = False
-    doc.styles["Normal"].paragraph_format.line_spacing = 1.3
+    doc.styles["Normal"].paragraph_format.line_spacing = 1.15
     doc.styles["Heading 1"].paragraph_format.space_before = Pt(10)
     doc.styles["Heading 1"].paragraph_format.space_after = Pt(4)
     doc.styles["Heading 2"].paragraph_format.space_before = Pt(8)

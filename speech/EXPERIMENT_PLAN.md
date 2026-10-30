@@ -35,7 +35,7 @@ speech/
 - **消融**（同测试集同评估脚本）：baseline(40ep+增强) / `--epochs 20` / `--no_augment` / `--width 48`，各独立 save_dir 分别 evaluate；汇总准确率、宏 F1、EER 对比表。
 - **加分项**：`detect.py demo_long.wav --target yes --threshold 0.9`；阈值 0.5/0.9/0.99 对比成表；绘制分数-时间曲线（含阈值线与检测点）。`my_recordings/` + `scripts/rerun_infer_detect.py` 一键重跑。
 - **错误分析**：misclassified.txt 取 top 置信错误 3~5 条，波形 + log-Mel 对照图 + 声学分析（元音/爆破音相似性、噪声、截断、unknown 合理错误）；如实说明基于谱图检查而非人工试听。
-- **报告**：`reports/build_report.py`（python-docx），8 章结构 4~8 页，全部数字程序化读自 metrics.json/消融汇总；LibreOffice headless 转 PDF（Word COM 导 PDF 会卡）；注明教学代码来源、本人工作、CC BY 4.0 与参考文献。
+- **报告**：`reports/build_report.py`（python-docx），8 章结构 4~8 页，全部数字程序化读自 metrics.json/消融汇总；本机无独立 LibreOffice，实际用 LibreOffice Kit 转 PDF；注明教学代码来源、本人工作、CC BY 4.0 与参考文献。
 - **打包**：`scripts/package_submission.py` 生成 `2023302610_肖怀瑾_kws.zip`（code/ + runs/best.pt + confusion_matrix.png + det_curve.png + training_curves.png + metrics.json + report.pdf；排除 data/ 与环境）。
 
 ## 4. 实施顺序与状态

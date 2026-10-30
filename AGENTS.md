@@ -22,7 +22,7 @@
 
 ## Git 管理与阶段提交
 
-- 本工作区初始化为 Git 仓库，远端 `origin` 关联 `https://github.com/Qinling-Melon-Farmers/NPU-visionproject.git`，主分支为 `main`。
+- 本工作区初始化为 Git 仓库，远端 `origin` 关联 `https://github.com/Qinling-Melon-Farmers/NPU-MultimediaCourse.git`（2026-10-31 由 `NPU-visionproject` 改名），主分支为 `main`。
 - 每轮较大且可审查的改动完成后提交一次；优先按基础设施、实验模块、验证修复、报告交付拆分，记录有意义的里程碑。
 - 提交信息遵循 Conventional Commits：`<type>(<scope>): <summary>`，使用 `chore`、`docs`、`feat`、`fix`、`test`、`refactor` 等准确类型；必要时正文说明原因与验证结果。
 - 提交前检查 diff、暂存文件和必要验证，采用明确路径暂存，避免把其他代理未完成的改动混入提交。主代理统一执行 Git 提交。
