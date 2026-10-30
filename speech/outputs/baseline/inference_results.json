@@ -4,7 +4,7 @@
   "target": "yes",
   "infer_examples": {
     "yes": {
-      "file": "004ae714_nohash_0.wav",
+      "file": "yes/004ae714_nohash_0.wav",
       "path": "E:\\MultimediaCourseAssets\\speech\\data\\speech_commands\\yes\\004ae714_nohash_0.wav",
       "top": [
         {
@@ -22,7 +22,7 @@
       ]
     },
     "stop": {
-      "file": "004ae714_nohash_0.wav",
+      "file": "stop/004ae714_nohash_0.wav",
       "path": "E:\\MultimediaCourseAssets\\speech\\data\\speech_commands\\stop\\004ae714_nohash_0.wav",
       "top": [
         {
@@ -90,5 +90,5 @@
     }
   },
   "my_recordings": [],
-  "my_recordings_status": "自录音频尚未提供：请将 16 kHz 单声道 wav 放入 speech/kws_hw/my_recordings/ 后重跑本脚本"
+  "my_recordings_status": "自录音频尚未提供：本人录音（16 kHz 单声道 wav，放入 speech/kws_hw/my_recordings/）就位并重跑推理套件后将补充对应结果"
 }
