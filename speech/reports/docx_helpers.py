@@ -22,6 +22,7 @@ CN_HEAD = "黑体"
 EN_FONT = "Times New Roman"
 CODE_FONT = "Consolas"
 TEXT_WIDTH_CM = 14.6
+TEXT_SIZE = 10.5  # 正文五号，4~8 页紧凑报告
 BLACK = RGBColor(0, 0, 0)
 GRAY = RGBColor(0x59, 0x59, 0x59)
 
@@ -322,7 +323,7 @@ def heading(doc: Document, text: str, level: int = 1):
 def body(doc: Document, text: str, first_line: bool = True):
     paragraph = doc.add_paragraph()
     run = paragraph.add_run(text)
-    _set_run_fonts(run, CN_FONT, 12)
+    _set_run_fonts(run, CN_FONT, TEXT_SIZE)
     if first_line:
         _set_first_line_chars(paragraph, 2)
     return paragraph
@@ -331,7 +332,7 @@ def body(doc: Document, text: str, first_line: bool = True):
 def body_no_indent(doc: Document, text: str):
     paragraph = doc.add_paragraph()
     run = paragraph.add_run(text)
-    _set_run_fonts(run, CN_FONT, 12)
+    _set_run_fonts(run, CN_FONT, TEXT_SIZE)
     paragraph.paragraph_format.first_line_indent = Pt(0)
     return paragraph
 
@@ -339,7 +340,7 @@ def body_no_indent(doc: Document, text: str):
 def bullet(doc: Document, text: str):
     paragraph = doc.add_paragraph(style="List Bullet")
     run = paragraph.add_run(text)
-    _set_run_fonts(run, CN_FONT, 12)
+    _set_run_fonts(run, CN_FONT, TEXT_SIZE)
     paragraph.paragraph_format.first_line_indent = Pt(0)
     return paragraph
 

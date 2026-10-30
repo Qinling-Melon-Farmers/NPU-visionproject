@@ -150,7 +150,9 @@ def main():
     for word in ["yes", "stop"]:
         cands = sorted(sc_root.glob(f"{word}/*.wav"))
         if cands:
-            demo_cases[word] = infer_one(model, ckpt, cands[0], device)
+            entry = infer_one(model, ckpt, cands[0], device)
+            entry["file"] = f"{word}/{cands[0].name}"   # 不同词目录下存在同名 wav
+            demo_cases[word] = entry
     results["infer_examples"] = demo_cases
 
     # ---------- 2. 长音频滑动窗口分数与阈值实验（指导文档 8.1 / 8.3） ----------
@@ -195,8 +197,9 @@ def main():
             my_results.append(entry)
     results["my_recordings"] = my_results
     results["my_recordings_status"] = (
-        "已处理自录音频" if my_results else
-        "自录音频尚未提供：请将 16 kHz 单声道 wav 放入 speech/kws_hw/my_recordings/ 后重跑本脚本")
+        "已处理自录音频，结果见上表与对应检测图" if my_results else
+        "自录音频尚未提供：本人录音（16 kHz 单声道 wav，放入 speech/kws_hw/"
+        "my_recordings/）就位并重跑推理套件后将补充对应结果")
 
     with open(out_dir / "inference_results.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)

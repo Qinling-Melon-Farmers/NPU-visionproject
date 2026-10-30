@@ -70,11 +70,10 @@ def pct(value, digits=2):
 
 
 def title_block(doc):
-    H.cover_line(doc, "《多媒体技术》课程大作业 · 语音部分", 14, True)
-    H.cover_line(doc, "从零训练一个关键词唤醒模型（Keyword Spotting）", 18, True,
-                 space_after=6)
-    H.cover_line(doc, f"{STUDENT}　学号 {STUDENT_ID}　2026 年 10 月 31 日", 11,
-                 False, space_after=10)
+    H.cover_line(doc, "《多媒体技术》课程大作业 · 语音部分", 12, True)
+    H.cover_line(doc, "从零训练一个关键词唤醒模型（KWS）", 15, True, space_after=4)
+    H.cover_line(doc, f"{STUDENT}　学号 {STUDENT_ID}　2026 年 10 月 31 日", 10,
+                 False, space_after=6)
 
 
 def section_task(doc):
@@ -105,14 +104,24 @@ def section_data(doc, data):
            f"文件按 0.5 秒步长切 1 秒片段构成 silence 类，共 12 类。划分严格沿用官方 "
            f"validation_list.txt / testing_list.txt（按说话人哈希得到，同一说话人只出现在"
            f"一个集合，测试集是 speaker-disjoint 的），最终训练/验证/测试为 "
-           f"{data['num_train']} / {data['num_val']} / {data['num_test']} 条，各类分布见表 1。")
+           f"{data['num_train']} / {data['num_val']} / {data['num_test']} 条，"
+           f"分布汇总见表 1。")
     rows = []
-    for c in classes:
-        rows.append([c, counts["train"][c], counts["val"][c], counts["test"][c]])
+
+    def agg(split, part):
+        c = counts[split]
+        if part == "kw":
+            return sum(c[k] for k in classes if k not in ("unknown", "silence"))
+        return c[part]
+
+    for name, part in [("10 个关键词合计", "kw"), ("unknown", "unknown"),
+                       ("silence", "silence")]:
+        rows.append([name, agg("train", part), agg("val", part),
+                     agg("test", part)])
     rows.append(["合计", data["num_train"], data["num_val"], data["num_test"]])
-    H.add_table(doc, 1, "Speech Commands 12 类样本分布（条）",
+    H.add_table(doc, 1, "Speech Commands 样本分布汇总（条）",
                 ["类别", "训练集", "验证集", "测试集"], rows,
-                widths=[4.0, 3.4, 3.4, 3.4], align_center_cols={1, 2, 3})
+                widths=[4.6, 3.2, 3.2, 3.2], align_center_cols={1, 2, 3})
     H.body(doc,
            "特征提取为纯 NumPy 实现的 log-Mel 频谱：25 ms 窗长（400 点）按 10 ms 帧移"
            "（160 点）分帧共 98 帧，加 Hamming 窗后做 512 点 FFT 得到 257 维功率谱，经 "
@@ -122,7 +131,7 @@ def section_data(doc, data):
            "一致。")
     H.add_figure(doc, 1, FIG / "fig_feature_example.png",
                  "测试集一条 yes 样本的波形（上）与 40×98 log-Mel 特征（下）",
-                 width_cm=13.5)
+                 width_cm=11.0)
 
 
 def section_model(doc, ablation):
@@ -195,7 +204,7 @@ def section_results(doc, data, metrics, history, per_class):
                   "更严苛工作点的漏唤醒率"]],
                 widths=[4.0, 3.2, 7.2])
     H.add_figure(doc, 2, FIG / "training_curves.png",
-                 "训练曲线：损失（左）与准确率（右）随 epoch 变化", width_cm=13.0)
+                 "训练曲线：损失（左）与准确率（右）随 epoch 变化", width_cm=11.0)
     worst = sorted(classes, key=lambda c: per_class[c][1])[:3]
     worst_text = "、".join(f"{c}（recall {per_class[c][1]:.4f}）" for c in worst)
     H.body(doc,
@@ -204,10 +213,10 @@ def section_results(doc, data, metrics, history, per_class):
            "分散到各个关键词上属于预期行为，silence 中少量片段被识别为元音相近的词。"
            "图 4 的 DET 曲线整体贴近左下角，阶梯形态源于正样本仅 256 条的测试集分辨率。")
     H.add_figure(doc, 3, FIG / "confusion_matrix.png", "测试集混淆矩阵（行=真实，列=预测）",
-                 width_cm=12.5)
+                 width_cm=10.0)
     H.add_figure(doc, 4, FIG / "det_curve.png",
                  "唤醒词 yes 的 DET 曲线（红点为 EER，绿三角为 FAR=1%/0.1% 工作点）",
-                 width_cm=10.5)
+                 width_cm=8.5)
     H.body(doc,
            "需要说明的是：本测试集是一条一条孤立的 1 秒单词，这里的 FAR/FRR 是测试集上的"
            "等价指标，不能外推为真实产品中“每小时误唤醒几次”的结论；后者需要小时级长音频"
@@ -221,16 +230,13 @@ def per_class_macro_f1(per_class):
 def section_errors(doc, error_cases, per_class):
     H.heading(doc, "6. 错误分析", 1)
     H.body(doc,
-           "从 misclassified.txt 中按“模型错误置信度”降序挑取 4 条典型案例，图 5 给出"
-           "它们的波形与 log-Mel 特征对照。分析方法为：对照波形能量分布、元音共振峰条带"
-           "与摩擦音成分进行谱图检查（未做人耳试听，如实说明）。")
-    H.add_figure(doc, 5, FIG / "fig_error_analysis.png",
-                 "最高置信错误样本的波形与 log-Mel 特征对照（左：波形；右：谱图）",
-                 width_cm=14.5)
+           "从 misclassified.txt 中按“模型错误置信度”降序挑取 4 条典型案例，"
+           "图 5 给出它们的波形与 log-Mel 特征对照。分析方法为：对照波形能量分布、"
+           "元音共振峰条带与摩擦音成分进行谱图检查（未做人耳试听，如实说明）。")
     for i, case in enumerate(error_cases["top_cases"], 1):
         key = (case["true"], case["pred"])
         note = CASE_NOTES.get(key, "两词在发音上存在相近的元音/辅音结构，谱图上能量分布"
-                                 "高度相似，模型仅 2 万参数、判别边界有限。")
+                                   "高度相似，模型仅 2 万参数、判别边界有限。")
         H.body_no_indent(
             doc, f"案例 {i}：{case['file']}，真实 {case['true']}，预测 {case['pred']}，"
                  f"预测概率 {case['prob']:.4f}。{note}")
@@ -238,6 +244,9 @@ def section_errors(doc, error_cases, per_class):
            "其中 unknown 被预测为某个关键词属于“合理的错误”：unknown 本身是其余 20 个词"
            "的集合，模型没有学过这些词的独立类别，只能把它们归到最像的已知关键词；这类"
            "错误在真实唤醒系统中由“唤醒后接 ASR 二次确认”来兜底。")
+    H.add_figure(doc, 5, FIG / "fig_error_analysis.png",
+                 "最高置信错误样本的波形与 log-Mel 特征对照（左：波形；右：谱图）",
+                 width_cm=11.5)
 
 
 def section_ablation(doc, ablation):
@@ -246,17 +255,19 @@ def section_ablation(doc, ablation):
            "按“只改一个变量、其余不变”设计四组对比，全部使用同一数据划分、同一测试集与"
            "同一评估脚本（协议见附录 A 命令），结果见表 5。")
     rows = []
+    short = {"runs": "基线：40ep+增强(w32)", "runs_20": "少训练：20ep+增强(w32)",
+             "runs_noaug": "无增强：40ep(w32)", "runs_w48": "加宽：40ep+增强(w48)"}
     for r in ablation["rows"]:
         if r.get("status") != "ok":
             continue
-        minutes = f"{r['train_minutes']:.1f} 分钟" if r.get("train_minutes") else "—"
-        rows.append([r["label"], f"{r['params_k']:.2f} K", f"{r['epochs']}",
+        minutes = f"{r['train_minutes']:.1f}min" if r.get("train_minutes") else "—"
+        rows.append([short[r["run"]], f"{r['params_k']:.2f}K", f"{r['epochs']}",
                      minutes, f"{r['test_accuracy']:.2f}%",
                      f"{r['macro_f1']:.4f}", f"{r['eer_percent']:.2f}%"])
     H.add_table(doc, 5, "消融实验对比（同一测试集 3307 条）",
                 ["配置", "参数量", "epoch", "训练用时", "测试准确率", "宏 F1", "EER"],
                 rows,
-                widths=[4.6, 1.7, 1.4, 2.0, 2.1, 1.6, 1.6],
+                widths=[3.5, 1.8, 1.6, 1.8, 2.2, 1.9, 1.7],
                 align_center_cols={1, 2, 3, 4, 5, 6}, font_size=8.5)
     base = next(r for r in ablation["rows"] if r["run"] == "runs")
     r20 = next((r for r in ablation["rows"] if r["run"] == "runs_20"), None)
@@ -298,7 +309,7 @@ def section_bonus(doc, inference, ablation):
                      "、".join(f"t={d['t']:.2f}s ({d['score']:.4f})" for d in dets) or "无"])
     H.add_table(doc, 6, "demo_long.wav 滑动窗口检测的阈值对比（窗口 0.25 s 步长）",
                 ["阈值", "检测次数", "检测时间点与分数"], rows,
-                widths=[1.8, 2.0, 10.6], align_center_cols={0, 1}, font_size=8.5)
+                widths=[1.6, 2.2, 10.8], align_center_cols={0, 1}, font_size=8.5)
     H.add_figure(doc, 6, FIG / "fig_detect_timeline.png",
                  "demo_long.wav 的窗口分数曲线与三个阈值（红三角为阈值 0.9 的检测结果）",
                  width_cm=14.0)
@@ -315,8 +326,7 @@ def section_bonus(doc, inference, ablation):
                f"{info['file']} → {info['top'][0]['class']} "
                f"({info['top'][0]['prob'] * 100:.2f}%)"
                for info in inference["infer_examples"].values())
-           + "。自录音频部分：" + inference["my_recordings_status"]
-           + "，录音就位后重跑推理套件即可补充对应结果。")
+           + "。自录音频部分：" + inference["my_recordings_status"] + "。")
 
 
 def section_summary(doc):
@@ -349,25 +359,29 @@ def section_references(doc):
         "[6] 课程教学代码 kws_code.zip 与《音频大作业指导文档》，2026 年 10 月。",
     ]
     for ref in refs:
-        H.body_no_indent(doc, ref)
+        p = H.body_no_indent(doc, ref)
+        p.runs[0].font.size = Pt(10.5)
+        p.paragraph_format.line_spacing = 1.15
 
 
 def section_appendix(doc, data, env):
     H.heading(doc, "附录 A：运行环境与命令", 1)
     rows = [
         ["Python", env["python"], "Conda 环境 D:\\Anaconda3\\envs\\pytorch"],
-        ["PyTorch / CUDA", f"{env['torch']} + cu{env['torch.version.cuda']}",
+        ["PyTorch / CUDA", f"{env['torch']}（CUDA {env['torch.version.cuda']}）",
          f"GPU：{env['gpu']}"],
-        ["numpy / scipy", f"{env['numpy']} / {env['scipy']}", ""],
-        ["soundfile / scikit-learn", f"{env['soundfile']} / {env['sklearn']}",
-         "soundfile 为本次在环境内补装"],
-        ["matplotlib / tqdm", f"{env['matplotlib']} / {env['tqdm']}", ""],
+        ["numpy/scipy/sklearn",
+         f"{env['numpy']} / {env['scipy']} / {env['sklearn']}", ""],
+        ["soundfile/matplotlib/tqdm",
+         f"{env['soundfile']} / {env['matplotlib']} / {env['tqdm']}",
+         "soundfile、python-docx 为本次在环境内补装"],
     ]
     H.add_table(doc, 7, "运行环境", ["组件", "版本", "说明"], rows,
-                widths=[4.2, 4.6, 5.6], font_size=9)
-    H.body_no_indent(doc, f"数据来源：{data['source_url']}（MD5 {data['md5']}，"
-                          f"多连接分段下载后校验）。关键命令（均在上述环境的仓库根目录以 "
-                          f"python -s 运行）：")
+                widths=[4.4, 5.0, 5.2], font_size=8.5)
+    p = H.body_no_indent(doc, f"数据来源：{data['source_url']}（MD5 {data['md5']}，"
+                              f"多连接分段下载后校验）。关键命令（均在上述环境的仓库"
+                              f"根目录以 python -s 运行）：")
+    p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.LEFT
     H.add_code_block(doc, "\n".join([
         "python -s prepare_data.py --data_dir E:/MultimediaCourseAssets/speech/data",
         "python -s train.py                     # 基线 40 epoch（runs/）",
@@ -396,8 +410,13 @@ def main():
     per_class = parse_classification_report(FIG / "classification_report.txt", classes)
 
     doc = H.setup_document()
-    # 4~8 页的紧凑报告：一级标题不强制换页（vision 版为长报告默认换页）
+    # 4~8 页的紧凑报告排版：一级标题不强制换页、正文 1.3 倍行距、压缩标题间距
     doc.styles["Heading 1"].paragraph_format.page_break_before = False
+    doc.styles["Normal"].paragraph_format.line_spacing = 1.3
+    doc.styles["Heading 1"].paragraph_format.space_before = Pt(10)
+    doc.styles["Heading 1"].paragraph_format.space_after = Pt(4)
+    doc.styles["Heading 2"].paragraph_format.space_before = Pt(8)
+    doc.styles["Heading 2"].paragraph_format.space_after = Pt(3)
     H.set_core_properties(doc)
     title_block(doc)
     section_task(doc)
