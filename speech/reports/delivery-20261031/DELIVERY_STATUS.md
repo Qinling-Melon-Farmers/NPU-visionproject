@@ -5,11 +5,10 @@
 | 文件 | 说明 |
 | --- | --- |
 | `kws_report.docx` | 实验报告 Word 版（8 页，6 图 6 表，作者属性=肖怀瑾，一级标题楷体/二级黑体/正文宋体；第 8 节含 15 条自录结果） |
-| `kws_report.pdf` | 实验报告 PDF（8 页，Word 16 COM 导出；SHA256 `84ed5f5baa339a4ce2495d53878e6d7204f33ead053f7202d4b7b546de461973`） |
+| `kws_report.pdf` | 实验报告 PDF（8 页，Word 16 COM 导出） |
 | `../../submission/2023302610_肖怀瑾_kws/` | 可读提交目录：code/ + runs/ + report.docx + report.pdf + README.md，18 文件；已同步自录版报告 |
-| `../../submission/2023302610_肖怀瑾_kws.zip` | 提交 zip（目录平铺打包，1.80 MB；SHA256 `b0c031e4b48624767dc94f44b68bdb19e43533ea53fcc7ed1c62c315c0d5afd0`） |
+| `../../submission/2023302610_肖怀瑾_kws.zip` | 提交 zip（目录平铺打包，1.80 MB） |
 
-报告 DOCX SHA256：`d33628515014caab3c8c9ec1662b10cec76acda139862f81ae2ef02c6ed7c7fa`。
 报告数字全部由 `build_report.py` 程序化读取 `outputs/` 下 evidence JSON 写入，未手抄。窗函数按教师代码实际实现写为 Hann，并在正文注明指导文档文字为 Hamming。
 
 ## 自录音频（2026-10-31 完成）
