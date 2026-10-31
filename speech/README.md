@@ -28,12 +28,12 @@ conda run -p D:\Anaconda3\envs\pytorch python -s <脚本> <参数>
 - 校园网单连接限速，使用 `scripts/download_dataset_parallel.sh` 对官方 URL 做
   32 段 Range 并行下载（支持断点续跑；必要时对当前进程临时注入
   `http_proxy/https_proxy`，不改全局配置），完成后 `md5sum` 校验。
-- 数据放 `E:\MultimediaCourseAssets\speech\data`（脚本原生支持 `--data_dir`，
-  无需 junction）。
+- 数据在 `assets/speech/data`（2026-10-31 作业提交后自 `E:\MultimediaCourseAssets\speech\data`
+  迁入工作区；脚本原生支持 `--data_dir`，无需 junction）。
 
 ```powershell
 bash speech/scripts/download_dataset_parallel.sh
-conda run -p D:\Anaconda3\envs\pytorch python -s speech/kws_hw/prepare_data.py --data_dir E:/MultimediaCourseAssets/speech/data
+conda run -p D:\Anaconda3\envs\pytorch python -s speech/kws_hw/prepare_data.py --data_dir assets/speech/data
 conda run -p D:\Anaconda3\envs\pytorch python -s speech/scripts/verify_data.py
 ```
 
@@ -44,12 +44,12 @@ conda run -p D:\Anaconda3\envs\pytorch python -s speech/scripts/verify_data.py
 
 ```powershell
 cd speech\kws_hw
-conda run -p D:\Anaconda3\envs\pytorch python -s train.py --data_dir E:/MultimediaCourseAssets/speech/data/processed
-conda run -p D:\Anaconda3\envs\pytorch python -s evaluate.py --data_dir E:/MultimediaCourseAssets/speech/data/processed
+conda run -p D:\Anaconda3\envs\pytorch python -s train.py --data_dir assets/speech/data/processed
+conda run -p D:\Anaconda3\envs\pytorch python -s evaluate.py --data_dir assets/speech/data/processed
 # 消融三组（同测试集同评估脚本）
-conda run -p D:\Anaconda3\envs\pytorch python -s train.py --data_dir E:/MultimediaCourseAssets/speech/data/processed --epochs 20 --save_dir runs_20
-conda run -p D:\Anaconda3\envs\pytorch python -s train.py --data_dir E:/MultimediaCourseAssets/speech/data/processed --no_augment --save_dir runs_noaug
-conda run -p D:\Anaconda3\envs\pytorch python -s train.py --data_dir E:/MultimediaCourseAssets/speech/data/processed --width 48 --save_dir runs_w48
+conda run -p D:\Anaconda3\envs\pytorch python -s train.py --data_dir assets/speech/data/processed --epochs 20 --save_dir runs_20
+conda run -p D:\Anaconda3\envs\pytorch python -s train.py --data_dir assets/speech/data/processed --no_augment --save_dir runs_noaug
+conda run -p D:\Anaconda3\envs\pytorch python -s train.py --data_dir assets/speech/data/processed --width 48 --save_dir runs_w48
 # 每组分别 evaluate（--checkpoint / --save_dir 换成对应目录）
 ```
 

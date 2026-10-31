@@ -20,8 +20,9 @@ vision/               课程代码、作者代码（vendor/）、配置、清单
 从工作区根目录运行下列 PowerShell 命令。只使用专用 Conda 环境，课程 Python 命令均带 `-s`；不得改用系统 Python、base、`pip --user` 或修理其他课程环境。默认配置为 [configs/default.yaml](configs/default.yaml)：
 
 ```yaml
-asset_root: E:/MultimediaCourseAssets/vision
-environment_prefix: E:/MultimediaCourseAssets/envs/multimedia-vision
+asset_root: assets/vision
+# environment_prefix: E:/MultimediaCourseAssets/envs/multimedia-vision
+# ↑ 原环境已于 2026-10-31 随 E 盘目录出清删除；重建环境后把本行指向新路径并取消注释
 device: cuda
 ```
 
@@ -30,8 +31,8 @@ device: cuda
 环境定义见 [environment.yml](environment.yml)。下例通过单次命令限定官方源，不修改 Conda 全局配置；先解算检查，再移除 `--dry-run` 执行实际创建。不要对已经存在的环境盲目重跑创建或批量改核心依赖。
 
 ```powershell
-$courseEnv = 'E:\MultimediaCourseAssets\envs\multimedia-vision'
-$env:CONDA_PKGS_DIRS = 'E:\MultimediaCourseAssets\conda-pkgs'
+# 原环境 E:\MultimediaCourseAssets\envs\multimedia-vision 已于 2026-10-31 删除；重建时自行指定新路径，例如：
+$courseEnv = "$env:LOCALAPPDATA\envs\multimedia-vision"
 $env:CONDA_REPORT_ERRORS = 'false'
 conda create -p $courseEnv --override-channels -c https://conda.anaconda.org/pytorch -c https://conda.anaconda.org/nvidia -c https://repo.anaconda.com/pkgs/main python=3.11 pytorch=2.5.1 torchvision=0.20.1 pytorch-cuda=11.8 numpy=1.26.4 opencv=4.10 h5py scipy matplotlib pillow pyyaml python-docx ffmpeg pytest tqdm --dry-run
 # 核对解算结果后，用同一命令去掉 --dry-run 创建环境。
@@ -52,7 +53,7 @@ conda env export -p $courseEnv --no-builds
 ```powershell
 conda run --no-capture-output -p $courseEnv python -s -m vision prepare --download --config vision/configs/default.yaml --run-id prepare-01
 # 或仅调用资源准备，不运行实验：
-.\vision\scripts\prepare_resources.ps1 -AssetRoot 'E:\MultimediaCourseAssets\vision' -EnvironmentPath $courseEnv
+.\vision\scripts\prepare_resources.ps1 -AssetRoot 'assets/vision' -EnvironmentPath $courseEnv
 ```
 
 资源准备只发匿名公开 HTTP(S) 请求，不读取浏览器、Cookie、令牌或本机登录信息。已存在资源先核验 SHA256，匹配则复用；不匹配时保留原文件并报错。断点续传校验 URL 和服务器版本标识；服务器忽略 Range 时使用新的临时文件，失败记录与部分文件保留。归档解压拒绝路径逃逸和链接。网络失败后可重试同一资源命令；不得通过删除已有资源绕过校验。
@@ -80,7 +81,7 @@ DSNet 使用官方 TVSum GoogLeNet1024维 H5 和对应 AF checkpoint，默认官
 官方DSNet H5的`video_name`仅适用于SumMe，TVSum不能猜测编号顺序。可独立运行映射核验：
 
 ```powershell
-conda run -p $courseEnv python -s vision/scripts/build_tvsum_mapping.py --asset-root 'E:\MultimediaCourseAssets\vision'
+conda run -p $courseEnv python -s vision/scripts/build_tvsum_mapping.py --asset-root 'assets/vision'
 ```
 
 `manifests/tvsum_h5_mapping.json`保存H5、官方TSV及原视频哈希、帧数、评分曲线比较和50项映射证据。固定按官方1–5分范围归一化`(20人平均分-1)/4`，在H5 picks处全表最大误差约`2.3842e-8`；50项评分曲线均唯一识别，48项原视频/标注/H5帧数严格一致。`video_16 → WG0MBPpPC6I`为原视频9535帧、标注/H5 9534帧，`video_39 → Se3oxnaPsz0`为原视频4166帧、标注/H5 4165帧；两项实际解码确认差1帧，清单保留未通过严格时间轴核验状态，没有静默截断。当前摘要使用完全核验的`video_1 → AwmHb44_ouw`（10597帧），映射依据不涉及模型预测或F1选样。

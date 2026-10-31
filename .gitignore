@@ -46,3 +46,6 @@ speech/reports/*.docx
 speech/reports/*.pdf
 speech/reports/delivery-*/
 speech/outputs/**/*.npy
+
+# 数据资产（2026-10-31 作业提交后自 E:\MultimediaCourseAssets 迁入，仅本地保留）
+assets/

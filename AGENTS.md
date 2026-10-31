@@ -20,6 +20,13 @@
 - 语音交付物：可运行代码 + `runs/best.pt` + 4~8 页 PDF 报告（按指导文档 8 章结构，数字与 metrics.json 一致）+ 结果图 + 提交包 `2023302610_肖怀瑾_kws.zip`（不含 data/ 与环境）。自录音频先行跑通并留 `my_recordings/` 入口，用户录音就位后重跑推理与检测并更新报告。
 - 语音改动复用现有 GitHub 仓库（origin 不变），只做本地 commit、不 push；仓库改名与 Description 由用户自行处理。
 
+## 已批准的实施决定（2026-10-31，作业提交后归档出清）
+
+- 语音大作业已完成提交。应用户要求，数据资产自 `E:\MultimediaCourseAssets\` 迁入工作区 `assets/`（vision 4.4 GB、speech 4.2 GB、cache-metadata-backups，整体 .gitignore 排除）；随后经用户确认删除 `E:\MultimediaCourseAssets\` 整目录（含 multimedia-vision 环境与 conda-pkgs），E 盘课程目录出清。
+- 语音部分 Git 推送已获授权并执行（origin 已由用户改名为 NPU-MultimediaCourse）；此后本地 commit 完成即可直接 push。
+- multimedia-vision 环境删除后如需重跑视觉实验：按 vision/environment.yml（或 environment-lock-win-64.yml / conda-explicit-win-64.txt）重建，并把 vision/configs/default.yaml 的 environment_prefix 指向新环境（asset_root 已改为 assets/vision）。语音环境 D:\Anaconda3\envs\pytorch 未受影响。
+- 数据集下载地址均有记录：语音 Speech Commands 见 speech/README.md 与报告附录 A（官方 URL + MD5）；视觉各数据与权重来源见 vision/manifests/*.json 及第 9 节资源表。
+
 ## Git 管理与阶段提交
 
 - 本工作区初始化为 Git 仓库，远端 `origin` 关联 `https://github.com/Qinling-Melon-Farmers/NPU-MultimediaCourse.git`（2026-10-31 由 `NPU-visionproject` 改名），主分支为 `main`。
@@ -67,8 +74,10 @@
 常用核验命令（PowerShell）：
 
 ```powershell
-conda run -p E:\MultimediaCourseAssets\envs\multimedia-vision python -s -c "import sys; print(sys.executable)"
-conda run -p E:\MultimediaCourseAssets\envs\multimedia-vision python -s vision/scripts/environment_check.py
+# multimedia-vision 环境已于 2026-10-31 随 E:\MultimediaCourseAssets 出清删除；
+# 重建环境后把下列命令的 -p 指向新环境路径即可运行同样核验。
+conda run -p <重建后的环境路径> python -s -c "import sys; print(sys.executable)"
+conda run -p <重建后的环境路径> python -s vision/scripts/environment_check.py
 ```
 
 ## 3. 文件保护与删除审批
@@ -165,8 +174,8 @@ EXPERIMENT_PLAN.md            视觉实施计划与阶段记录
 kws_code.zip                  语音教师教学代码包
 vision/                      三个视觉实验的代码、配置、测试、日志、结果与报告
 speech/                      语音大作业（关键词唤醒 KWS）的代码、日志、结果与报告
-E:\MultimediaCourseAssets\vision   视觉本地大型数据、权重、特征与视频
-E:\MultimediaCourseAssets\speech   语音本地大型数据（Speech Commands）与解压目录
+assets/                      本地大型数据资产（vision/speech，2026-10-31 自 E 盘迁入，不入 Git）
+                             （E:\MultimediaCourseAssets 已于同日出清删除；multimedia-vision 环境可由 yml 重建）
 ```
 
 - 路径尽量相对工作区或由配置传入，兼容 Windows、中文路径及空格；不要把本机绝对路径写死在可提交代码里。

@@ -1,4 +1,4 @@
-asset_root: E:/MultimediaCourseAssets/vision
+asset_root: assets/vision
 environment_prefix: E:/MultimediaCourseAssets/envs/multimedia-vision
 seed: 20261023
 device: cuda
