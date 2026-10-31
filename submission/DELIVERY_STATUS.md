@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | 视觉单独包 | `vision/submission/2023302610_肖怀瑾_vision.zip` | 110 文件，13.87 MB；README.md + report/（DOCX+PDF）+ vision/（代码一级目录，含 vendor/） |
 | 语音提交目录 + zip | `speech/submission/2023302610_肖怀瑾_kws/` 与同名 `.zip` | 目录 20 文件（code/ + runs/ + report.docx + report.pdf + README.md）；zip 平铺 20 条目，1.80 MB |
-| 两组一起 | `submission/2023302610_肖怀瑾_多媒体大作业.zip` | 129 文件，15.67 MB；README.md + vision/ + kws/ |
+| 两组一起 | `submission/2023302610+肖怀瑾.zip`（用户命名） | 131 文件，15.84 MB；README.md + vision/ + kws/ |
 
 ## 验证
 
@@ -17,9 +17,8 @@
 
 ## 遗留
 
-错误分析未做人耳试听（报告如实注明，基于波形/谱图声学检查）；如需完全对齐指导文档
-10.2 节可由本人抽听 4 条 misclassified 样本后补 1~2 句听感再重导出。视觉交互记录沿用
-快照；语音不记录大模型交互。
+错误分析已含谱图检查；人工听感待补充——4 条待听样本与说明在根目录 `试听样本/`，
+用户听后反馈将补入报告第 6 节并重导出。视觉交互记录沿用快照；语音不记录大模型交互。
 
 ## 未提交
 

@@ -382,6 +382,10 @@ def section_bonus(doc, inference, ablation):
                "自录验证（本人 15 条录音，m4a 经 ffmpeg 转为 16 kHz 单声道 wav）："
                + "；".join(parts)
                + "。" + long_text)
+        H.add_figure(doc, 7, FIG / "fig_my_recordings_screenshot.png",
+                     "自录音频目录截图：my_recordings/ 下 15 条 16 kHz 单声道 wav"
+                     "（Windows 资源管理器）",
+                     width_cm=13.0)
 
 
 def section_summary(doc):
