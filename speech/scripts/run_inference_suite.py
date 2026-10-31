@@ -191,6 +191,10 @@ def main():
                 t2, s2 = detect_scores(model, ckpt, w, device, target_idx)
                 dets = group_detections(t2, s2, 0.9)
                 entry["detections_at_0.9"] = dets
+                entry["threshold_experiment"] = {
+                    f"{th:g}": {"num_detections": len(group_detections(t2, s2, th)),
+                                "detections": group_detections(t2, s2, th)}
+                    for th in (0.5, 0.9, 0.99)}
                 plot_timeline(t2, s2, [0.5, 0.9, 0.99], dets,
                               out_dir / f"fig_detect_my_{wav_path.stem}.png",
                               f"自录长音频 {wav_path.name} 的滑动窗口检测")

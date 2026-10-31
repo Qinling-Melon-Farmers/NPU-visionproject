@@ -35,7 +35,7 @@ speech/
 - **消融**（同测试集同评估脚本）：baseline(40ep+增强) / `--epochs 20` / `--no_augment` / `--width 48`，各独立 save_dir 分别 evaluate；汇总准确率、宏 F1、EER 对比表。
 - **加分项**：`detect.py demo_long.wav --target yes --threshold 0.9`；阈值 0.5/0.9/0.99 对比成表；绘制分数-时间曲线（含阈值线与检测点）。`my_recordings/` + `scripts/rerun_infer_detect.py` 一键重跑。
 - **错误分析**：misclassified.txt 取 top 置信错误 3~5 条，波形 + log-Mel 对照图 + 声学分析（元音/爆破音相似性、噪声、截断、unknown 合理错误）；如实说明基于谱图检查而非人工试听。
-- **报告**：`reports/build_report.py`（python-docx），8 章结构 4~8 页，全部数字程序化读自 metrics.json/消融汇总；本机无独立 LibreOffice，实际用 LibreOffice Kit 转 PDF；注明教学代码来源、本人工作、CC BY 4.0 与参考文献。
+- **报告**：`reports/build_report.py`（python-docx），8 章结构 4~8 页，全部数字程序化读自 metrics.json/消融汇总；本机未装 LibreOffice，PDF 由 Word 16 COM 导出（8 页语音报告导出正常）；注明教学代码来源、本人工作、CC BY 4.0 与参考文献。
 - **打包**：`scripts/package_submission.py` 生成 `2023302610_肖怀瑾_kws.zip`（code/ + runs/best.pt + confusion_matrix.png + det_curve.png + training_curves.png + metrics.json + report.pdf；排除 data/ 与环境）。
 
 ## 4. 实施顺序与状态
@@ -47,7 +47,7 @@ speech/
 | 3 | 数据下载（32 段并行+MD5 校验）、特征提取与核验 | data/processed 清单与核验记录 | 完成 |
 | 4 | 基线 40 epoch 训练 + 评估 | runs/ 产物、metrics.json | 完成（94.62%，EER 1.47%） |
 | 5 | 消融三组 + 汇总表 | 消融对比 JSON/表 | 完成（93.65% / 93.29% / 95.31%） |
-| 6 | 长音频检测、阈值实验、自录入口 | 检测结果与曲线图 | 完成（自录待用户提供） |
+| 6 | 长音频检测、阈值实验、自录入口 | 检测结果与曲线图 | 完成（15 条自录已处理：10 关键词 9 对、4 非关键词全部归 unknown、长录音检出 2 次 yes） |
 | 7 | 错误分析素材 | 谱图对照与条目分析 | 完成 |
 | 8 | 报告 docx→PDF、README、打包、阶段提交 | report.pdf、提交 zip、Git 提交 | 完成（PDF 8 页） |
 
@@ -58,6 +58,6 @@ speech/
 - [x] 训练曲线、混淆矩阵、DET、分数分布、结果表、消融表齐备
 - [x] 消融 4 组完成且同测试集可比
 - [x] 加分项：长音频检测 + 阈值实验完成
-- [x] 自录入口就绪 + 重跑脚本；用户录音后补跑并更新报告（报告已如实标注）
+- [x] 自录音频完成：15 条录音转码、推理、检测并写入报告第 8 节（2026-10-31）；入口与转码脚本保留
 - [x] 报告 PDF 8 页、数字与 metrics.json 一致
 - [x] 提交 zip 命名与内容符合指导文档 10.4 节

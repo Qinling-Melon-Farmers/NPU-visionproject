@@ -65,15 +65,20 @@ conda run -p D:\Anaconda3\envs\pytorch python -s speech/scripts/summarize_ablati
 conda run -p D:\Anaconda3\envs\pytorch python -s speech/reports/build_report.py          # 生成 docx
 ```
 
-报告 docx 用 LibreOffice Kit 转 PDF；本机没有独立 LibreOffice，Word 16 COM 在本机导出会卡住。
-当前提交材料放在 `submission/2023302610_肖怀瑾_kws/` 目录（自录音频待补）；录音补齐后
-可由 `scripts/package_submission.py` 打成同名 zip，最终包只含 code/、runs/、report.docx 和 report.pdf，
-不含 data/ 与环境。
+报告 docx 由 Word 16 COM（`ExportAsFixedFormat`）导出 PDF——本机未安装
+LibreOffice，8 页语音报告导出正常（vision 82 页长报告曾有 COM 卡顿记录，故当时改用
+其它渲染方式；本机若装 LibreOffice 也可 `soffice --headless --convert-to pdf`）。
+提交材料采用两份形态：`submission/2023302610_肖怀瑾_kws/` 可读目录
+（code/ + runs/ + report.docx + report.pdf + README.md）与同名 zip；
+合并包见根目录 `submission/`。均不含 data/ 与环境。
 
 ## 自录音频入口
 
-将本人录音（16 kHz 单声道 wav；关键词约 1 秒一条；长录音 10~20 秒）放入
-`speech/kws_hw/my_recordings/`，然后重跑 `run_inference_suite.py`——脚本自动区分
-短音频（单条识别）与长音频（阈值 0.9 滑窗检测），并更新
-`outputs/baseline/inference_results.json` 与对应图，报告重跑 `build_report.py`
-即可同步更新。
+原始录音（任意格式，m4a/mp3 均可）放入 `speech/kws_hw/my_recordings_raw/`，
+运行 `scripts/convert_recordings.py` 批量转成 16 kHz 单声道 wav 到
+`speech/kws_hw/my_recordings/`（文件名按《自录音频准备清单.md》映射）；已是 wav
+的直接放入后者。然后重跑 `run_inference_suite.py`——脚本自动区分短音频（单条识别）
+与长音频（0.5/0.9/0.99 三阈值滑窗检测），更新 `outputs/baseline/inference_results.json`
+与对应图；再跑 `build_report.py` 与 Word 导出同步报告（或直接运行
+`scripts/refresh_deliverables.ps1` 一键完成）。2026-10-31 的 15 条自录录音已按此流程
+处理并写入报告第 8 节。

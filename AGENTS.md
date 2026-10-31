@@ -61,7 +61,7 @@
 
 - Conda 位于 `D:\Anaconda3`；本次检查时终端默认环境为 `base`。
 - `pytorch` 环境位于 `D:\Anaconda3\envs\pytorch`。
-- 已登记版本：Python `3.12.8`、PyTorch `2.5.1`、torchvision `0.20.1`、pytorch-cuda `11.8`、NumPy `2.4.6`、OpenCV `4.10.0`。
+- 已登记版本：Python `3.12.8`、PyTorch `2.5.1`、torchvision `0.20.1`、pytorch-cuda `11.8`、NumPy `2.4.6`、OpenCV `4.10.0`。（2026-10-23 快照，与语音部分实际版本不同——语音环境 numpy 2.2.6 等，以 `speech/outputs/environment.json` 为准。）
 - 不因上述版本存在就认定三个作者仓库均可直接运行，也不为编写文档而安装或修复依赖。
 
 常用核验命令（PowerShell）：

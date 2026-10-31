@@ -329,7 +329,59 @@ def section_bonus(doc, inference, ablation):
                f"{info['file']} → {info['top'][0]['class']} "
                f"({info['top'][0]['prob'] * 100:.2f}%)"
                for info in inference["infer_examples"].values())
-           + "。自录音频部分：" + inference["my_recordings_status"] + "。")
+           + "。")
+
+    # 自录音频结果（my_recordings/，数字全部程序化读自 inference_results.json）
+    truth = {"kw_yes_01.wav": "yes", "kw_no_01.wav": "no", "kw_up_01.wav": "up",
+             "kw_down_01.wav": "down", "kw_left_01.wav": "left",
+             "kw_right_01.wav": "right", "kw_on_01.wav": "on",
+             "kw_off_01.wav": "off", "kw_stop_01.wav": "stop", "kw_go_01.wav": "go"}
+    my = [e for e in inference.get("my_recordings", []) if e["type"] == "keyword"]
+    long_entries = [e for e in inference.get("my_recordings", []) if e["type"] == "long"]
+    if my:
+        kw = [(e["file"], e["prediction"]["top"][0]) for e in my]
+        correct = sum(1 for f, t in kw if t["class"] == truth.get(f))
+        wrong = [(truth[f], t["class"], t["prob"]) for f, t in kw
+                 if f in truth and t["class"] != truth[f]]
+        low = [(truth[f], t["prob"]) for f, t in kw
+               if f in truth and t["class"] == truth[f] and t["prob"] < 0.9]
+        others = [(f, t["class"], t["prob"]) for f, t in kw if f not in truth]
+        zh_name = {"kw_zh_shi_01.wav": "中文“是”", "kw_zh_ting_01.wav": "中文“停”"}
+        others_text = "、".join(
+            (zh_name.get(f, f.replace("kw_other_", "").replace("_01.wav", ""))
+             + f"→{c}（{p:.2f}）")
+            for f, c, p in others)
+        wrong_text = "、".join(f"{w[0]}→{w[1]}（{w[2]:.2f}）" for w in wrong)
+        low_text = "、".join(f"{f} {p:.2f}" for f, p in low)
+        parts = [
+            f"10 个英文关键词 {correct} 个 top-1 正确，多数置信度接近 1"
+            + (f"（相对较低：{low_text}）" if low else ""),
+        ]
+        if wrong:
+            parts.append(f"{wrong_text} 为唯一误判，该条语音完整落在 1 秒窗口内，"
+                         "与测试集混淆矩阵中 up/off 的互混方向一致，属模型层面混淆")
+        if others:
+            parts.append(f"{others_text} 全部被归入 unknown 类——unknown 类使"
+                         "没学过的词得到合理处置而非误报为关键词")
+        long_text = ""
+        if long_entries:
+            e = long_entries[0]
+            dets = e.get("detections_at_0.9", [])
+            det_text = "、".join(
+                f"t={d['t']:.2f} s（{d['score']:.4f}）" for d in dets)
+            thr = e.get("threshold_experiment", {})
+            thr_text = ""
+            if thr:
+                thr_text = ("；阈值 0.5/0.9/0.99 下分别检出 "
+                            + "/".join(str(v["num_detections"])
+                                       for v in thr.values()) + " 次")
+            long_text = (f"长录音（{e['duration_s']:.1f} 秒，静音→yes→静音→stop→"
+                         f"静音→yes→静音）在阈值 0.9 下检出 {len(dets)} 次 yes"
+                         f"（{det_text}），stop 与静音段无误触发{thr_text}。")
+        H.body(doc,
+               "自录验证（本人 15 条录音，m4a 经 ffmpeg 转为 16 kHz 单声道 wav）："
+               + "；".join(parts)
+               + "。" + long_text)
 
 
 def section_summary(doc):

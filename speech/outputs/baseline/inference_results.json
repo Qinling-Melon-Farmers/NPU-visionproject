@@ -89,6 +89,385 @@
       ]
     }
   },
-  "my_recordings": [],
-  "my_recordings_status": "自录音频尚未提供：本人录音（16 kHz 单声道 wav，放入 speech/kws_hw/my_recordings/）就位并重跑推理套件后将补充对应结果"
+  "my_recordings": [
+    {
+      "file": "kw_down_01.wav",
+      "duration_s": 1.28,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_down_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_down_01.wav",
+        "top": [
+          {
+            "class": "down",
+            "prob": 0.7580646276473999
+          },
+          {
+            "class": "stop",
+            "prob": 0.16651540994644165
+          },
+          {
+            "class": "unknown",
+            "prob": 0.05926506593823433
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_go_01.wav",
+      "duration_s": 1.09,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_go_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_go_01.wav",
+        "top": [
+          {
+            "class": "go",
+            "prob": 0.9994437098503113
+          },
+          {
+            "class": "stop",
+            "prob": 0.0002907674352172762
+          },
+          {
+            "class": "no",
+            "prob": 0.00012666458496823907
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_left_01.wav",
+      "duration_s": 1.09,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_left_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_left_01.wav",
+        "top": [
+          {
+            "class": "left",
+            "prob": 0.9999673366546631
+          },
+          {
+            "class": "unknown",
+            "prob": 1.9410796085139737e-05
+          },
+          {
+            "class": "yes",
+            "prob": 1.0797400136652868e-05
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_no_01.wav",
+      "duration_s": 1.09,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_no_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_no_01.wav",
+        "top": [
+          {
+            "class": "no",
+            "prob": 0.9999790191650391
+          },
+          {
+            "class": "go",
+            "prob": 1.4101054148341063e-05
+          },
+          {
+            "class": "unknown",
+            "prob": 6.468696483352687e-06
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_off_01.wav",
+      "duration_s": 1.02,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_off_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_off_01.wav",
+        "top": [
+          {
+            "class": "off",
+            "prob": 0.9999876022338867
+          },
+          {
+            "class": "on",
+            "prob": 7.409978024952579e-06
+          },
+          {
+            "class": "left",
+            "prob": 2.297532091688481e-06
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_on_01.wav",
+      "duration_s": 0.79,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_on_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_on_01.wav",
+        "top": [
+          {
+            "class": "on",
+            "prob": 0.509882390499115
+          },
+          {
+            "class": "off",
+            "prob": 0.48977428674697876
+          },
+          {
+            "class": "up",
+            "prob": 0.00023923622211441398
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_other_hello_01.wav",
+      "duration_s": 1.0,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_other_hello_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_other_hello_01.wav",
+        "top": [
+          {
+            "class": "unknown",
+            "prob": 0.9315560460090637
+          },
+          {
+            "class": "down",
+            "prob": 0.027761166915297508
+          },
+          {
+            "class": "no",
+            "prob": 0.020584572106599808
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_other_house_01.wav",
+      "duration_s": 1.07,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_other_house_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_other_house_01.wav",
+        "top": [
+          {
+            "class": "unknown",
+            "prob": 0.9959338307380676
+          },
+          {
+            "class": "right",
+            "prob": 0.0030996419955044985
+          },
+          {
+            "class": "no",
+            "prob": 0.0002817672211676836
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_right_01.wav",
+      "duration_s": 1.34,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_right_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_right_01.wav",
+        "top": [
+          {
+            "class": "right",
+            "prob": 0.9999998807907104
+          },
+          {
+            "class": "unknown",
+            "prob": 1.3841784607393492e-07
+          },
+          {
+            "class": "left",
+            "prob": 1.9407262463744246e-09
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_stop_01.wav",
+      "duration_s": 0.87,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_stop_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_stop_01.wav",
+        "top": [
+          {
+            "class": "stop",
+            "prob": 0.9999271631240845
+          },
+          {
+            "class": "unknown",
+            "prob": 7.202905544545501e-05
+          },
+          {
+            "class": "off",
+            "prob": 6.327177288767416e-07
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_up_01.wav",
+      "duration_s": 1.11,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_up_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_up_01.wav",
+        "top": [
+          {
+            "class": "off",
+            "prob": 0.8527739644050598
+          },
+          {
+            "class": "up",
+            "prob": 0.14035911858081818
+          },
+          {
+            "class": "on",
+            "prob": 0.005448142532259226
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_yes_01.wav",
+      "duration_s": 0.96,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_yes_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_yes_01.wav",
+        "top": [
+          {
+            "class": "yes",
+            "prob": 0.9999960660934448
+          },
+          {
+            "class": "left",
+            "prob": 3.7588697523460723e-06
+          },
+          {
+            "class": "unknown",
+            "prob": 1.689715389829871e-07
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_zh_shi_01.wav",
+      "duration_s": 1.28,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_zh_shi_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_zh_shi_01.wav",
+        "top": [
+          {
+            "class": "unknown",
+            "prob": 0.9919344186782837
+          },
+          {
+            "class": "on",
+            "prob": 0.0035269346553832293
+          },
+          {
+            "class": "down",
+            "prob": 0.0020505674183368683
+          }
+        ]
+      }
+    },
+    {
+      "file": "kw_zh_ting_01.wav",
+      "duration_s": 1.56,
+      "type": "keyword",
+      "prediction": {
+        "file": "kw_zh_ting_01.wav",
+        "path": "C:\\Users\\ASUS\\Desktop\\多媒体技术\\speech\\kws_hw\\my_recordings\\kw_zh_ting_01.wav",
+        "top": [
+          {
+            "class": "unknown",
+            "prob": 0.8865724205970764
+          },
+          {
+            "class": "down",
+            "prob": 0.08517681807279587
+          },
+          {
+            "class": "stop",
+            "prob": 0.025762449949979782
+          }
+        ]
+      }
+    },
+    {
+      "file": "long_demo_01.wav",
+      "duration_s": 11.43,
+      "type": "long",
+      "detections_at_0.9": [
+        {
+          "t": 2.75,
+          "score": 0.9997
+        },
+        {
+          "t": 7.25,
+          "score": 1.0
+        }
+      ],
+      "threshold_experiment": {
+        "0.5": {
+          "num_detections": 2,
+          "detections": [
+            {
+              "t": 2.75,
+              "score": 0.9997
+            },
+            {
+              "t": 7.25,
+              "score": 1.0
+            }
+          ]
+        },
+        "0.9": {
+          "num_detections": 2,
+          "detections": [
+            {
+              "t": 2.75,
+              "score": 0.9997
+            },
+            {
+              "t": 7.25,
+              "score": 1.0
+            }
+          ]
+        },
+        "0.99": {
+          "num_detections": 2,
+          "detections": [
+            {
+              "t": 2.75,
+              "score": 0.9997
+            },
+            {
+              "t": 7.25,
+              "score": 1.0
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "my_recordings_status": "已处理自录音频，结果见上表与对应检测图"
 }
