@@ -7,8 +7,8 @@
 视觉部分单独提交包为 `submission/2023302610_肖怀瑾_vision.zip`，结构如下：
 
 ```text
-README.md             本说明（提交包根目录另附运行要点）
-report/               vision_report.docx 与 vision_report.pdf
+README.md             提交说明与运行要点
+2023302610_肖怀瑾_视觉报告.docx / .pdf   实验报告（交付版）
 vision/               课程代码、作者代码（vendor/）、配置、清单、测试和运行脚本
 ```
 

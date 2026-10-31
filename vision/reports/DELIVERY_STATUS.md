@@ -12,7 +12,7 @@
 | 代理协作 | 附录 D；79 条独立归档事件，17 条可读、62 条加密，不计学生轮数 |
 | 交互核验 | `../logs/interactions_20261023_audit02.jsonl` 与 `.audit.json`；源文件行号保留；2026-10-28 审阅未写入附录 |
 | 严格完整性限制 | 62 条代理间正文仍加密不可读；未解密、未编造补齐；报告只在附录 D 保留缺口说明 |
-| 代码和报告包 | `../submission/2023302610_肖怀瑾_vision.zip`；110 文件；13.87 MB；顶层为 README.md、report/（DOCX+PDF）、vision/（代码一级目录）；提交校验脚本与内部工作流文档不进包 |
+| 代码和报告包 | `../submission/2023302610_肖怀瑾_vision.zip`；103 文件；13.83 MB；顶层为 2023302610_肖怀瑾_视觉报告.docx/.pdf + README.md + vision/（代码一级目录）；报告生成脚本 vision/reports/ 与提交校验脚本不进包 |
 | 本地摘要 | 配置资源目录下 `cache/summary/visual-20261023-fp32/`；三预算离屏播放与逐帧对齐记录通过 |
 | 验证记录 | `../outputs/visual-20261023-fp32/verification_20261028T205819476067.json`；三份 replay；20 项测试；旧 v3 验证已归档到 `archive/submission_verification_20261028_v3.json` |
 | Git | 已关联 origin 并按阶段本地提交；截至本次交付未执行 push，未重写远端历史 |

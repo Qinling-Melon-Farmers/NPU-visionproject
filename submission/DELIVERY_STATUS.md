@@ -4,9 +4,9 @@
 
 | 提交物 | 位置 | 内容 |
 | --- | --- | --- |
-| 视觉单独包 | `vision/submission/2023302610_肖怀瑾_vision.zip` | 110 文件，13.87 MB；README.md + report/（DOCX+PDF）+ vision/（代码一级目录，含 vendor/） |
-| 语音提交目录 + zip | `speech/submission/2023302610_肖怀瑾_kws/` 与同名 `.zip` | 目录 20 文件（code/ + runs/ + report.docx + report.pdf + README.md）；zip 平铺 20 条目，1.80 MB |
-| 两组一起 | `submission/2023302610+肖怀瑾.zip`（用户命名） | 131 文件，15.84 MB；README.md + vision/ + kws/ |
+| 视觉单独包 | `vision/submission/2023302610_肖怀瑾_vision.zip` | 103 文件，13.83 MB；README.md + 2023302610_肖怀瑾_视觉报告.docx/.pdf + vision/（代码一级目录，不含报告生成脚本） |
+| 语音提交目录 + zip | `speech/submission/2023302610_肖怀瑾_kws/` 与同名 `.zip` | 目录 20 文件（code/ + runs/ + report.docx + report.pdf + README.md）；zip 平铺 20 条目，1.80 MB（报告名 report.pdf 为指导文档 10.4 规定格式） |
+| 两组一起 | `submission/2023302610+肖怀瑾.zip`（用户命名） | 124 文件，15.81 MB；README.md + 视觉/ + 语音/，两份报告按 学号+姓名+类别 命名放在各子目录根 |
 
 ## 验证
 
