@@ -7,21 +7,13 @@
 视觉部分单独提交包为 `submission/2023302610_肖怀瑾_vision.zip`，结构如下：
 
 ```text
-README_FIRST.md
-code/vision/          课程代码、作者代码、配置、清单、测试和运行脚本
+README.md             本说明（提交包根目录另附运行要点）
 report/               vision_report.docx 与 vision_report.pdf
-docs/                 REPRODUCE / EVIDENCE / LICENSES / INTERACTION_AUDIT / REQUIREMENTS_COVERAGE
-manifest/             submission_manifest.json + checksums.sha256
-verify_package.py     解压后的哈希和结构自检
+vision/               课程代码、作者代码（vendor/）、配置、清单、测试和运行脚本
 ```
 
-打开压缩包先读 `README_FIRST.md`；代码级说明仍是本文件。重新打包：
-
-```powershell
-conda run -p E:\MultimediaCourseAssets\envs\multimedia-vision python -s vision/scripts/package_vision_submission.py
-```
-
-打包脚本使用显式目录清单，不扫描 `outputs/`、`logs/`、数据、权重、特征、视频和旧提交包。旧版 `vision_review_20261028_v3.zip` 保留，不被覆盖。
+包内不含数据集、预训练权重、特征缓存和运行日志；数据与模型路径由
+[configs/default.yaml](configs/default.yaml) 的 `asset_root` 指定。
 
 ## 环境与配置
 
@@ -143,8 +135,8 @@ conda run -p $courseEnv python -s vision/scripts/replay_image.py --config vision
 
 Word 报告生成于 `vision/reports/`，真实结果图表直接嵌入，缺少结果、交互记录或播放证据时为草稿。交互附录只来自已保存的用户可见提示、回复和执行证据；不可补造无法访问的历史对话、模型版本或隐藏推理。提交前在 Word 中更新目录、填写姓名学号并检查图片、分页及参考文献。
 
-交互记录已专项审计，见 [reports/INTERACTION_AUDIT.md](reports/INTERACTION_AUDIT.md)。学生与编程大模型的记录位于附录 C，代理协作位于附录 D，后者不计入学生交互轮数。旧版混合日志保留，新报告根据 `logs/interaction_audit_latest.json` 读取分类快照。两批结构化问答已经补回；62 次代理协作的历史正文仅有加密持久化记录，无法读取，故“全部历史交互严格完整”未通过。报告封面、附录及打包清单明确此边界，不把实验验证通过等同于历史记录无缺口。
+交互记录已专项审计。学生与编程大模型的记录位于附录 C，代理协作位于附录 D，后者不计入学生交互轮数。旧版混合日志保留，新报告根据 `logs/interaction_audit_latest.json` 读取分类快照。两批结构化问答已经补回；62 次代理协作的历史正文仅有加密持久化记录，无法读取，故“全部历史交互严格完整”未通过。报告封面、附录明确此边界，不把实验验证通过等同于历史记录无缺口。
 
-最终提交一份涵盖三个实验及完整可见交互附录的 `.docx`，并附同版 PDF；另附代码、配置、来源清单、许可证、必要运行说明及依赖信息。按明确文件清单复制或打包：保留 `vision` 的课程代码、测试、说明、配置、作者来源/许可证及所需结果证据；选择最终报告。不要把整个资源根目录、Conda环境、数据、权重、特征缓存或本地摘要MP4加入提交包，也不要为打包删除这些本地资源。摘要MP4只留本地检查。
+最终提交一份涵盖三个实验及完整可见交互附录的 `.docx`，并附同版 PDF；另附代码、配置、来源清单、许可证、必要运行说明及依赖信息。提交包内保留 `vision` 的课程代码、测试、说明、配置、作者来源/许可证及所需结果证据与最终报告；不把资源根目录、Conda环境、数据、权重、特征缓存或本地摘要MP4放入包内，也不为打包删除这些本地资源。摘要MP4只留本地检查。
 
-当前报告为 [reports/delivery-20261028/vision_report.docx](reports/delivery-20261028/vision_report.docx)（另附同目录 PDF），由 [reports/build_report_v2.py](reports/build_report_v2.py) 生成；提交包为 `submission/2023302610_肖怀瑾_vision.zip`。Word 16 更新目录后为正文 30 页（第 1—30 页）、全篇 82 页；32 图、28 表；附录 C 从第 44 页开始，附录 D 从第 72 页开始。姓名学号已按同机课程报告填写；封面已删除实验地点和指导教师两行。交互历史缺口不会因排版和打包而消除，请结合 [reports/INTERACTION_AUDIT.md](reports/INTERACTION_AUDIT.md) 审阅。打包与独立解压验证脚本分别为 `scripts/package_vision_submission.py` 和包内 `verify_package.py`。旧版 `delivery-final-20261023/vision_report.docx` 与旧提交包保留，未删除。
+当前报告为 [reports/delivery-20261028/vision_report.docx](reports/delivery-20261028/vision_report.docx)（另附同目录 PDF），由 [reports/build_report_v2.py](reports/build_report_v2.py) 生成。Word 16 更新目录后为正文 30 页（第 1—30 页）、全篇 82 页；32 图、28 表；附录 C 从第 44 页开始，附录 D 从第 72 页开始。姓名学号已按同机课程报告填写；封面已删除实验地点和指导教师两行。交互历史缺口不会因排版和打包而消除。

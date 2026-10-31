@@ -4,15 +4,14 @@
 
 | 提交物 | 位置 | 内容 |
 | --- | --- | --- |
-| 视觉单独包 | `vision/submission/2023302610_肖怀瑾_vision.zip` | 120 文件，13.89 MB；README_FIRST + code/vision + report/（DOCX+PDF）+ docs + manifest + verify_package.py |
-| 语音提交目录 + zip | `speech/submission/2023302610_肖怀瑾_kws/` 与同名 `.zip` | 目录 18 文件（code/ + runs/ + report.docx + report.pdf + README.md）；zip 平铺 19 条目，1.80 MB |
-| 两组一起 | `submission/2023302610_肖怀瑾_多媒体大作业.zip` | 139 文件，15.69 MB；vision/ + kws/ + README_FIRST.md |
+| 视觉单独包 | `vision/submission/2023302610_肖怀瑾_vision.zip` | 110 文件，13.87 MB；README.md + report/（DOCX+PDF）+ vision/（代码一级目录，含 vendor/） |
+| 语音提交目录 + zip | `speech/submission/2023302610_肖怀瑾_kws/` 与同名 `.zip` | 目录 20 文件（code/ + runs/ + report.docx + report.pdf + README.md）；zip 平铺 20 条目，1.80 MB |
+| 两组一起 | `submission/2023302610_肖怀瑾_多媒体大作业.zip` | 129 文件，15.67 MB；README.md + vision/ + kws/ |
 
 ## 验证
 
-- 视觉包自检：118 个文件哈希匹配，报告 DOCX/PDF 可读；解压后 `python -m vision --help` 通过，`pytest vision/tests` 20 项通过。
-- 视觉报告 Word 16 统计 82 页，目录页码已更新；封面已去掉实验地点、指导教师两行。
-- 语音包报告 DOCX/PDF 均 8 页；`best.pt` 可加载（19,948 参数，epoch 30）；指标与 `metrics.json` 一致。
+- 视觉包（重构后结构）解压自检：`python -m vision --help` 正常，`pytest vision/tests` 20 项通过；报告 DOCX/PDF 可打开。
+- 语音包与提交目录内容一致，`best.pt` 可加载（19,948 参数，epoch 30）；报告 8 页，指标与 `metrics.json` 一致；README 自录状态已同步。
 - 自录验证：15 条录音（10 关键词 9 对、4 非关键词全归 unknown、长录音 2 次 yes/三阈值一致）已写入报告第 8 节并同步进目录与两份 zip。
 - 合并包含两个子目录，无 `data/`、权重缓存、`__pycache__` 或 `.pytest_cache`；视觉子包自检通过。
 
